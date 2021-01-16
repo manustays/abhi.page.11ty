@@ -1,0 +1,5 @@
+README.md
+src/**/README.md
+src/**/EXAMPLE-*.*
+_drafts/
+node_modules/

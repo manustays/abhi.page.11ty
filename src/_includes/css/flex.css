@@ -1,0 +1,152 @@
+/* ---- Most common flex styles ---- */
+
+/* .flex-h, .flex-v, .flex-h-c, .flex-v-c, .flex-h-cc, .flex-v-cc, */
+.layout.horizontal,
+.layout.vertical,
+.layout.horizontal-reverse,
+.layout.vertical-reverse {
+	display: flex;
+}
+
+/* .flex-i-h, .flex-i-v, .flex-i-h-c, .flex-i-v-c, .flex-i-h-cc, .flex-i-v-cc, */
+.layout.inline {
+	display: inline-flex;
+}
+
+.layout.horizontal {
+	flex-direction: row;
+}
+
+.layout.vertical {
+	flex-direction: column;
+}
+
+.layout.wrap {
+	flex-wrap: wrap;
+}
+
+.layout.no-wrap {
+	flex-wrap: nowrap;
+}
+
+/* .flex-h-c, .flex-v-c, .flex-h-cc, .flex-v-cc, */
+.layout.center,
+.layout.center-center {
+	align-items: center;
+}
+
+/* .flex-h-cc, .flex-v-cc, */
+.layout.center-justified,
+.layout.center-center {
+	justify-content: center;
+}
+
+.flex-auto {
+	flex: 1 1 auto;
+}
+
+.flex-none {
+	flex: none;
+}
+
+.flex {
+	flex: 1;
+	flex-basis: 0.000000001px;
+}
+
+.flex-2 {
+	flex: 2;
+}
+
+.flex-3 {
+	flex: 3;
+}
+
+.flex-4 {
+	flex: 4;
+}
+
+.flex-5 {
+	flex: 5;
+}
+
+.flex-6 {
+	flex: 6;
+}
+
+
+/* ---- Basic flexbox reverse styles ---- */
+
+.layout.horizontal-reverse {
+	flex-direction: row-reverse;
+}
+
+.layout.vertical-reverse {
+	flex-direction: column-reverse;
+}
+
+.layout.wrap-reverse {
+	flex-wrap: wrap-reverse;
+}
+
+
+/* ---- Flexbox Basic alignment ---- */
+
+.layout.start {
+	align-items: flex-start;
+}
+
+.layout.end {
+	align-items: flex-end;
+}
+
+/* Alignment in main axis */
+
+.layout.start-justified {
+	justify-content: flex-start;
+}
+
+.layout.end-justified {
+	justify-content: flex-end;
+}
+
+.layout.around-justified {
+	justify-content: space-around;
+}
+
+.layout.justified {
+	justify-content: space-between;
+}
+
+
+/* Self alignment */
+
+.self-start {
+	align-self: flex-start;
+}
+
+.self-center {
+	align-self: center;
+}
+
+.self-end {
+	align-self: flex-end;
+}
+
+.self-stretch {
+	align-self: stretch;
+}
+
+
+/* -------- Responsive Flexbox -------- */
+@media (min-width: 700px) {
+
+	.layout.horizontal-md {
+		flex-direction: row;
+	}
+
+	.layout.horizontal-reverse-md {
+		flex-direction: row-reverse;
+	}
+
+}

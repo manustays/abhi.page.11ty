@@ -1,0 +1,65 @@
+- category: Web Frontend
+  skills:
+  - PWA
+  - Jamstack
+  - Redux
+  - Polymer
+  - LitElement
+  - React
+  - Vue
+  - ES6/7
+  - CSS3
+  - 11ty
+  - Hugo
+  - Svelte
+
+- category: Web Backend
+  skills:
+  - Node.js
+  - Express.js
+  - PHP
+  - Flask
+  - Django
+  - Nginx
+
+- category: Native
+  skills:
+  - Android SDK
+  - React Native
+
+- category: Languages
+  skills:
+  - C
+  - C++
+  - Java
+  - Javascript
+  - Python
+  - Perl
+  - PHP
+  - Go
+  - Linux Shell Scripting
+
+- category: Database
+  skills:
+  - MySQL
+  - MongoDB
+  - SQLite
+
+- category: Architecture/Others
+  skills:
+  - Microservices
+  - Event-Driven
+  - Functional Programming
+  - Cloud
+  - REST
+  - OpenAPI
+  - Socket.io
+  - RabbitMQ
+  - Lucene
+  - Celery
+
+- category: Currently Learning
+  skills:
+  - Blockchain
+  - Microservices
+  - Azure Cloud

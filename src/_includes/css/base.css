@@ -1,0 +1,343 @@
+
+:root {
+	--clr-bg: #333;
+	--clr-text: #fff;
+	--clr-primary: #173854;
+	--clr-primary-txt: #8bb8df;
+	--clr-primary-shade: #102538;
+	--clr-primary-glare: #22547c;
+	--clr-highlight: #fedb8b;
+	--clr-light: #fff;
+	--clr-mid: #ccc;
+	--clr-dark: #333;
+	--clr-slate: #404040;
+	--clr-action-bg: #b3d2ea;
+
+	--lighter-text-color: #888;
+	--background-section-color: #fffcf6;
+	--tag-color: #ffefd1;
+	--footer-background-color: #58595b;
+	--footer-column-header: #adadad;
+	--footer-text: #e4e4e4;
+	--footer-link: #bbb;
+	--nav-caption: #b0b0b0;
+	--divider-color: #e0e0e0;
+	--button-shadow-color: rgba(254,178,25,0.6);
+}
+
+body {
+	line-height: 1.56;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,' Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	background: var(--clr-bg);
+	color: var(--clr-text);
+	scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+	font-family: Lora, serif;
+}
+
+h1 {font-size: 1.95rem}
+h2 {font-size: 1.56rem}
+h3 {font-size: 1.25rem}
+
+@media(min-width: 700px) {
+	h1 {font-size: 3.05rem}
+	h2 {font-size: 2.44rem}
+	h3 {font-size: 1.95rem}
+}
+
+body,html {
+	height:100%;
+}
+
+
+
+section.block, header, footer {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+section.block {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+@media (min-width: 576px) {
+	section.block, header, footer {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+
+	section.block {
+		padding-top: 3%;
+		padding-bottom: 3%;
+	}
+}
+
+@media (min-width: 1300px) {
+	section.block, header, footer {
+		padding-left: calc( (100% - 1100px) / 2 );
+		padding-right: calc( (100% - 1100px) / 2 );
+	}
+}
+
+
+section.block.header {
+	background: var(--clr-slate);
+}
+
+/* section.block.highlight, section.block.highlight * {
+	background: var(--clr-highlight);
+	color: var(--clr-dark);
+} */
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+[disabled] {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+aside {
+  position: absolute;
+  right: 50px;
+  padding: 0;
+  top: 20px;
+}
+
+
+img {
+  max-width: 100%;
+}
+
+a {
+	transition-duration: 0.4s;
+	text-decoration: none;
+	color: var(--clr-text);
+}
+
+a.icolink {		/* A short link with an icon inside */
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	fill: currentColor;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: var(--clr-highlight);
+}
+
+a.icolink:hover {
+	color: var(--clr-highlight);
+}
+
+a[disabled] {
+	text-decoration: none !important;
+	color: var(--lighter-text-color);
+}
+
+a.nostyle, a.nostyle:hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.txt-center {
+	text-align: center;
+}
+
+.txt-thin {
+	font-weight: 300;
+}
+
+.lh-high {
+	line-height: 1.67;
+}
+
+/* For full-width centered paragraphs, limit the width */
+p.p-fw {
+	max-width: 1000px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/* Color utility classes --- */
+
+.bg-shaded {
+	background-color: var(--clr-slate);
+}
+
+.bg-highlight {
+	background-color: var(--clr-highlight);
+}
+
+.clr-highlight {
+	color: var(--clr-highlight);
+}
+
+.clr-dark {
+	color: var(--clr-dark);
+}
+
+
+
+
+/* =============== COMMON UI COMPONENTS ================= */
+
+.button {
+	font-size: 16px;
+	font-weight: bold;
+	width: fit-content;
+	white-space: nowrap;
+	padding: 10px 20px;
+	margin: 0.3em;
+	background: var(--clr-action-bg);
+	color: var(--clr-dark);
+	text-decoration: none;
+	border-radius: 3px;
+	cursor: pointer;
+	line-height: 1.43;
+	transition: all 0.3s ease-out;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.button:hover {
+	filter: brightness(1.2);
+	color: var(--clr-dark);
+}
+
+.button > svg:first-child {
+	margin-right: 0.5em;
+}
+
+.button > svg:last-child {
+	margin-left: 0.5em;
+}
+
+/*
+	A Tag of text with a colored dot on the left.
+	Use the "dotTag" Nunjucks shortcode in your templates to add a tag.
+*/
+.dottagbox {
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none !important;
+}
+
+.dottagbox::before {
+	content: '';
+	width: 0.6em;
+	min-width: 0.6em;
+	height: 0.6em;
+	margin-right: 0.5em;
+	border-radius: 50%;
+	background: var(--clr-highlight);
+}
+
+.dottagbox.filled {
+	font-size: 0.9em;
+	font-weight: 500;
+	padding: 0 0.7em 0 0.6em;
+	margin: 2px 3px;
+	height: 1.8em;
+	border-radius: 0.9em;
+	background: var(--clr-primary-txt);
+	color: var(--clr-dark);
+}
+.dottagbox.hash::before {
+	content: '#';
+	width: auto;
+	min-width: auto;
+	height: auto;
+	margin-right: 2px;
+	border-radius: 0;
+	background: transparent;
+	font-weight: 700;
+}
+
+
+.svgico {
+	display: inline-block;
+	vertical-align: middle;
+	width: 1.2em;
+	height: 1.2em;
+	fill: currentColor;
+}
+
+
+/* Common styling for Tables: */
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	background: var(--footer-background-color);
+	color: var(--footer-text);
+	border: 1px solid var(--footer-column-header);
+	font-size: 0.9em;
+	font-weight: 700;
+	padding: 0.5em;
+	vertical-align:middle;
+}
+
+td {
+	padding: 0.4em;
+	vertical-align: middle;
+	border: 1px solid var(--footer-column-header);
+}
+
+tr:nth-child(even) td {
+	background: var(--background-section-color);
+}
+
+
+/* Slim <ul> lists: colored dots & negetive left-margin */
+
+ul.slim_ul, .slim_ul ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ul.slim_ul > li, .slim_ul ul > li {
+	position: relative;
+	line-height: 1.5;
+}
+
+ul.slim_ul > li::before, .slim_ul ul > li::before {
+	content: "";
+	position: absolute;
+	left: -1em;
+	top: 10px;
+	left: -1.1em;
+	top: 0.4em;
+	width: 0.6em;
+	height: 0.6em;
+	background: var(--clr-highlight);
+	border-radius: 50%;
+}

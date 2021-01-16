@@ -1,0 +1,19 @@
+- company: Eko India Financial Services Pvt. Ltd.
+  url: https://eko.in
+  positions:
+  - title: Solution Architect
+    start_date: Jan 2021
+  - title: Tech Lead
+    start_date: Apr 2014
+    end_date: Jan 2021
+  - title: Hacker in Residence (Engineering)
+    start_date: Oct 2010
+    end_date: Apr 2014
+
+- company: IndiaMART InterMESH Ltd.
+  url: https://www.indiamart.com
+  description: Scripting & automation, Solr Lucene based search solution, webcrawler bots, website design & development
+  positions:
+  - title: Executive Programmer
+    start_date: Dec 2009
+    end_date: Oct 2010

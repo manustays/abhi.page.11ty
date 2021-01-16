@@ -1,0 +1,48 @@
+---
+pagination:
+  data: collections.blog
+  size: 10
+  alias: posts
+  reverse: true
+  filter:
+    - all
+    - blog
+eleventyExcludeFromCollections: true
+breadcrumb: blog
+---
+
+{% extends "../_layouts/base.njk" %}
+
+{% block head %}
+	{% if pagination.pageNumber > 0 %}
+		<link rel="prev" href="{{ env.BASE_URL }}{{ pagination.href.previous }}">
+	{% endif %}
+	{% if pagination.pageNumber < pagination.pages.length - 1 %}
+	<link rel="next" href="{{ env.BASE_URL }}{{ pagination.href.next }}">
+	{% endif %}
+{% endblock %}
+
+{% block custom_style %}
+	{{ css_blog | cssmin | safe }}
+	{{ css_bloglist | cssmin | safe }}
+{% endblock %}
+
+{% block main %}
+
+	<section class="block header">
+		<h1>Blog</h1>
+	</section>
+
+	{% set blogposts = posts %}
+	{% include "blogslist.njk" %}
+
+	<section class="block blog-footer">
+		<div class="title">Browse by Tags</div>
+		<div class="layout horizontal wrap">
+			{% for item in collections.blogtags %}
+				<a class="button" href="/blog/tags/{{item}}/">#{{item}}</a>&nbsp;
+			{% endfor %}
+		</div>
+	</section>
+
+{% endblock %}

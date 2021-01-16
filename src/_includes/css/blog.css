@@ -1,0 +1,166 @@
+/* ================ Blog Posts ================ */
+
+/* h1 {
+	font-size: 2em;
+	line-height: 1.6;
+	color: var(--clr-highlight);
+}
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.17em; }
+h4 { font-size: 1.12em; }
+h5 { font-size: .83em; }
+h6 { font-size: .75em; }
+
+
+@media (min-width: 700px) {
+	h1 { font-size: 40px; }
+	h2 { font-size: 32px; }
+	h3 { font-size: 22px; }
+	h4 { font-size: 18px; }
+} */
+
+h1 {
+	color: var(--clr-highlight);
+}
+
+.post-body {
+	font-size: 1.25em;
+	line-height: 1.7;
+	margin: 2em 0;
+}
+
+p {
+	margin-top: 2.44em;
+}
+
+.post-body a:not([class]), .post-body a[class="ext-link"] {
+	text-decoration: none;
+	background: var(--clr-highlight);
+	color: var(--clr-dark);
+	padding: .2rem .4rem .3rem .4rem;
+    word-break: break-word;
+    line-height: 1.2;
+}
+
+.post-body a:hover {
+	text-decoration: underline;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	max-width: 500px;
+	background: var(--color-stroke);
+	border: none;
+	margin: 3.05rem auto;
+}
+
+blockquote {
+	border-left: .4rem solid var(--clr-action-bg);
+	margin-left: 0;
+	padding-left: 1.25em;
+	font-style: italic;
+	font-size: 1.2em;
+}
+
+blockquote p {
+    opacity: .85;
+    padding: 1.25rem 0;
+}
+
+code {
+	font-size: 1.2em;
+	color: var(--clr-primary-txt);
+	font-weight: 600;
+	margin-left: .01ch;
+	margin-right: .01ch;
+}
+
+
+.intro-meta {
+	font-size: 1.25rem;
+	line-height: 1.2;
+}
+
+.intro-meta > span {
+	margin-right: 1em;
+}
+
+.post-body img, img.hero {
+    display: block;
+    margin: 2rem auto;
+	max-width: 100%;
+	max-height: 400px;
+	border-radius: 5px;
+}
+
+
+
+.blog-footer {
+	background: var(--clr-highlight);
+	color: var(--clr-dark);
+	padding-top: 2em;
+	padding-bottom: 2em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.blog-footer .title {
+	font-size: 1.6em;
+	font-weight: 600;
+	margin-right: 1em;
+}
+
+.blog-footer a.button {
+	background: var(--clr-dark);
+	color: var(--clr-text);
+	padding: 8px 16px;
+	font-size: 0.9em;
+}
+
+.blog-footer a.button:hover {
+	background: var(--clr-primary);
+}
+
+
+/* ===================== Markdown Extentions ============================== */
+
+nav.table-of-contents {
+	display: block;
+	width: 100%;
+	padding: 0.4em;
+	margin-bottom: 2em;
+	background: var(--background-section-color);
+	border-left: 5px solid var(--clr-highlight);
+}
+
+nav.table-of-contents li > a {
+	text-decoration: none;
+	line-height: 1.8;
+	font-weight: bold;
+}
+
+@media (min-width: 700px) {
+	nav.table-of-contents {
+		max-width:70%;
+		width:auto;
+		padding: 1em;
+		margin-left: auto;
+		margin-right: auto;
+
+	}
+}
+
+h1 > a.header-anchor, h2 > a.header-anchor, h3 > a.header-anchor {
+	background: none;
+	color: var(--clr-mid);
+	text-decoration: none;
+	margin-left: 0.2em;
+	visibility: hidden;
+	opacity: 0.5;
+}
+
+h1:hover > a.header-anchor, h2:hover > a.header-anchor, h3:hover > a.header-anchor {
+	visibility: visible;
+}

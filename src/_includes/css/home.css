@@ -1,0 +1,115 @@
+
+section.homegrid {
+	display:grid;
+	grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+	grid-gap:10px;
+	padding-top: 0;
+    padding-bottom: 0;
+}
+
+.homegrid > * {
+	position: relative;
+	background: var(--clr-slate);
+	padding: 1.2em;
+	border-radius: 6px;
+}
+
+@media(min-width: 700px) {
+	.homegrid {
+		grid-gap:15px;
+	}
+
+	.homegrid > * {
+		padding: 2em;
+		border-radius: 8px;
+	}
+}
+
+.homegrid h1, .homegrid h2, .homegrid h3 {
+	margin-top: 0;
+}
+
+.homegrid h3 {
+	border-bottom: 3px solid var(--clr-highlight);
+	width: fit-content;
+}
+
+.intro {
+	background: var(--clr-primary-glare);
+}
+
+@media(min-width: 700px) {
+	.intro, .latest_posts {
+		grid-column: auto/span 2;
+	}
+}
+
+.intro p {
+	font-size: 1.25rem;
+}
+
+.intro h1 {
+	color: var(--clr-highlight);
+}
+
+.ico_list {
+	font-size: 1.3em;
+}
+
+.ico_list > a+a {
+	margin-left: 1.4em;
+}
+
+.profilepic {
+	border-radius: 50%;
+	max-width: 100%;
+	max-height: 250px;
+	margin-top: 2em;
+}
+
+
+/* ============= Articles ============= */
+
+.latest_posts a.article {
+	color: var(--clr-primary-txt);
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align: justify;
+}
+
+.latest_posts a.article:hover {
+	color: var(--clr-highlight);
+}
+
+.latest_posts time {
+	font-size: 0.8em;
+}
+
+/* ============== Skills, Work ============== */
+
+.skills .category, .company {
+	font-weight: bold;
+}
+
+.skills .category:not(:first-child),
+.company:not(:first-child) {
+	margin-top: 1em;
+}
+
+.skills .list, .position, .duration {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+
+/* ================ Work ================ */
+
+.quote {
+	border-left: 1px solid var(--clr-highlight);
+	padding-left: 0.5em;
+}
+
+.duration {
+	font-style: normal;
+	color: var(--clr-highlight);
+}

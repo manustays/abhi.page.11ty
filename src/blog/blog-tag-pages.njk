@@ -1,0 +1,48 @@
+---
+pagination:
+  data: collections.blogtags
+  size: 1
+  alias: tag
+permalink: /blog/tags/{{ tag }}/
+breadcrumb: blog
+---
+
+{# this file generates pages for all the blog-categories/tags #}
+
+{% extends "../_layouts/base.njk" %}
+
+
+{# Ideally set through eleventyComputed in front-matter but not working. Bug? #}
+{% set title = "All #" + tag + ' articles | Blog' %}
+{% set description = "A list of all blog posts tagged #" + tag %}
+{% set keywords = tag + ", blog, articles" %}
+
+
+{% block custom_style %}
+	{{ css_blog | cssmin | safe }}
+	{{ css_bloglist | cssmin | safe }}
+{% endblock %}
+
+{% block main %}
+	<section class="block header">
+		<h1>Posts tagged  <em>#{{ tag }}</em></h1>
+	</section>
+
+	<section class="block">
+		<a class="icolink button outline" href="/blog">{% svgico 'arrow-circle-left' %}<span>See all Posts</span></a>
+	</section>
+
+		{% set blogposts = collections[tag] | reverse %}
+		{% set pagination = null %}
+		{% include "blogslist.njk" %}
+
+	<section class="block blog-footer">
+		<div class="title">Browse by Tags</div>
+		<div class="layout horizontal wrap">
+			{% for item in collections.blogtags %}
+				<a class="button" href="/blog/tags/{{item}}/">#{{item}}</a>&nbsp;
+			{% endfor %}
+		</div>
+	</section>
+
+{% endblock %}

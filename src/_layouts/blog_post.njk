@@ -1,0 +1,41 @@
+---
+breadcrumb: blog
+---
+
+{% extends "./base.njk" %}
+
+{# Ideally set through eleventyComputed in front-matter but not working. Bug? #}
+{% set description = description or page.excerpt | trim %}
+
+{% block head %}
+	<link rel="index" href="{{ env.BASE_URL }}/blog/">
+{% endblock %}
+
+{% block custom_style %}
+	{{ css_blog | cssmin | safe }}
+{% endblock %}
+
+{% block main %}
+	<section class="block header">
+		<h1>{{ title }}</h1>
+        <div class="intro-meta">
+			<span><time>{{ date | dateFormat('MMM d, yyyy') }}</time></span>
+			<span>{% svgico 'clock-o' %} {{ content | readingTime }} read</span>
+		</div>
+	</section>
+	<section class="block">
+        {% Image image, 'Post Illustration', false, 'hero' %}
+        <div class="post-body">{{ content | safe }}</div>
+    </section>
+
+	<section class="block blog-footer">
+		<div class="title">Filed Under</div>
+		{% for item in tags %}
+			<a class="button" href="/blog/tags/{{item}}/">#{{ item }}</a>
+		{% endfor %}
+	</section>
+
+	<section class="block">
+		<a class="button outline" href="/blog/">{% svgico 'arrow-circle-left' %}<span>All Posts</span></a>
+    </section>
+{% endblock %}

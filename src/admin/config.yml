@@ -1,0 +1,36 @@
+backend:
+  # name: git-gateway
+  branch: master
+  name: test-repo
+
+media_folder: "src/assets/img/blog"
+public_folder: "/assets/img/blog"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "blog"}
+      - {label: "Title", name: "title", widget: "string", hint: "Title of the article that will show on top of the page"}
+      - {label: "Description", name: "description", widget: "text", hint: "A short description of this article. Or, adding <!-- excerpt --> after the first paragraph will make that the description!"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Tags", name: "tags", widget: "list", hint: "Enter one or more tags associated with this article. Separate tags with comma. Ex: technology, finance", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - name: "website settings"
+        label: "Website Settings"
+        file: "src/_data/website.yaml"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Keywords (SEO)", name: "keywords", widget: "string", hint: "These are keywords that are associated with this website that can help with website traffic and higher results in Google searches. (Separate keywords by commas) "}
+          - {label: "LinkedIn Link", name: "linkedin", widget: "string"}
+          - {label: "Twitter Link", name: "twitter", widget: "string"}
+          - {label: "Twitter Handle", name: "twitter_handle", widget: "string"}

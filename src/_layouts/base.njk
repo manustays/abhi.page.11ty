@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#ffb218"/>
+
+	<link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
+
+	<meta name="copyright"content="{% thisYear %} {{ footer.copyright }}">
+
+	{# ---- Optimal/non-blocking way to load Google Font (https://csswizardry.com/2020/05/the-fastest-google-fonts) ---- #}
+	{% if website.google_font_url %}
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		{# Less optimized method but less FOUT: #}
+		<link rel="stylesheet" href="{{ website.google_font_url }}" />
+
+		{# More optimized method but more FOUT: #}
+		{# <link rel="preload" as="style" href="{{ website.google_font_url }}" />
+		<link rel="stylesheet" href="{{ website.google_font_url }}" media="print" onload="this.media='all'" /> #}
+		{# Ignoring <noscript> for normal font load when Javascript is disabled. Fallback font will be used #}
+	{% endif %}
+
+
+	{# SEO... #}
+	<title>{{ title and title + " | " }}{{ website.title }}</title>
+
+	<meta name="description" content="{{ (description or website.tag_line) | truncate(150) }}">
+	<meta name="keywords" content="{{ keywords or website.keywords }}, {{ website.title }}">
+
+	{# OpenGraph (Facebook) Social Card #}
+	<meta property="og:title" content="{{ title and title + " | " }}{{ website.title }}">
+	<meta property="og:description" content="{{ description or website.description }}">
+	<meta property="og:image" content="{{ env.BASE_URL }}{% SocialImagePath image or website.image %}">
+    <meta property="og:type" content="website">
+	<meta property="og:url" content="{{ env.BASE_URL }}{{ page.url }}">
+    <meta property="og:site_name" content="{{ website.title }}">
+
+	{# Twitter Social Card #}
+	<meta name="twitter:title" content="{{ title and title + " | " }}{{ website.title }}">
+	<meta name="twitter:description" content="{{ description or website.description }}">
+	<meta name="twitter:image" content="{{ env.BASE_URL }}{% SocialImagePath image or website.image %}">
+	<meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ env.BASE_URL }}{{ page.url }}">
+    <meta name="twitter:site" content="{{ website.twitter_handle }}">
+
+	{# RSS Atom Feed #}
+	<link rel="alternate" href="{{ env.BASE_URL }}/feed.xml" type="application/atom+xml"
+    title="Blog | {{ website.title }}">
+
+
+	{% block head %}{% endblock %}
+
+
+    {# DEFINE Main CSS Files (common to all sections & pages) #}
+    {% set css_main %}
+	  {% include "css/flex.css" %}
+      {% include "css/base.css" %}
+	  {% include "css/header.css" %}
+	  {% include "css/footer.css" %}
+    {% endset %}
+
+	{# DEFINE CSS Files for Home page #}
+    {% set css_home %}
+	  {% include "css/home.css" %}
+    {% endset %}
+
+	{# DEFINE CSS for Blog section (included in blog template and the blog listing pages) #}
+	{% set css_blog %}
+      {% include "css/blog.css" %}
+    {% endset %}
+	{% set css_bloglist %}
+      {% include "css/bloglist.css" %}
+    {% endset %}
+
+	{# DEFINE Main Javascript files #}
+	{% set js_main %}
+      {% include "js/base.js" %}
+    {% endset %}
+
+	<style>
+		{{ css_main | cssmin | safe }}
+		{% block custom_style %}{% endblock %}
+    </style>
+
+  </head>
+
+  <body>
+
+	{% include "header.njk" %}
+
+	<main>
+		{% block main%}{% endblock %}
+	</main>
+
+	{% include "footer.njk" %}
+
+	{% set netlify_cms %}
+      {% include "js/netlify_cms.js" %}
+    {% endset %}
+
+    <script>
+		{{ js_main | jsmin | safe }}
+		{{ netlify_cms | jsmin | safe }}
+    </script>
+
+
+	{# ~~~~~ Global site tag (gtag.js) - Google Analytics ~~~~~ #}
+	{% if env.GA_KEY %}
+		{% set google %}
+			{% include "js/google_analytics.js" %}
+		{% endset %}
+		<script>
+			{{ google | jsmin | safe }}
+			googleAnalytics('{{ env.GA_KEY }}');
+			addLoadEvent(function() { loadScript("https://www.googletagmanager.com/gtag/js?id={{ env.GA_KEY }}", null, null, true); });
+		</script>
+    {% endif %}
+
+
+	{# ~~~~~ Microsoft Clarity (Analytics) ~~~~~ #}
+    {% if env.MS_CLARITY_TAG %}
+      <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "{{ env.MS_CLARITY_TAG }}");</script>
+    {% endif %}
+
+
+	{# ~~~~~~~~ custom script placeholder for other pages ~~~~~~~~ #}
+	<script>{% block custom_script %}{% endblock %}</script>
+
+  </body>
+</html>

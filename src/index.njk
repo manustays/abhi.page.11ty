@@ -1,0 +1,21 @@
+{% extends "./_layouts/base.njk" %}
+
+{% block custom_style %}
+  {{ css_home | cssmin | safe }}
+{% endblock %}
+
+{% block main %}
+
+	<section class="block homegrid">
+
+		{% include 'section_intro.njk' %}
+
+		{% include 'section_skills.njk' %}
+
+		{% include 'section_work_experience.njk' %}
+
+		{% include 'section_latest_blog_posts.njk' %}
+
+	</section>
+
+{% endblock %}

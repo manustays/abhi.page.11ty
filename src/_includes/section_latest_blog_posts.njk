@@ -1,0 +1,11 @@
+<section class="latest_posts layout vertical">
+	<h3>Latest Articles</h3>
+
+	{% for post in collections.blog | trimArray(3) %}
+		<a class="article" href="{{ post.url | url }}">{{ post.data.title }}</a>
+		<br><time datetime="{{ post.date | dateFormat('yyyy-mm-dd') }}">{{ post.date | dateFormat('MMM d, yyyy') }}</time>
+	{% endfor %}
+
+	<a class="button self-end" href="/blog" title="Go to Blog section"><span>More Articles</span>{% svgico 'arrow-circle-right' %}</a>
+
+</section>

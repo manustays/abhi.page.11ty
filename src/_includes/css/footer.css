@@ -1,0 +1,21 @@
+footer {
+	padding-top: 4em;
+	padding-bottom: 4em;
+}
+
+footer .logo {
+	margin-bottom: 1em;
+}
+
+footer .ico_list {
+	font-size: 0.9em;
+}
+
+footer .ico_list a+a {
+	margin-left: 2em;
+}
+
+footer .copyright {
+	font-size: 0.8em;
+	color: var(--clr-mid);
+}

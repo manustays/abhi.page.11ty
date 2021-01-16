@@ -1,0 +1,14 @@
+<section class="work">
+	<h3>Experience</h3>
+
+	{% for company in work %}
+		<div class="company">{{ company.company }}</div>
+		<div class="quote">
+			{% for position in company.positions %}
+				<div class="position">{{ position.title }}</div>
+				<div class="duration">{{ position.start_date }} - {{ position.end_date or 'present' }}</div>
+			{% endfor %}
+		</div>
+	{% endfor %}
+
+</section>

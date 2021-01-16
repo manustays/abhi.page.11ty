@@ -1,0 +1,76 @@
+/* ================ Blog Listing Pages ================ */
+
+
+.blogslist {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+	grid-gap: 20px;
+}
+
+@media(min-width: 700px) {
+	.blogslist {
+		grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
+		grid-gap: 20px;
+	}
+}
+
+.blogslist .card {
+	background: var(--clr-slate);
+	text-decoration: none;
+	color: var(--main-text-color);
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	transition: all .2s ease-out;
+}
+
+.blogslist .card:hover {
+	background: var(--clr-primary);
+}
+
+.blogslist article {
+	padding: 20px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.blogslist h4 {
+	margin: 0.2em 0;
+}
+
+.blogslist p {
+	flex: 1;
+	font-size: 0.9em;
+	line-height: 1.4;
+}
+
+.blogslist time {
+	font-size: 11px;
+	font-weight: bold;
+	color: var(--header-color);
+	letter-spacing: .05em;
+}
+
+.blogslist .taglist > span {
+	font-size: 0.8em;
+	font-weight: bold;
+	margin-right: 0.5em;
+	color: var(--lighter-text-color);
+	/* font-family: 'Courier New', Courier, monospace; */
+}
+
+.blogslist .thumb {
+  padding-bottom: 60%;
+  background-size: cover;
+  height: auto;
+}
+
+.pagination a {
+	color: var(--main-text-color);
+}

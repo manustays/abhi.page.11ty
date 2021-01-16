@@ -1,0 +1,41 @@
+title: abhi.page/
+intro: Hi, I’m Abhishek
+description: I’m a polyglot developer. I ♥ efficient architecture & clean design.
+author: Kumar Abhishek
+
+#### SEO & Social...
+image: /assets/img/abhi-bw.jpg
+keywords: blog, notes, developer, personal, resume, technology, portfolio, abhishek, abhiweb
+twitter_handle: '@abhiweb'
+
+social_profiles:
+  - title: Linkedin
+    url: https://linkedin.com/in/abhiweb
+    id: abhiweb
+    ico: linkedin
+  - title: Github
+    url: https://github.com/manustays
+    id: manustays
+    ico: github
+  - title: Twitter
+    url: https://twitter.com/abhiweb
+    id: '@abhiweb'
+    ico: twitter
+  - title: Pinterest
+    url: https://in.pinterest.com/manustays
+    id: manustays
+    ico: pinterest
+  - title: Stack Overflow
+    url: https://stackoverflow.com/users/505601/abhishek?tab=profile
+    ico: stack-overflow
+
+
+#### Others...
+google_font_url: https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%21%22%23%24%25%26%27%2B%2C%2F%40%7C%7B%7D%5B%5D%3B%3C%3D%3E%3F.!-*()₹
+
+
+## The following values are setup as ENVIRONMENT-VARIABLES:
+## (See '.env.example' file for details)
+# BASE_URL
+# GA_KEY            (Google Analytics)
+# MS_CLARITY_TAG    (Microsoft Clarity Analytics)

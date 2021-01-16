@@ -1,0 +1,27 @@
+/* ============== TOP NAVIGATION BAR ============ */
+
+.logo {
+	font-size: 1.2em;
+	font-weight: bold;
+	font-family: Lora, serif;
+	color: var(--clr-highlight);
+}
+
+header {
+	min-height: 74px;
+}
+
+header .crumb {
+	font-weight: bold;
+	margin-left: 3px;
+	color: var(--clr-mid);
+	opacity: 0.4;
+}
+
+header nav a {
+	margin-left: 2em;
+}
+
+header a:not(.logo) {
+	font-weight: bold;
+}

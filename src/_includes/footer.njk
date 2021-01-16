@@ -1,0 +1,13 @@
+<footer class="layout horizontal center-center">
+	<div class="layout vertical">
+		{# <span class="logo">{{ website.author }}</span> #}
+		<div class="ico_list">
+			{% for social in website.social_profiles -%}
+				<a href="{{ social.url }}" target="_blank" rel="noopener" title="Connect with me on {{ social.title }}">{% svgico social.ico %}</a>
+			{%- endfor %}
+		</div>
+	</div>
+	{# <span class="flex"></span>
+	<span class="copyright">© { % thisYear % }</span> #}
+</footer>
+
