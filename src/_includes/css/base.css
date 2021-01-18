@@ -10,6 +10,7 @@
 	--clr-light: #fff;
 	--clr-mid: #ccc;
 	--clr-dark: #333;
+	--clr-darker: #222;
 	--clr-slate: #404040;
 	--clr-action-bg: #b3d2ea;
 
@@ -19,10 +20,6 @@
 	--footer-background-color: #58595b;
 	--footer-column-header: #adadad;
 	--footer-text: #e4e4e4;
-	--footer-link: #bbb;
-	--nav-caption: #b0b0b0;
-	--divider-color: #e0e0e0;
-	--button-shadow-color: rgba(254,178,25,0.6);
 }
 
 body {
@@ -37,7 +34,7 @@ h1, h2, h3 {
 	font-family: Lora, serif;
 }
 
-h1 {font-size: 1.95rem}
+h1 {font-size: 1.95rem; margin-top: 0.3em; margin-bottom: 0.3em; }
 h2 {font-size: 1.56rem}
 h3 {font-size: 1.25rem}
 
@@ -49,6 +46,8 @@ h3 {font-size: 1.25rem}
 
 body,html {
 	height:100%;
+	margin: 0;
+	padding: 0;
 }
 
 
@@ -73,8 +72,8 @@ section.block {
 	}
 
 	section.block {
-		padding-top: 3%;
-		padding-bottom: 3%;
+		padding-top: 2%;
+		padding-bottom: 2%;
 	}
 }
 
@@ -163,23 +162,6 @@ a.nostyle, a.nostyle:hover {
 .txt-center {
 	text-align: center;
 }
-
-.txt-thin {
-	font-weight: 300;
-}
-
-.lh-high {
-	line-height: 1.67;
-}
-
-/* For full-width centered paragraphs, limit the width */
-p.p-fw {
-	max-width: 1000px;
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 
 /* Color utility classes --- */
 
