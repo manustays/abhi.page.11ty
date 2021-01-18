@@ -2,6 +2,7 @@
 layout: blog
 title: How we built the Connect Web App – Part 1 – Breaking from our past
 description: The story of designing the Interaction Framework and a PWA, enabling us to automate the process of building and delivering financial products & services to our users.
+keywords: eko, connect
 image: /assets/img/blog/connect.jpeg
 date: 2016-08-04T20:03:37+05:30
 tags: ["architecture"]
