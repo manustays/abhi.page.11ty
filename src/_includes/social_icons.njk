@@ -1,0 +1,5 @@
+<div class="ico_list">
+	{% for social in website.social_profiles -%}
+		<a href="{{ social.url }}" target="_blank" rel="noopener" title="{{ social.msg or 'Connect with me' }}">{% svgico social.ico %}</a>
+	{%- endfor %}
+</div>

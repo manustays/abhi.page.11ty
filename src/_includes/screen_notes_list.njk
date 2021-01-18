@@ -1,0 +1,16 @@
+{#
+	Common screen to display notes listing page.
+	Contains notes-list, tags-list, search, etc.
+	Used on 'Notes' index as well as tag listing pages.
+#}
+
+<section class="block header">
+	<h1>Notes{% if tag %} | #{{tag}}{% endif %}</h1>
+	<h5>Notes on technology and coding. My second brain.</h5>
+</section>
+
+<div class="notes-list-page">
+	{% include "notes_tag_menu.njk" %}
+
+	{% include "noteslist.njk" %}
+</div>

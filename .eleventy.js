@@ -42,7 +42,10 @@ module.exports = function(eleventyConfig) {
 	// eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(svgContents);
 	eleventyConfig.addPlugin(blogTools);
-	eleventyConfig.addPlugin(syntaxHighlight);
+	eleventyConfig.addPlugin(syntaxHighlight, {
+		alwaysWrapLineHighlights: true,
+		trim: true,
+	});
 	eleventyConfig.addPlugin(readingTime);
 	eleventyConfig.addPlugin(pluginRss);
 
@@ -230,6 +233,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addLayoutAlias('base', 'base.njk');
 	eleventyConfig.addLayoutAlias('page', 'page.njk');
 	eleventyConfig.addLayoutAlias('blog', 'blog_post.njk');
+	eleventyConfig.addLayoutAlias('note', 'note_post.njk');
 
 	// Add Data Extensions...
 	eleventyConfig.addDataExtension('yaml', contents => yaml.safeLoad(contents));
@@ -259,7 +263,7 @@ module.exports = function(eleventyConfig) {
 
 
 
-	// Collection of blog posts with files created in the '/blog' folder
+	// Collection of technical notes with files created in the '/blog' folder
 	eleventyConfig.addCollection("notes", function (collection) {
 		return collection.getFilteredByGlob('src/notes/*.md');
 	});

@@ -1,0 +1,32 @@
+---
+pagination:
+  data: collections.notetags
+  size: 1
+  alias: tag
+permalink: /notes/tags/{{ tag }}/
+breadcrumb: notes
+---
+
+{# this file generates pages for all the blog-categories/tags #}
+
+{% extends "../_layouts/base.njk" %}
+
+
+{# Ideally set through eleventyComputed in front-matter but not working. Bug? #}
+{% set title = "Notes tagged #" + tag + ' | Notes on Technology & Coding' %}
+{% set description = 'A list of all technology and coding notes tagged #' + tag + '. Search for notes or browse though related notes.' %}
+{% set keywords = tag + ", notes, technology, recipes" %}
+
+
+{% block custom_style %}
+	{{ css_blog | cssmin | safe }}
+	{{ css_noteslist | cssmin | safe }}
+{% endblock %}
+
+{% block main %}
+
+	{% set technotes = collections[tag] | reverse %}
+	{% set pagination = null %}
+	{% include "screen_notes_list.njk" %}
+
+{% endblock %}

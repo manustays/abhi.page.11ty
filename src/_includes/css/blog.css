@@ -68,14 +68,6 @@ blockquote p {
     padding: 1.25rem 0;
 }
 
-code {
-	font-size: 1.2em;
-	color: var(--clr-primary-txt);
-	font-weight: 600;
-	margin-left: .01ch;
-	margin-right: .01ch;
-}
-
 
 .intro-meta {
 	font-size: 1.25rem;
@@ -122,6 +114,39 @@ code {
 .blog-footer a.button:hover {
 	background: var(--clr-primary);
 }
+
+
+/* ================== Code / Syntax Highlight ================ */
+
+code {
+	font-size: 1.2em;
+	color: var(--clr-primary-txt);
+	font-weight: 600;
+	margin-left: .01ch;
+	margin-right: .01ch;
+}
+
+pre > code {
+	font-weight: 400;
+	font-size: 1em;
+}
+
+/* pre {
+	counter-reset: lineNumber;
+}
+code .highlight-line:before {
+	-webkit-user-select: none;
+	border-right: 1px solid #404040;
+	color: #858585;
+	content: counter(lineNumber);
+	counter-increment: lineNumber;
+	display: inline-block;
+	font-variant-numeric: tabular-nums;
+	margin-right: 1.2em;
+	padding-right: 1.2em;
+	text-align: right;
+	width: 2.4em;
+} */
 
 
 /* ===================== Markdown Extentions ============================== */

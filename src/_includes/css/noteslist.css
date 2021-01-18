@@ -1,0 +1,75 @@
+/* ================ Blog Listing Pages ================ */
+
+.notes-list-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.note-tag-menu {
+	width: 100%;
+	background: var(--clr-darker);
+}
+
+@media(min-width: 700px) {
+	.notes-list-page {
+		flex-direction: row;
+	}
+
+	.note-tag-menu {
+		width: 20%;
+	}
+}
+
+.note-tr, .note-meta, .taglist {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.note-tr {
+	padding: 0.2em 0;
+}
+
+.note-tr:hover {
+	background: var(--clr-darker);
+}
+
+.note-meta {
+	font-size: 0.8em;
+}
+
+.note-title {
+	flex-grow: 1;
+	font-weight: 500;
+}
+
+.note-title .emoji {
+	margin-right: 0.8em;
+}
+
+
+.pagination a {
+	color: var(--main-text-color);
+}
+
+/* ============ Note Tags Listing on Left =============== */
+
+.note-tag-menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.note-tag-menu li > a {
+	display:inline-flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+	padding: 0.4em 1em;
+	font-weight: 500;
+}
+
+.note-tag-menu li[selected] {
+	background: var(--clr-primary);
+}

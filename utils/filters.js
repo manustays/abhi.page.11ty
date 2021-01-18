@@ -28,15 +28,6 @@ module.exports = {
 	// Useful to change property of an object in the Nunjucks 'set' method which is fairly limited
 	mergeObjectFilter: (obj1, obj2) => { return { ...obj1, ...obj2 } },
 
-
-    obfuscate: str => {
-        const chars = [];
-        for (var i = str.length - 1; i >= 0; i--) {
-            chars.unshift(['&#', str[i].charCodeAt(), ';'].join(''));
-        }
-        return chars.join('');
-	},
-
 	// Reduce length of a large Array
 	trimArray: (array, max_length) => {
 		if (array && array.length && array.length > max_length) {
@@ -44,4 +35,7 @@ module.exports = {
 		}
 		return array;
 	},
+
+	// Trim "https://" and trailing '/' from links
+	shortURL: (url) => url.replace(/^https?:\/\//i, '').replace(/\/$/, ''),
 }

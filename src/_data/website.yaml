@@ -1,11 +1,14 @@
-title: abhi.page/
+title: abhi.page
 intro: Hi, I’m Abhishek
-description: I’m a polyglot developer. I ♥ efficient architecture & clean design.
+about: I’m a polyglot developer. I ♥ efficient architecture & clean design.
+description: Abhishek's personal website & blog. I write articles & notes on technology and software development.
+
 author: Kumar Abhishek
+github_main_branch: https://github.com/manustays/abhi.page.11ty/tree/main
 
 #### SEO & Social...
 image: /assets/img/abhi-bw.jpg
-keywords: blog, notes, developer, personal, resume, technology, portfolio, abhishek, abhiweb
+keywords: blog, notes, developer, technology, coding, resume, portfolio, abhishek, abhiweb
 twitter_handle: '@abhiweb'
 
 social_profiles:
@@ -13,21 +16,26 @@ social_profiles:
     url: https://linkedin.com/in/abhiweb
     id: abhiweb
     ico: linkedin
+    msg: Connect with me on LinkedIn
   - title: Github
     url: https://github.com/manustays
     id: manustays
     ico: github
+    msg: My work on GitHub
   - title: Twitter
     url: https://twitter.com/abhiweb
     id: '@abhiweb'
     ico: twitter
+    msg: I'm on Twitter (@abhiweb)
   - title: Pinterest
     url: https://in.pinterest.com/manustays
     id: manustays
     ico: pinterest
+    msg: Connect with me on Pinterest
   - title: Stack Overflow
     url: https://stackoverflow.com/users/505601/abhishek?tab=profile
     ico: stack-overflow
+    msg: My profile on StackOverflow
 
 
 #### Others...

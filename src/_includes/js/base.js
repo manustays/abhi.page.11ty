@@ -50,13 +50,3 @@ function loadScript(src, _id, onLoadCallback, defer) {
 	s.src = src;
 	d.head.appendChild(s);
 }
-
-
-/**
- * SalesIQ: Open chat widget
- */
-function showChat() {
-	if ($zoho && $zoho.salesiq) {
-		$zoho.salesiq.floatwindow.visible('show');	// show / hide
-	}
-}

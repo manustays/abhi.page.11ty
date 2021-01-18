@@ -1,0 +1,8 @@
+<nav class="note-tag-menu">
+	<ul class="menu">
+		<li {% if not tag %}selected{% endif %}><a href="/notes" class="nostyle">ALL NOTES</a></li>
+		{% for _tag in collections.notetags %}
+			<li {% if tag==_tag %}selected{% endif %}><a href="/notes/tags/{{ _tag }}" class="nostyle">#{{ _tag }}</a></li>
+		{% endfor %}
+	</ul>
+</nav>
