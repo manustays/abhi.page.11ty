@@ -89,6 +89,10 @@ section.block.header {
 	background: var(--clr-slate);
 }
 
+section.block.header > h5 {
+	margin-top: 0;
+}
+
 /* section.block.highlight, section.block.highlight * {
 	background: var(--clr-highlight);
 	color: var(--clr-dark);

@@ -1,0 +1,37 @@
+---
+title: Notes on Technology & Coding
+description: A collection of coding notes and recipes. My second brain.
+pagination:
+  data: collections.notes
+  size: 50
+  alias: notes
+  reverse: true
+  filter:
+    - all
+    - blog
+eleventyExcludeFromCollections: true
+breadcrumb: notes
+---
+
+{% extends "../_layouts/base.njk" %}
+
+{% block head %}
+	{% if pagination.pageNumber > 0 %}
+		<link rel="prev" href="{{ env.BASE_URL }}{{ pagination.href.previous }}">
+	{% endif %}
+	{% if pagination.pageNumber < pagination.pages.length - 1 %}
+	<link rel="next" href="{{ env.BASE_URL }}{{ pagination.href.next }}">
+	{% endif %}
+{% endblock %}
+
+{% block custom_style %}
+	{{ css_blog | cssmin | safe }}
+	{{ css_noteslist | cssmin | safe }}
+{% endblock %}
+
+{% block main %}
+
+	{% set technotes = notes %}
+	{% include "screen_notes_list.njk" %}
+
+{% endblock %}

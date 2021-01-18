@@ -1,0 +1,8 @@
+/* Addtional styles for notes pages (apart from blog.css) */
+
+blockquote.directlinks {
+	font-style: normal;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-size: 1.1em;
+}
