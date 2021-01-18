@@ -1,6 +1,6 @@
 <header class="layout horizontal center" role="navigation">
 
-	<a class="logo" href="/">{{ website.title }}/</a>{% if breadcrumb %}<span class="crumb">{{ breadcrumb }}</span>{% endif %}
+	<a class="logo" href="/">{{ website.title }}/</a>{% if breadcrumb %}<a class="nostyle crumb" href="/{{ breadcrumb }}">{{ breadcrumb }}</a>{% endif %}
 
 	<span class="flex"></span>
 
