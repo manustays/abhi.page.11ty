@@ -42,4 +42,14 @@ module.exports = {
 	 */
 	thisYear: () => () => new Date().getFullYear().toString(),
 
+
+	/**
+	 * Embed CodePen
+	 * @param {*} url The full URL to the pen
+	 * @param {*} tabs Comma-separated string of the tabs of the codepen to display (default: "js,result")
+	 * @param {*} height A unitless value of the height in pixels (default: "300")
+	 * @param {*} theme A theme ID (default: "dark")
+	 */
+	embedCodePen: () => (url, tabs = "js,result", height = "300", theme = "dark") => `<iframe class="embed-codepen" height="${height}" style="width:100%;" scrolling="no" title="See the Pen" src="${url}?height=${height}&theme-id=${theme}&default-tab=${tabs}" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><p><a href="${url}" target="_blank" rel="noopener">See the Pen</a></p></iframe>`,
+
 }
