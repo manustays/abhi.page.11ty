@@ -1,13 +1,9 @@
 <section class="intro layout vertical center-center txt-center">
 	<h1 class="main-header">{{ website.intro }}</h1>
 
-	<p>{{ website.description }}</p>
+	<p>{{ website.about }}</p>
 
-	<div class="ico_list">
-		{% for social in website.social_profiles -%}
-			<a href="{{ social.url }}" target="_blank" rel="noopener" title="Connect with me on {{ social.title }}">{% svgico social.ico %}</a>
-		{%- endfor %}
-	</div>
+	{% include 'social_icons.njk' %}
 
 	{% Image "/assets/img/abhi-bw.jpg", "Profile Photo", false, "profilepic" %}
 </section>
