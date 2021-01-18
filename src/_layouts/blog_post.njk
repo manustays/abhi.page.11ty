@@ -37,5 +37,8 @@ breadcrumb: blog
 
 	<section class="block">
 		<a class="button outline" href="/blog/">{% svgico 'arrow-circle-left' %}<span>All Posts</span></a>
+		{% if website.github_main_branch %}
+			<a class="button outline" href="{{ website.github_main_branch }}/{{ page.inputPath }}">{% svgico 'pencil' %}<span>Suggest Edit</span></a>
+		{% endif %}
     </section>
 {% endblock %}
