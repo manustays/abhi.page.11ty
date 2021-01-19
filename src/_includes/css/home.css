@@ -25,13 +25,14 @@ section.homegrid {
 	}
 }
 
-.homegrid h1, .homegrid h2, .homegrid h3 {
+.homegrid h1, .homegrid h3, .homegrid .h3 {
 	margin-top: 0;
 }
 
-.homegrid h3 {
+.homegrid h3, .homegrid .h3 {
 	border-bottom: 3px solid var(--clr-highlight);
 	width: fit-content;
+	margin-bottom: 0.8em;
 }
 
 .intro {
@@ -68,11 +69,15 @@ section.homegrid {
 }
 
 
-/* ============= Articles ============= */
+/* ============= Latest Articles ============= */
+
+.latest_posts .post-tr + .post-tr, .latest_posts .toolbar {
+	margin-top: 1em;
+}
 
 .latest_posts a.article {
 	color: var(--clr-primary-txt);
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: bold;
 	text-align: justify;
 }
@@ -83,6 +88,8 @@ section.homegrid {
 
 .latest_posts time {
 	font-size: 0.8em;
+	font-weight: 500;
+	margin-left: 0.4em;
 }
 
 /* ============== Skills, Work ============== */

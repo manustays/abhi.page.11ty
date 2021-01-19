@@ -12,10 +12,11 @@ header {
 }
 
 header .crumb {
-	font-weight: bold;
 	margin-left: 3px;
 	color: var(--clr-mid);
 	opacity: 0.4;
+	font-family: Lora, serif;
+	font-size: 1.2em;
 }
 
 header nav a {

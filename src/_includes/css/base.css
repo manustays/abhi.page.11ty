@@ -30,18 +30,18 @@ body {
 	scroll-behavior: smooth;
 }
 
-h1, h2, h3 {
+h1, h2, h3, .h3 {
 	font-family: Lora, serif;
 }
 
 h1 {font-size: 1.95rem; margin-top: 0.3em; margin-bottom: 0.3em; }
 h2 {font-size: 1.56rem}
-h3 {font-size: 1.25rem}
+h3, .h3 {font-size: 1.25rem}
 
 @media(min-width: 700px) {
 	h1 {font-size: 3.05rem}
 	h2 {font-size: 2.44rem}
-	h3 {font-size: 1.95rem}
+	h3, .h3 {font-size: 1.95rem}
 }
 
 body,html {

@@ -1,11 +1,17 @@
 <section class="latest_posts layout vertical">
-	<h3>Latest Articles</h3>
+	<div class="h3">Latest Notes &amp; Articles</div>
 
-	{% for post in collections.blog | trimArray(3) %}
-		<a class="article" href="{{ post.url | url }}">{{ post.data.title }}</a>
-		<br><time datetime="{{ post.date | dateFormat('yyyy-mm-dd') }}">{{ post.date | dateFormat('MMM d, yyyy') }}</time>
+	{% for post in collections.allArticles | reverse | trimArray(3) %}
+		<div class="post-tr">
+			<a class="article" href="{{ post.url | url }}">{{ post.data.title }}</a>
+			<time datetime="{{ post.date | dateFormat('yyyy-mm-dd') }}">{{ post.date | dateFormat('MMM d, yyyy') }}</time>
+		</div>
 	{% endfor %}
 
-	<a class="button self-end" href="/blog" title="Go to Blog section"><span>More Articles</span>{% svgico 'arrow-circle-right' %}</a>
+	<div class="toolbar layout horizontal end-justified wrap">
+		<a class="button self-end" href="/notes" title="Read more technical notes"><span>Read Notes</span>{% svgico 'arrow-circle-right' %}</a>
+
+		<a class="button self-end" href="/blog" title="Read more blog posts"><span>Blog</span>{% svgico 'arrow-circle-right' %}</a>
+	</div>
 
 </section>
