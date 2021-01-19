@@ -6,6 +6,11 @@ description: Abhishek's personal website & blog. I write articles & notes on tec
 author: Kumar Abhishek
 github_main_branch: https://github.com/manustays/abhi.page.11ty/tree/main
 
+sections:
+  feed:
+    title: Notes on Technology and Software Development
+
+
 #### SEO & Social...
 image: /assets/img/abhi-bw.jpg
 keywords: blog, notes, developer, technology, coding, resume, portfolio, abhishek, abhiweb
