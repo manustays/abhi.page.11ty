@@ -38,7 +38,7 @@ breadcrumb: blog
 
 	<section class="block blog-footer">
 		<div class="title">Browse by Tags</div>
-		<div class="layout horizontal wrap">
+		<div class="layout horizontal wrap mono">
 			{% for item in collections.blogtags %}
 				<a class="button" href="/blog/tags/{{item}}/">#{{item}}</a>&nbsp;
 			{% endfor %}
