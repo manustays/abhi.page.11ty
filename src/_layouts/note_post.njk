@@ -1,11 +1,11 @@
 ---
 breadcrumb: notes
+section_title: Notes
 ---
 
 {% extends "./base.njk" %}
 
 {# Ideally set through eleventyComputed in front-matter but not working. Bug? #}
-{% set title = ((title + ' | ') if title else '') + 'Notes' %}
 {% set description = (description or "Coding notes and recipes. My second brain.") | trim %}
 {% set keywords = (keywords or "note") + ',blog,' + (tags and tags.join(",")) %}
 
