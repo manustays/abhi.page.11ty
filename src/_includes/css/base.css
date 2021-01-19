@@ -24,7 +24,7 @@
 
 body {
 	line-height: 1.56;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,' Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Helvetica, sans-serif,' Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 	background: var(--clr-bg);
 	color: var(--clr-text);
 	scroll-behavior: smooth;
@@ -165,6 +165,10 @@ a.nostyle, a.nostyle:hover {
 
 .txt-center {
 	text-align: center;
+}
+
+.mono {
+	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
 }
 
 /* Color utility classes --- */
