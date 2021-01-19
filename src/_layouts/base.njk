@@ -24,13 +24,13 @@
 
 
 	{# SEO... #}
-	<title>{{ title and title + " | " }}{{ website.author }}</title>
+	<title>{{ title and title + ' | ' }}{{ section_title + ' | ' if section_title else ''  }}{{ website.author }}</title>
 
 	<meta name="description" content="{{ (description or website.description) | truncate(150) }}">
 	<meta name="keywords" content="{{ keywords or website.keywords }}, {{ website.title }}">
 
 	{# OpenGraph (Facebook) Social Card #}
-	<meta property="og:title" content="{{ title and title + " | " }}{{ website.author }}">
+	<meta property="og:title" content="{{ title }}">
 	<meta property="og:description" content="{{ description or website.description }}">
 	<meta property="og:image" content="{{ env.BASE_URL }}{% SocialImagePath image or website.image %}">
 	<meta property="og:type" content="website">
@@ -38,7 +38,7 @@
 	<meta property="og:site_name" content="{{ website.title }}">
 
 	{# Twitter Social Card #}
-	<meta name="twitter:title" content="{{ title and title + " | " }}{{ website.author }}">
+	<meta name="twitter:title" content="{{ title }}">
 	<meta name="twitter:description" content="{{ description or website.description }}">
 	<meta name="twitter:image" content="{{ env.BASE_URL }}{% SocialImagePath image or website.image %}">
 	<meta name="twitter:card" content="summary_large_image">
@@ -47,7 +47,7 @@
 
 	{# RSS Atom Feed #}
 	<link rel="alternate" href="{{ env.BASE_URL }}/feed.xml" type="application/atom+xml"
-	title="Blog | {{ website.author }}">
+	title="{{ website.sections.feed.title }} | {{ website.author }}">
 
 
 	{% block head %}{% endblock %}
