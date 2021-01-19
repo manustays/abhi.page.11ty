@@ -12,7 +12,7 @@ header {
 }
 
 header .crumb {
-	margin-left: 3px;
+	margin-left: 2px;
 	color: var(--clr-mid);
 	opacity: 0.4;
 	font-family: Lora, serif;
