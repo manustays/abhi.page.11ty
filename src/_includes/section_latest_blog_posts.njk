@@ -3,7 +3,7 @@
 
 	{% for post in collections.allArticles | reverse | trimArray(3) %}
 		<div class="post-tr">
-			<a class="article" href="{{ post.url | url }}">{{ post.data.title }}</a>
+			<a class="article" href="{{ post.url | url }}">{{ post.data.title }}</a><br>
 			<time datetime="{{ post.date | dateFormat('yyyy-mm-dd') }}">{{ post.date | dateFormat('MMM d, yyyy') }}</time>
 		</div>
 	{% endfor %}
