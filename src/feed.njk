@@ -4,28 +4,28 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-<title>Blog | {{ website.author }}</title>
+<title>Notes on Software Development &amp; Technology | {{ website.author }}</title>
 <subtitle>{{ website.description }}</subtitle>
 <link href="{{ env.BASE_URL }}/feed.xml" rel="self"/>
 <link href="{{ env.BASE_URL }}/"/>
-<updated>{{ collections.blog | rssLastUpdatedDate }}</updated>
+<updated>{{ collections.allArticles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 <id>{{ env.BASE_URL }}/</id>
 <author>
 	<name>{{ website.author }}</name>
-	<email>{{ website.email }}</email>
+	{# <email>{{ website.email }}</email> #}
 </author>
-{%- for post in collections.blog | reverse -%}
+{%- for post in collections.allArticles | reverse -%}
 {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(env.BASE_URL) }}{% endset %}
 <entry>
 	<title>{{ post.data.title }}</title>
 	<link href="{{ absolutePostUrl }}"/>
-	<updated>{{ post.date | rssDate }}</updated>
+	<updated>{{ post.date | dateToRfc3339 }}</updated>
 	<id>{{ absolutePostUrl }}</id>
 	<author>
-		<name>{{ website.author }}</name>{# TODO: Put actual blog post author info here #}
-		<email>{{ website.email }}</email>
+		<name>{{ website.author }}</name>{# TODO: Put actual post author info here #}
+		{# <email>{{ website.email }}</email> #}
 	</author>
-	<content type="html">&lt;p&gt;&lt;img src="{{ env.BASE_URL }}{{ post.data.image }}"&gt;&lt;/p&gt;{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+	<content type="html">{% if post.data.image %}&lt;p&gt;&lt;img src="{{ env.BASE_URL }}{{ post.data.image }}"&gt;&lt;/p&gt;{% endif %}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
 </entry>
 {%- endfor -%}
 </feed>

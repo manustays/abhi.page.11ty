@@ -70,10 +70,7 @@ module.exports = function(eleventyConfig) {
 			throw new Error(`Missing \`src\` on Image: ALT = ${alt}`);
 		}
 
-		if (!alt) {
-			throw new Error(`Missing \`alt\` on Image from: ${src}`);
-		}
-
+		alt = alt || '';
 		lazy = lazy || false;
 		classes = classes || '';
 		src = fixSrcPath(src);
@@ -281,6 +278,19 @@ module.exports = function(eleventyConfig) {
 			}
 		});
 		return Object.keys(_tags).sort();
+	});
+
+	// Add a common collection for both blog and notes to create the common feed
+	eleventyConfig.addCollection("allArticles", function (collection) {
+		let _list = collection.getFilteredByGlob('src/notes/*.md');
+		_list = _list.concat(collection.getFilteredByGlob('src/blog/*.md'))
+		_list.sort((a,b) => {
+			const dateA = new Date(a.date);
+			const dateB = new Date(b.date);
+			return dateA < dateB ? -1 :
+				dateA > dateB ? 1 : 0;
+		});
+		return _list;
 	});
 
 	return {
