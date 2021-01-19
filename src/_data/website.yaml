@@ -11,6 +11,11 @@ sections:
     title: Notes on Technology and Software Development
 
 
+#### WebMentions (How to setup: https://sia.codes/posts/webmentions-eleventy-in-depth)
+webmentions:
+  site_id: abhi.page
+  # Setup WEBMENTION_IO_TOKEN in envoirnment variables (see .env.example)
+
 #### SEO & Social...
 image: /assets/img/abhi-bw.jpg
 keywords: blog, notes, developer, technology, coding, resume, portfolio, abhishek, abhiweb
