@@ -28,7 +28,8 @@
 }
 
 .note-tr {
-	padding: 0.2em 0;
+	padding: 0.4em 0.2em;
+	border-radius: 4px;
 }
 
 .note-tr:hover {

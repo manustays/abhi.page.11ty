@@ -1,9 +1,9 @@
 <section class="block noteslist">
     {% for note in technotes | trimArray(30) %}
 		<a href="{{ note.url | url }}" class="nostyle note-tr">
-			<div class="note-title"><span class="emoji">{{ note.data.emoji }}</span>{{ note.data.title }}</div>
+			<div class="note-title"><span class="emoji">{{ note.data.emoji or '🗒' }}</span>{{ note.data.title }}</div>
 			<div class="note-meta">
-				<div class="taglist">
+				<div class="taglist mono">
 					{% for tag in note.data.tags | trimArray(3) %}
 						<span class="post-tag">#{{ tag }}</span>&nbsp;
 					{% endfor %}

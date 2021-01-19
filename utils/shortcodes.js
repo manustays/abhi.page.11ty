@@ -45,11 +45,15 @@ module.exports = {
 
 	/**
 	 * Embed CodePen
-	 * @param {*} url The full URL to the pen
+	 * @param {*} id The pen full URL
 	 * @param {*} tabs Comma-separated string of the tabs of the codepen to display (default: "js,result")
 	 * @param {*} height A unitless value of the height in pixels (default: "300")
 	 * @param {*} theme A theme ID (default: "dark")
 	 */
-	embedCodePen: () => (url, tabs = "js,result", height = "300", theme = "dark") => `<iframe class="embed-codepen" height="${height}" style="width:100%;" scrolling="no" title="See the Pen" src="${url}?height=${height}&theme-id=${theme}&default-tab=${tabs}" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"><p><a href="${url}" target="_blank" rel="noopener">See the Pen</a></p></iframe>`,
+	embedCodePen: () => (url, tabs = "js,result", height = "300", theme = "dark") => {
+		const path = new URL(url).pathname;
+		const id = path.split('/')[3];
+		return `<iframe class="codepen" height="${height}" style="width:100%;" scrolling="no" title="See the Pen" src="https://codepen.io/anon/embed/${id}?height=${height}&theme-id=${theme}&default-tab=${tabs}" frameborder="0" loading="lazy" allowtransparency="true" allowfullscreen="true"><p><a href="${url}" target="_blank" rel="noopener">See the Pen</a></p></iframe>`
+	},
 
 }

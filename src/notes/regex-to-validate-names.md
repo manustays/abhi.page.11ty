@@ -3,14 +3,14 @@ layout: note
 title: A Regular Expression to filter invalid names
 description: A regular expression to be used as a basic filter to detect invalid Indian names. Useful for quick frontend validation.
 keywords: regex
-emoji: 🗣
+emoji: 🔤
 date: 2021-01-17T21:08:00+05:30
 tags:
   - regex
   - recipe
 ---
 
-A regular expression (using Javascript flavor) that can be used as a basic filter to detect invalid names.
+A regular expression that can be used as a basic filter to detect invalid names.
 
 * I use it in an Indian context. May not be useful for others.
 * Use it with an 'i' RegEx flag to ignore case.
@@ -35,5 +35,5 @@ A regular expression (using Javascript flavor) that can be used as a basic filte
 ***Note:***
 I had written this long back by analyzing invalid entries made in a fin-tech app used by agents to make entries on behalf of other customers. I will update the exact logic and describe parts of the regex soon!
 
-Test it here:
+Test it here & get a sample code in Javascript:
 {% embedCodePen "https://codepen.io/abhiweb/pen/wvzNaQM", "result", "220" %}

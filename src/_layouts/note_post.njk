@@ -5,6 +5,7 @@ breadcrumb: notes
 {% extends "./base.njk" %}
 
 {# Ideally set through eleventyComputed in front-matter but not working. Bug? #}
+{% set title = ((title + ' | ') if title else '') + 'Notes' %}
 {% set description = (description or "Coding notes and recipes. My second brain.") | trim %}
 {% set keywords = (keywords or "note") + ',blog,' + (tags and tags.join(",")) %}
 
@@ -45,7 +46,7 @@ breadcrumb: notes
 	<section class="block blog-footer">
 		<div class="title">Filed Under</div>
 		{% for item in tags %}
-			<a class="button" href="/blog/tags/{{item}}/">#{{ item }}</a>
+			<a class="button mono" href="/blog/tags/{{item}}/">#{{ item }}</a>
 		{% endfor %}
 	</section>
 
