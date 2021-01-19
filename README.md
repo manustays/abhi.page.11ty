@@ -1,4 +1,4 @@
-# An 11ty Website & Blog
+# Personal Website & Blog in 11ty
 Kumar Abhishek's personal website & blog built with [Eleventy](https://www.11ty.dev).
 
 ---
@@ -47,3 +47,4 @@ Kumar Abhishek's personal website & blog built with [Eleventy](https://www.11ty.
 
 ## Credits
 1. Theme inspired from [Hylia Starter Kit](https://github.com/hankchizljaw/hylia)
+1. Notes section inspired from [gatsby-theme-code-notes](https://github.com/mrmartineau/gatsby-theme-code-notes)
