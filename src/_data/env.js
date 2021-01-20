@@ -6,6 +6,8 @@
 */
 
 module.exports = {
+	NODE_ENV: process.env.NODE_ENV || 'development',
+
 	BASE_URL: process.env.BASE_URL || '',
 
 	GA_KEY: process.env.GA_KEY || '',
