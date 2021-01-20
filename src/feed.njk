@@ -10,22 +10,31 @@ eleventyExcludeFromCollections: true
 <link href="{{ env.BASE_URL }}/"/>
 <updated>{{ collections.allArticles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
 <id>{{ env.BASE_URL }}/</id>
-<author>
-	<name>{{ website.author }}</name>
-	{# <email>{{ website.email }}</email> #}
-</author>
+<author><name>{{ website.author }}</name><uri>{{ env.BASE_URL }}</uri></author>
 {%- for post in collections.allArticles | reverse -%}
-{% set absolutePostUrl %}{{ post.url | url | absoluteUrl(env.BASE_URL) }}{% endset %}
+{%- set absolutePostUrl %}{{ post.url | url | absoluteUrl(env.BASE_URL) }}{% endset -%}
+{%- set title = post.data.title -%}
+{%- set notelinks = '' -%}
+{%- set section = post.url | path2section -%}
+{%- set heroimage = '<p><img src="'+env.BASE_URL+post.data.image+'"></p>' if post.data.image else '' -%}
+{%- set footer = '<hr><p><a href="'+absolutePostUrl+'" rel="self"><strong>Read on '+website.title+'</strong></a></p>' -%}
+{%- if section == 'notes' and post.data.links -%}
+{%- if post.data.links -%}
+	{%- set notelinks -%}
+	<blockquote><strong>Direct Links:</strong>
+	<ul>{% for _lnk in post.data.links %}<li><a href="{{_lnk}}" target="_blank" rel="noopener">{{_lnk | shortURL}}</a></li>{% endfor %}</ul>
+	</blockquote>
+	{%- endset -%}
+{%- endif -%}
+{% endif %}
 <entry>
-	<title>{{ post.data.title }}</title>
-	<link href="{{ absolutePostUrl }}"/>
+	<title>{{ post.data.title }}{{ ' | Notes' if section == 'notes' else '' }}</title>
+	<link href="{{ absolutePostUrl }}" length="{{ post.templateContent | length }}"/>
 	<updated>{{ post.date | dateToRfc3339 }}</updated>
+	<category term="{{ 'notes' if section == 'notes' else 'blog' }}" label="{{ 'Coding Notes' if section == 'notes' else 'Blog Post' }}" />
 	<id>{{ absolutePostUrl }}</id>
-	<author>
-		<name>{{ website.author }}</name>{# TODO: Put actual post author info here #}
-		{# <email>{{ website.email }}</email> #}
-	</author>
-	<content type="html">{% if post.data.image %}&lt;p&gt;&lt;img src="{{ env.BASE_URL }}{{ post.data.image }}"&gt;&lt;/p&gt;{% endif %}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+	<author><name>{{ website.author }}</name><uri>{{ env.BASE_URL }}</uri></author>
+	<content type="html">{{ heroimage }}{{ notelinks }}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}{{ footer }}</content>
 </entry>
 {%- endfor -%}
 </feed>
