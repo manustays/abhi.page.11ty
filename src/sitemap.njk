@@ -4,14 +4,40 @@ eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-{%- for item in collections.all -%}
-{%- if not item.data.excludeFromSitemap and item.url and item.url != '/admin/' -%}
+{%- for item in collections.notes | reverse -%}
 <url>
-<loc>{{ env.BASE_URL }}{{ item.url }}</loc>
-<lastmod>{{ item.date | dateFormat('yyyy-MM-dd') }}</lastmod>
+	<loc>{{ env.BASE_URL }}{{ item.url }}</loc>
+	<lastmod>{{ item.date | dateFormat('yyyy-MM-dd') }}</lastmod>
 </url>
-{%- endif -%}
 {%- endfor -%}
-
+{%- for item in collections.blog | reverse -%}
+<url>
+	<loc>{{ env.BASE_URL }}{{ item.url }}</loc>
+	<lastmod>{{ item.date | dateFormat('yyyy-MM-dd') }}</lastmod>
+</url>
+{%- endfor -%}
+{%- for item in collections.notetags -%}
+<url>
+	<loc>{{ env.BASE_URL }}/notes/tags/{{ item }}</loc>
+	<lastmod>{{ collections.notes | getNewestCollectionItemDate | dateFormat('yyyy-MM-dd') }}</lastmod>
+</url>
+{%- endfor -%}
+{%- for item in collections.blogtags -%}
+<url>
+	<loc>{{ env.BASE_URL }}/blog/tags/{{ item }}</loc>
+	<lastmod>{{ collections.notes | getNewestCollectionItemDate | dateFormat('yyyy-MM-dd') }}</lastmod>
+</url>
+{%- endfor -%}
+<url>
+	<loc>{{ env.BASE_URL }}/notes</loc>
+	<lastmod>{{ collections.notes | getNewestCollectionItemDate | dateFormat('yyyy-MM-dd') }}</lastmod>
+</url>
+<url>
+	<loc>{{ env.BASE_URL }}/blog</loc>
+	<lastmod>{{ collections.blog | getNewestCollectionItemDate | dateFormat('yyyy-MM-dd') }}</lastmod>
+</url>
+<url>
+	<loc>{{ env.BASE_URL }}</loc>
+	<lastmod>{{ collections.notes | getNewestCollectionItemDate | dateFormat('yyyy-MM-dd') }}</lastmod>
+</url>
 </urlset>
