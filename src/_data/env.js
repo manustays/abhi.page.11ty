@@ -6,8 +6,13 @@
 */
 
 module.exports = {
+	NODE_ENV: process.env.NODE_ENV || 'development',
+
 	BASE_URL: process.env.BASE_URL || '',
 
 	GA_KEY: process.env.GA_KEY || '',
-	MS_CLARITY_TAG: process.env.MS_CLARITY_TAG || ''
+	MS_CLARITY_TAG: process.env.MS_CLARITY_TAG || '',
+
+	// How to setup WebMentions: https://sia.codes/posts/webmentions-eleventy-in-depth/
+	WEBMENTION_IO_TOKEN: process.env.WEBMENTION_IO_TOKEN || '',
 }

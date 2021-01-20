@@ -4,4 +4,5 @@ node_modules
 npm-debug.log
 build
 _site
+_cache
 .env

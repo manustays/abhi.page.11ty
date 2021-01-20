@@ -38,4 +38,18 @@ module.exports = {
 
 	// Trim "https://" and trailing '/' from links
 	shortURL: (url) => url.replace(/^https?:\/\//i, '').replace(/\/$/, ''),
+
+	// Get section-id ('blog' or 'notes') from a path
+	path2section: (url) => url.replace(/^\/?(blog|notes)\/.*$/, "$1"),
+
+
+	// ----------------- Filters for WebMentions -------------------
+
+	getWebmentionsForUrl: (webmentions, url) => webmentions.children.filter(entry => entry['wm-target'] === url),
+
+	size: (mentions) => !mentions ? 0 : mentions.length,
+
+	webmentionsByType: (mentions, mentionType) => mentions.filter(entry => !!entry[mentionType]),
+
+	readableDateFromISO: (dateStr, formatStr = "dd LLL yyyy 'at' hh:mma") => DateTime.fromISO(dateStr).toFormat(formatStr)
 }
