@@ -16,7 +16,7 @@ links:
 * Use `preload` to asynchronously load the font fast on supported browsers.
 * In the link to the main font stylesheet:
   * Set `media=print` on the stylesheet to stop loading it during page load.
-  * On page load, set `media=all` on stylesheet (using Javscript) to load the font.
+  * On page load, set `media=all` on stylesheet (using Javascript) to load the font.
 * As a fallback for browsers where Javascript is disabled, include a normal link to the stylesheet within `<noscript>` tag.
 
 Here is a recommended snippet:
