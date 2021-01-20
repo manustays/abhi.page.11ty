@@ -6,7 +6,7 @@
 */
 
 module.exports = {
-	NODE_ENV: process.env.NODE_ENV || 'development',
+	BUILD_ENV: process.env.BUILD_ENV || 'development',
 
 	BASE_URL: process.env.BASE_URL || '',
 
