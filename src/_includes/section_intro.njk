@@ -1,5 +1,12 @@
+{% if website.name_audio %}
+	{%- set myname -%}
+		<span class="speakname" onclick="javascript:document.querySelector('#audioname').play()">{{ website.display_name }}{% svgico 'speaker' %}</span><audio id="audioname" src="{{ website.name_audio }}"></audio>
+	{%- endset -%}
+{% else %}
+	{%- set myname %}<span>{{ website.display_name }}</span>{% endset -%}
+{% endif %}
 <section class="intro layout vertical center-center txt-center">
-	<h1 class="main-header">{{ website.intro }}</h1>
+	<h1 class="main-header">{{ website.intro_prefix }}{{ myname | safe }}</h1>
 
 	<p>{{ website.about }}</p>
 

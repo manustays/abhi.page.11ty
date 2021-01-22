@@ -225,6 +225,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/ico');
 	eleventyConfig.addPassthroughCopy('src/assets/img');
 	eleventyConfig.addPassthroughCopy('src/assets/favicon');
+	eleventyConfig.addPassthroughCopy('src/assets/audio');
 
 	// Add Layouts...
 	eleventyConfig.addLayoutAlias('base', 'base.njk');
