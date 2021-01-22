@@ -1,4 +1,4 @@
-/* ================ Blog Listing Pages ================ */
+/* ================ Notes Listing Pages ================ */
 
 .notes-list-page {
 	display: flex;
@@ -20,11 +20,18 @@
 	}
 }
 
+
+/* ===================== Notes List ===================== */
+
 .note-tr, .note-meta, .taglist {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	flex-wrap: wrap;
+}
+
+.note-tr {
+	flex-wrap: nowrap;
 }
 
 .note-tr {
@@ -36,25 +43,39 @@
 	background: var(--clr-darker);
 }
 
-.note-meta {
-	font-size: 0.8em;
+.emoji {
+	margin-right: 0.8em;
+	align-self: flex-start;
 }
 
 .note-title {
+	display: inline-flex;
+	flex-grow: 1;
+	flex-direction: column;
+}
+
+.note-title > span {
 	flex-grow: 1;
 	font-weight: 500;
 }
 
-.note-title .emoji {
-	margin-right: 0.8em;
+.note-meta {
+	font-size: 0.8em;
+	align-self: flex-end;
 }
-
 
 .pagination a {
 	color: var(--main-text-color);
 }
 
-/* ============ Note Tags Listing on Left =============== */
+@media(min-width: 700px) {
+	.note-title {
+		flex-direction: row;
+		align-items: center;
+	}
+}
+
+/* ============ Note Tags Menu on Left =============== */
 
 .note-tag-menu ul {
 	list-style-type: none;
@@ -73,4 +94,38 @@
 
 .note-tag-menu li[selected] {
 	background: var(--clr-primary);
+}
+
+.note-tag-menu #nvtgs { display: none; }
+
+.note-tag-menu label {
+	width: 100%;
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+	background: var(--clr-highlight);
+	color: var(--clr-dark);
+}
+
+.note-tag-menu label > svg {
+	margin-right: 0.5em;
+}
+
+.note-tag-menu .menu {
+	display: none;
+}
+
+.note-tag-menu #nvtgs:checked + .menu {
+	display: block;
+}
+
+@media(min-width: 700px) {
+	.note-tag-menu label {
+		display: none;
+	}
+
+	.note-tag-menu .menu {
+		display: block !important;
+	}
 }

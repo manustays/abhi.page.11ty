@@ -1,14 +1,17 @@
 <section class="block noteslist">
     {% for note in technotes | trimArray(30) %}
 		<a href="{{ note.url | url }}" class="nostyle note-tr">
-			<div class="note-title"><span class="emoji">{{ note.data.emoji or '🗒' }}</span>{{ note.data.title }}</div>
-			<div class="note-meta">
-				<div class="taglist mono">
-					{% for tag in note.data.tags | trimArray(3) %}
-						<span class="post-tag">#{{ tag }}</span>&nbsp;
-					{% endfor %}
+			<div class="emoji">{{ note.data.emoji or '🗒' }}</div>
+			<div class="note-title">
+				<span>{{ note.data.title }}</span>
+				<div class="note-meta">
+					<div class="taglist mono">
+						{% for tag in note.data.tags | trimArray(3) %}
+							<span class="post-tag">#{{ tag }}</span>&nbsp;
+						{% endfor %}
+					</div>
+					<time datetime="{{ note.date | dateFormat('yyyy-mm-dd') }}">{{ note.date | dateFormat('MMM d, yyyy') }}</time>
 				</div>
-				<time datetime="{{ note.date | dateFormat('yyyy-mm-dd') }}">{{ note.date | dateFormat('MMM d, yyyy') }}</time>
 			</div>
 		</a>
     {% endfor %}

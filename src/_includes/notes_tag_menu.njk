@@ -1,4 +1,6 @@
 <nav class="note-tag-menu">
+	<label for="nvtgs" title="Filter by Tags">{% svgico 'bars' %}<span>TAGS</span></label>
+	<input type="checkbox" id="nvtgs">
 	<ul class="menu mono">
 		<li {% if not tag %}selected{% endif %}><a href="/notes" class="nostyle">ALL NOTES</a></li>
 		{% for _tag in collections.notetags %}

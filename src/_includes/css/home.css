@@ -41,6 +41,9 @@ section.homegrid {
 
 .speakname {
 	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 }
 .speakname:hover{
 	text-shadow: 0 0 6px rgba(255,255,255,.3);
