@@ -3,7 +3,7 @@ const fs = require("fs");
 const { minify } = require("terser");
 const htmlmin = require("html-minifier");
 
-const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+// const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const blogTools = require("eleventy-plugin-blog-tools");
 const svgContents = require("eleventy-plugin-svg-contents");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -14,6 +14,7 @@ const Image = require("@11ty/eleventy-img");
 const filters = require('./utils/filters.js');
 const shortcodes = require('./utils/shortcodes.js');
 // const iconsprite = require('./utils/iconsprite.js');
+const socialImage = require('./utils/asyncShortcodeSocialImg.js');
 
 const md = require("markdown-it");
 const md_emoji = require("markdown-it-emoji");
@@ -91,7 +92,7 @@ module.exports = function(eleventyConfig) {
 		else {
 			const sources = `${Object.values(meta).map(format => format && format[0] ? `<source type="image/${format[0].format}" srcset="${format.map(entry => entry.srcset).join(", ")}">` : '').join("\n")}`;
 
-			return `<picture>${sources}<img class="${classes}" src="${lowsrc.url}" alt="${alt}" ${lazy ? 'loading="lazy"' : ''}></picture>`;
+			return `<picture>${sources}<img class="${classes}" src="${lowsrc.url}" alt="${alt}" ${lazy ? 'loading="lazy"' : ''} decoding="async"></picture>`;
 		}
 	});
 
@@ -107,6 +108,22 @@ module.exports = function(eleventyConfig) {
 			outputDir: "./_site/img/"
 		});
 		return meta.jpeg && meta.jpeg.length > 0 ? meta.jpeg[0].url : '';
+	});
+
+
+	eleventyConfig.addAsyncShortcode("SocialImg", async (title, siteName) => {
+		if (!title) return '';
+
+		let socialImgPath = await socialImage(eleventyConfig.javascriptFunctions.slug(title),	// filename
+			title,									// title
+			siteName + '/',							// sitename
+			'./src/assets/img/abhi-bw-circle.png',	// author-image
+			{										// options
+				outputDir: './_site/img/preview',
+				urlPath: '/img/preview'
+			});
+
+		return socialImgPath;
 	});
 
 

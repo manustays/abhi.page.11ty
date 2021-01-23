@@ -8,6 +8,7 @@ section_title: Notes
 {# Ideally set through eleventyComputed in front-matter but not working. Bug? #}
 {% set description = (description or "Coding notes and recipes. My second brain.") | trim %}
 {% set keywords = (keywords or "note") + ',blog,' + (tags and tags.join(",")) %}
+{% set generate_social_image = false if image else true %}
 
 {% block head %}
 	<link rel="index" href="{{ env.BASE_URL }}/notes/">

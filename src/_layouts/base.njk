@@ -3,11 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#ffb218"/>
+	<meta name="theme-color" content="#173854"/>
 
 	<link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/vnd.microsoft.icon" />
-
-	<meta name="copyright"content="{% thisYear %} {{ footer.copyright }}">
 
 	{# ---- Optimal/non-blocking way to load Google Font (Reference: https://csswizardry.com/2020/05/the-fastest-google-fonts) ---- #}
 	{% if website.google_font_url %}
@@ -29,10 +27,10 @@
 	<meta name="description" content="{{ (description or website.description) | truncate(150) }}">
 	<meta name="keywords" content="{{ keywords or website.keywords }}, {{ website.title }}">
 
-	{# OpenGraph (Facebook) Social Card #}
+	{# OpenGraph Social Card #}
 	<meta property="og:title" content="{{ title }}">
 	<meta property="og:description" content="{{ description or website.description }}">
-	<meta property="og:image" content="{{ env.BASE_URL }}{% SocialImagePath image or website.image %}">
+	<meta property="og:image" content="{{ env.BASE_URL }}{% if generate_social_image -%}{% SocialImg title, website.title %}{%- else -%}{% SocialImagePath image or website.image %}{%- endif %}">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="{{ env.BASE_URL }}{{ page.url }}">
 	<meta property="og:site_name" content="{{ website.title }}">
@@ -40,7 +38,7 @@
 	{# Twitter Social Card #}
 	<meta name="twitter:title" content="{{ title }}">
 	<meta name="twitter:description" content="{{ description or website.description }}">
-	<meta name="twitter:image" content="{{ env.BASE_URL }}{% SocialImagePath image or website.image %}">
+	<meta name="twitter:image" content="{{ env.BASE_URL }}{% if generate_social_image -%}{% SocialImg title, website.title %}{%- else -%}{% SocialImagePath image or website.image %}{%- endif %}">
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:url" content="{{ env.BASE_URL }}{{ page.url }}">
 	<meta name="twitter:site" content="{{ website.twitter_handle }}">
