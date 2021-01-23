@@ -6,3 +6,4 @@ build
 _site
 _cache
 .env
+*.code-workspace

@@ -23,7 +23,7 @@ Kumar Abhishek's personal website & blog built with [Eleventy](https://www.11ty.
     * 📄🔧 [**website.yaml**](/src/_data/website.yaml)  `Top configurations, like, domain, logo, title, SEO, etc`
 	* 📑🔧 [**skills.yaml**](/src/_data/skills.yaml)  `List your skills here`
 	* 📑🔧 [**work.yaml**](/src/_data/developers.yaml)  `List your professional experiences here`
-	* 📄🔧 [**env.yaml**](/src/_data/env.yaml)  `Secret configurations as envoirnment variables`
+	* 📄🔧 [**env.yaml**](/src/_data/env.yaml)  `Secret configurations as environment variables`
   * 📂👩‍💻 [**_layouts**](/src/_layouts)  `Reusable templates for various page types`
     * 📄⭐ [**base.njk**](/src/_layouts/base.njk)  `Main template with outermost common code used by all pages`
 	* 📄 [**blog_post.njk**](/src/_layouts/blog_post.njk)  `Template for blog post pages ideally written in markdown`
@@ -48,3 +48,4 @@ Kumar Abhishek's personal website & blog built with [Eleventy](https://www.11ty.
 ## Credits
 1. Theme inspired from [Hylia Starter Kit](https://github.com/hankchizljaw/hylia)
 1. Notes section inspired from [gatsby-theme-code-notes](https://github.com/mrmartineau/gatsby-theme-code-notes)
+1. Name pronunciation inspired from LinkedIn's similar feature and [@heyatif's post on his Vocalizer script](http://atifaz.am/blog/vocalizer-help-others-pronounce-your-name-correctly.html). Though, I wrote a static implementation for efficiency.
