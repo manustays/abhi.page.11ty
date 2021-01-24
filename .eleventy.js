@@ -9,12 +9,14 @@ const svgContents = require("eleventy-plugin-svg-contents");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const readingTime = require('eleventy-plugin-reading-time');
+const generateSocialImages = require("@manustays/eleventy-plugin-generate-social-images");
+const embedCodePen = require("@manustays/eleventy-plugin-codepen-iframe");
 const Image = require("@11ty/eleventy-img");
 
 const filters = require('./utils/filters.js');
 const shortcodes = require('./utils/shortcodes.js');
 // const iconsprite = require('./utils/iconsprite.js');
-const socialImage = require('./utils/asyncShortcodeSocialImg.js');
+// const genSocialImage = require('./utils/asyncShortcodeSocialImg.js');
 
 const md = require("markdown-it");
 const md_emoji = require("markdown-it-emoji");
@@ -49,6 +51,19 @@ module.exports = function(eleventyConfig) {
 	});
 	eleventyConfig.addPlugin(readingTime);
 	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(generateSocialImages, {
+		promoImage: "./src/assets/img/abhi-bw-circle.png",
+		outputDir: "./_site/img/preview",
+		urlPath: "/img/preview"
+	});
+	eleventyConfig.addPlugin(embedCodePen, {
+		tabs: "result",
+		user: "manustays",
+		height: 300,
+		width: "100%",
+		theme: "dark",
+		class: "codepen"
+	});
 
 	// Add Universal Filters
 	Object.keys(filters).forEach((filterName) => {
@@ -111,20 +126,20 @@ module.exports = function(eleventyConfig) {
 	});
 
 
-	eleventyConfig.addAsyncShortcode("SocialImg", async (title, siteName) => {
-		if (!title) return '';
+	// eleventyConfig.addAsyncShortcode("GenerateSocialImage", async (title, siteName) => {
+	// 	if (!title) return '';
 
-		let socialImgPath = await socialImage(eleventyConfig.javascriptFunctions.slug(title),	// filename
-			title,									// title
-			siteName + '/',							// sitename
-			'./src/assets/img/abhi-bw-circle.png',	// author-image
-			{										// options
-				outputDir: './_site/img/preview',
-				urlPath: '/img/preview'
-			});
+	// 	let socialImgPath = await genSocialImage(eleventyConfig.javascriptFunctions.slug(title),	// filename
+	// 		title,									// title
+	// 		siteName + '/',							// sitename
+	// 		'./src/assets/img/abhi-bw-circle.png',	// author-image
+	// 		{										// options
+	// 			outputDir: './_site/img/preview',
+	// 			urlPath: '/img/preview'
+	// 		});
 
-		return socialImgPath;
-	});
+	// 	return socialImgPath;
+	// });
 
 
 
