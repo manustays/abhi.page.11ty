@@ -36,4 +36,4 @@ A regular expression that can be used as a basic filter to detect invalid names.
 I had written this long back by analyzing invalid entries made in a fin-tech app used by agents to make entries on behalf of other customers. I will update the exact logic and describe parts of the regex soon!
 
 Test it here & get a sample code in Javascript:
-{% embedCodePen "https://codepen.io/abhiweb/pen/wvzNaQM", "result", "220" %}
+{% CodePen "https://codepen.io/abhiweb/pen/wvzNaQM", "result", "220" %}
