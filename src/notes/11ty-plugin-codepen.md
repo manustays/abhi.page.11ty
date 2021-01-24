@@ -1,6 +1,6 @@
 ---
 layout: note
-title: Plugin to embed CodePen in your Eleventy website (using iFrame)
+title: Eleventy Plugin for efficient CodePen embeds
 description: Embed CodePen.io Pens into your 11ty website by using a ShortCode. It directly embeds an iFrame for efficiency (without loading CodePen's Javascript).
 keywords: codepen, 11ty, eleventy-plugin
 emoji: 🎈

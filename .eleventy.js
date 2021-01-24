@@ -54,7 +54,8 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(generateSocialImages, {
 		promoImage: "./src/assets/img/abhi-bw-circle.png",
 		outputDir: "./_site/img/preview",
-		urlPath: "/img/preview"
+		urlPath: "/img/preview",
+		siteName: "abhi.page/"
 	});
 	eleventyConfig.addPlugin(embedCodePen, {
 		tabs: "result",

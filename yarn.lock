@@ -982,10 +982,10 @@
   resolved "https://registry.yarnpkg.com/@manustays/eleventy-plugin-codepen-iframe/-/eleventy-plugin-codepen-iframe-2.0.1.tgz#6c78c2e0c358c1f20785df7e1c02cba24ee94356"
   integrity sha512-lHnuFqfbKv+Iqb+U+cQeS21OIiIv8ytjlc/UGLoVXzm5eElep2XZn3CU8cCWHmWXHfjGYeTOyEaujUW0uDd4ZQ==
 
-"@manustays/eleventy-plugin-generate-social-images@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@manustays/eleventy-plugin-generate-social-images/-/eleventy-plugin-generate-social-images-1.0.0.tgz#6e87e9ed73996dd3ce3eb2885aabe062679d8d5d"
-  integrity sha512-IJkWVVnnpzpNi3rtz/j9IHTPXSoyQiOSWlJ862kP1R2ta095eq62gIlTSJiMCCvrblero8x09a0KuCR6z5gKsw==
+"@manustays/eleventy-plugin-generate-social-images@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@manustays/eleventy-plugin-generate-social-images/-/eleventy-plugin-generate-social-images-2.0.0.tgz#1c63c33879ac84e01bfcfd6624bd338430dceb70"
+  integrity sha512-a3EK1ue1rRx+AGA//pE+T6PjnCqSWJ1k/sD8etwahHO+yvPT0Nw99ERhwjjPx361ck/cGigr+ITFG/rtG7uElg==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
