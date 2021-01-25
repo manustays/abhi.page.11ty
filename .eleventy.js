@@ -13,6 +13,9 @@ const generateSocialImages = require("@manustays/eleventy-plugin-generate-social
 const embedCodePen = require("@manustays/eleventy-plugin-codepen-iframe");
 const Image = require("@11ty/eleventy-img");
 
+// For testing local plugin...
+// const generateSocialImages = require("../eleventy-plugin-generate-social-images");
+
 const filters = require('./utils/filters.js');
 const shortcodes = require('./utils/shortcodes.js');
 // const iconsprite = require('./utils/iconsprite.js');
@@ -55,7 +58,8 @@ module.exports = function(eleventyConfig) {
 		promoImage: "./src/assets/img/abhi-bw-circle.png",
 		outputDir: "./_site/img/preview",
 		urlPath: "/img/preview",
-		siteName: "abhi.page/"
+		siteName: "abhi.page/",
+		titleColor: "#fedb8b"
 	});
 	eleventyConfig.addPlugin(embedCodePen, {
 		tabs: "result",
