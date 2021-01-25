@@ -37,6 +37,8 @@ module.exports = (eleventyConfig) => {
 };
 ```
 
+> ⚠ You’re only allowed one module.exports in your configuration file! If one already exists, copy the content of the above into your existing module.exports function.
+
 #### STEP 3 – Use it in your templates like this:
 
 ```html
