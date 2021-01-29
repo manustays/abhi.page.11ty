@@ -50,7 +50,7 @@ hr {
 	display: block;
 	height: 1px;
 	max-width: 500px;
-	background: var(--color-stroke);
+	background: var(--clr-mid);
 	border: none;
 	margin: 3.05rem auto;
 }

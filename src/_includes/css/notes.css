@@ -4,13 +4,12 @@ blockquote.directlinks {
 	font-style: normal;
 	padding-top: 1em;
 	padding-bottom: 1em;
+	margin:0 0 2em 0;
 	font-size: 1.1em;
+	background: var(--clr-darker);
 }
 
 blockquote.directlinks ul {
-	padding-left: 0.6em;
-}
-
-blockquote.directlinks ul > li:only-child {
 	list-style-type:none;
+	padding-left: 0em;
 }
