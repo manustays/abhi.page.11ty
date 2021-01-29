@@ -3,7 +3,7 @@
 .logo {
 	font-size: 1.2em;
 	font-weight: bold;
-	font-family: Lora, serif;
+	font-family: 'Lora', serif;
 	color: var(--clr-highlight);
 }
 
@@ -15,7 +15,7 @@ header .crumb {
 	margin-left: 2px;
 	color: var(--clr-mid);
 	opacity: 0.4;
-	font-family: Lora, serif;
+	font-family: 'Lora', serif;
 	font-size: 1.2em;
 }
 
