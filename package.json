@@ -23,7 +23,7 @@
     "@babel/core": "7.2.0",
     "@gerhobbelt/markdown-it-attrs": "^3.0.3-20",
     "@manustays/eleventy-plugin-codepen-iframe": "^2.0.1",
-    "@manustays/eleventy-plugin-generate-social-images": "^3.0.0",
+    "@manustays/eleventy-plugin-generate-social-images": "^4.0.0",
     "del-cli": "^3.0.1",
     "dotenv": "^8.2.0",
     "eleventy-plugin-reading-time": "^0.0.1",

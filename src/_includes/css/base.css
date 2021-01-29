@@ -18,6 +18,16 @@
 	--background-section-color: #fffcf6;
 }
 
+/* lora-700 - latin */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/font/lora-latin-eng-700.woff2') format('woff2'),
+		url('/assets/font/lora-v16-latin-700.woff') format('woff');
+}
+
 body {
 	line-height: 1.56;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Helvetica, sans-serif,' Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -27,7 +37,7 @@ body {
 }
 
 h1, h2, h3, .h3 {
-	font-family: Lora, serif;
+	font-family: 'Lora', serif;
 }
 
 h1 {font-size: 1.95rem; margin-top: 0.3em; margin-bottom: 0.3em; }

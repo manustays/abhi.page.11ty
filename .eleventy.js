@@ -59,7 +59,10 @@ module.exports = function(eleventyConfig) {
 		outputDir: "./_site/img/preview",
 		urlPath: "/img/preview",
 		siteName: "abhi.page/",
-		titleColor: "#fedb8b"
+		titleColor: "#fedb8b",
+		terminalBgColor: "#202020",
+		customFontFilename: "lora-v16-latin-700.ttf",
+		lineBreakAt: 45
 	});
 	eleventyConfig.addPlugin(embedCodePen, {
 		tabs: "result",
@@ -261,6 +264,7 @@ module.exports = function(eleventyConfig) {
 	// Add Files Passthrough...
 	eleventyConfig.addPassthroughCopy('src/assets/ico');
 	eleventyConfig.addPassthroughCopy('src/assets/img');
+	eleventyConfig.addPassthroughCopy('src/assets/font');
 	eleventyConfig.addPassthroughCopy('src/assets/favicon');
 	eleventyConfig.addPassthroughCopy('src/assets/audio');
 

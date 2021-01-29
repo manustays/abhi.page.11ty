@@ -1,11 +1,12 @@
 title: abhi.page
 intro_prefix: Hi, I’m
-about: I’m a polyglot developer. I ♥ efficient architecture & clean design.
+about: I’m a fullstack developer. I ♥ efficient architecture & clean design. (he/him)
 description: Abhishek's personal website & blog. I write articles & notes on technology and software development.
 
 display_name: Abhishek
 name_audio: /assets/audio/abhishek_hi.mp3
 author: Kumar Abhishek
+github_current_repo: https://github.com/manustays/abhi.page.11ty
 github_main_branch: https://github.com/manustays/abhi.page.11ty/tree/main
 
 sections:
@@ -26,7 +27,7 @@ sections:
 #### WebMentions (How to setup: https://sia.codes/posts/webmentions-eleventy-in-depth)
 webmentions:
   domain: abhi.page
-  # Setup WEBMENTION_IO_TOKEN in envoirnment variables (see .env.example)
+  # Setup WEBMENTION_IO_TOKEN in environment variables (see .env.example)
 
 #### SEO & Social...
 image: /assets/img/abhi-bw.jpg
@@ -61,7 +62,7 @@ social_profiles:
 
 
 #### Others...
-google_font_url: https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%21%22%23%24%25%26%27%2B%2C%2F%40%7C%7B%7D%5B%5D%3B%3C%3D%3E%3F.!-*()₹
+# google_font_url: https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%21%22%23%24%25%26%27%2B%2C%2F%40%7C%7B%7D%5B%5D%3B%3C%3D%3E%3F.!-*()₹
 
 
 ## The following values are setup as ENVIRONMENT-VARIABLES:

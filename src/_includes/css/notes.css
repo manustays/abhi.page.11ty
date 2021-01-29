@@ -6,3 +6,11 @@ blockquote.directlinks {
 	padding-bottom: 1em;
 	font-size: 1.1em;
 }
+
+blockquote.directlinks ul {
+	padding-left: 0.6em;
+}
+
+blockquote.directlinks ul > li:only-child {
+	list-style-type:none;
+}
