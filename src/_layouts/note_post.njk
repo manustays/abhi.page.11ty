@@ -13,6 +13,23 @@ section_title: Notes
 {% block head %}
 	<link rel="index" href="{{ env.BASE_URL }}/notes/">
 	<link rel="prefetch" href="/notes" />
+	{# <script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [{
+			"@type": "ListItem",
+			"position": 1,
+			"name": "Notes",
+			"item": "{{ env.BASE_URL }}/notes"
+		},{
+			"@type": "ListItem",
+			"position": 2,
+			"name": "{{ title }}",
+			"item": "{{ env.BASE_URL }}{{ page.url }}"
+		}]
+	}
+	</script> #}
 {% endblock %}
 
 {% block custom_style %}
@@ -32,7 +49,7 @@ section_title: Notes
 		<article class="post-body">
 			{% if links %}
 				<blockquote class="directlinks">
-					<strong>{% svgico 'chain' %} Direct Links:</strong>
+					<strong>{% svgico 'chain' %} Direct Link{{ 's' if links.length > 1 else '' }}:</strong>
 					<ul>
 					{% for _lnk in links %}
 						<li><a href="{{_lnk}}" target="_blank" rel="noopener">{{_lnk | shortURL}}</a></li>

@@ -29,15 +29,15 @@ h1 {
 	margin: 2em 0;
 }
 
-p {
+/* p {
 	margin-top: 2.44em;
-}
+} */
 
 .post-body a:not([class]), .post-body a[class="ext-link"] {
 	text-decoration: none;
 	background: var(--clr-highlight);
 	color: var(--clr-dark);
-	padding: .2rem .4rem .3rem .4rem;
+	padding: .1rem .4rem .2rem .4rem;
     word-break: break-word;
     line-height: 1.2;
 }
