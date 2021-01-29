@@ -52,7 +52,7 @@ section_title: Notes
 					<strong>Direct Link{{ 's' if links.length > 1 else '' }}</strong>
 					<ul>
 					{% for _lnk in links %}
-						<li>{% svgico 'chain' %} <a href="{{_lnk}}" target="_blank" rel="noopener">{{_lnk | shortURL}}</a></li>
+						<li>{% svgico 'link' %}&nbsp;&nbsp;<a href="{{_lnk}}" target="_blank" rel="noopener">{{_lnk | shortURL}}</a></li>
 					{% endfor %}
 					</ul>
 				</blockquote>

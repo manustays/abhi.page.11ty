@@ -7,7 +7,7 @@
 				<div class="note-meta">
 					<div class="taglist mono">
 						{% for tag in note.data.tags | trimArray(3) %}
-							<span class="post-tag">#{{ tag }}</span>&nbsp;
+							<span class="post-tag">{{ tag }}</span>&nbsp;
 						{% endfor %}
 					</div>
 					<time datetime="{{ note.date | dateFormat('yyyy-mm-dd') }}">{{ note.date | dateFormat('MMM d, yyyy') }}</time>
