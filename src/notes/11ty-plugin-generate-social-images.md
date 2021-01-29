@@ -17,7 +17,7 @@ While porting [my website](https://abhi.page/) to [11ty](https://www.11ty.dev/),
 
 > A social-sharing-image shows as a thumbnail for a website/blogpost when shared on social media.
 >
-> This plugin generates such images automatically using the title of your blogposts/pages. For a demo, share this page a social media like [Twitter](https://twitter.com/intent/tweet?url=https://abhi.page/notes/11ty-plugin-generate-social-images) or [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://abhi.page/notes/11ty-plugin-generate-social-images&title=&summary=&source=)!
+> This plugin generates such images automatically using the title of your blogposts/pages. For a live example, share this page on a social media like [Twitter](https://twitter.com/intent/tweet?url=https://abhi.page/notes/11ty-plugin-generate-social-images) or [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://abhi.page/notes/11ty-plugin-generate-social-images&title=&summary=&source=)!
 
 Images are generated in PNG format in a standard 1200×628px size that is suitable for sharing with most social networks.
 
