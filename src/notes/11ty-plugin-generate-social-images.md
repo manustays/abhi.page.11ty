@@ -13,7 +13,7 @@ links:
   - https://github.com/manustays/eleventy-plugin-generate-social-images
 ---
 
-While porting my [website](https://abhi.page/) to [11ty](https://www.11ty.dev/), I wrote my own [plugin](https://github.com/manustays/eleventy-plugin-generate-social-images) to automatically generated social-sharing-images for my [articles](https://abhi.page/notes).
+While porting [my website](https://abhi.page/) to [11ty](https://www.11ty.dev/), I wrote my own [plugin](https://github.com/manustays/eleventy-plugin-generate-social-images) to automatically generated social-sharing-images for my [articles](https://abhi.page/notes).
 
 > A social-sharing-image shows as a thumbnail for a website/blogpost when shared on social media.
 >
