@@ -1,6 +1,13 @@
 # Personal Website & Blog in 11ty
 Kumar Abhishek's personal website & blog built with [Eleventy](https://www.11ty.dev).
 
+
+![Netlify Status](https://api.netlify.com/api/v1/badges/64fd99b7-daec-4a78-9eb9-71b348d6453a/deploy-status)
+<a href="https://github.com/manustays/abhi.page.11ty/issues">![GitHub issues](https://img.shields.io/github/issues/manustays/abhi.page.11ty)</a>
+<a href="https://abhi.page" target="_blank">![About Abhishek](https://img.shields.io/badge/about-me-blue)</a>
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fmanustays%2Fabhi.page.11ty" target="_blank"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fmanustays%2Fabhi.page.11ty"></a>
+<a href="https://twitter.com/intent/follow?screen_name=abhiweb" target="_blank">![Twitter Follow](https://img.shields.io/twitter/follow/abhiweb?label=Follow&style=social)</a>
+
 ---
 
 ## 🌟 Features
