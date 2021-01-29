@@ -35,7 +35,7 @@
 }
 
 .note-tr {
-	padding: 0.4em 0.2em;
+	padding: 0.5em 0.2em;
 	border-radius: 4px;
 }
 
@@ -60,8 +60,20 @@
 }
 
 .note-meta {
-	font-size: 0.8em;
-	align-self: flex-end;
+	font-size: 0.7em;
+	/* align-self: flex-end; */
+}
+.note-meta > * {
+	margin: 6px 0;
+}
+.note-meta  .post-tag {
+	background: var(--clr-darker);
+	border-radius: 4px;
+	padding: 0 0.5em;
+}
+
+.note-meta time {
+	font-weight: 500;
 }
 
 .pagination a {
