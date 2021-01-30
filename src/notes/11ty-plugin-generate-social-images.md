@@ -48,11 +48,11 @@ This is how it looks like configured for one of my blogposts:
 1. Image is created using an SVG template. Users can configure the design or pass custom SVG snippets to be inserted.
 2. Title text is [wrapped](https://github.com/manustays/eleventy-plugin-generate-social-images/blob/4df9ce4ad93036bb842728f4684b12954316f5e2/utils/generateSocialImage.js#L9) by breaking it into multiple lines at a pre-configured max-length-per-line. This was necessary because SVG does not support text-wrapping natively and the Sharp library does not support `<foreignObject>`.
 3. The title lines are [sanitized](https://github.com/manustays/eleventy-plugin-generate-social-images/blob/4df9ce4ad93036bb842728f4684b12954316f5e2/utils/generateSocialImage.js#L39) and inserted into the SVG.
-4. The SVG image is converted into PNG using the Sharp library.
-5. Author image is superimposed onto the generated PNG using Sharp's `composite()` function.
+4. The SVG image is converted into PNG using the [Sharp library](https://sharp.pixelplumbing.com).
+5. Author image is superimposed onto the generated PNG using [Sharp's `composite()` function](https://sharp.pixelplumbing.com/api-composite).
 
 
-## Usage
+## Installation & Usage
 
 #### STEP 1: Install the package:
 ```bash
@@ -100,7 +100,7 @@ For example, in your `base.njk` template file, use it in the `<head>` for genera
 | lineBreakAt  | number | 35           | Maximum row length for wrapping the title. Required because SVG does not have auto-wrapping text. Should depends on the font used |
 
 ## Custom Fonts
-The [Sharp](https://github.com/lovell/sharp) library uses librsvg that uses [fontconfig](https://www.freedesktop.org/software/fontconfig/fontconfig-user) to load external fonts. Therefore, the following steps are required:
+The [Sharp library](https://github.com/lovell/sharp) uses librsvg that uses [fontconfig](https://www.freedesktop.org/software/fontconfig/fontconfig-user) to load external fonts. Therefore, the following steps are required:
 1. Download your font file in project sub-folder. Eg: `./fonts/sans.ttf`
 2. Create a file `fonts.conf` with the following content:
    ```xml
