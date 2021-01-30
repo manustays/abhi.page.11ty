@@ -290,6 +290,10 @@ a.nostyle, a.nostyle:hover {
 
 table {
 	border-collapse: collapse;
+	max-width: 100%;
+    overflow-x: auto;
+    display: block;
+    font-size: 0.9em;
 }
 
 th {
@@ -309,6 +313,12 @@ td {
 
 tr:nth-child(even) td {
 	background: var(--clr-slate);
+}
+
+@media (max-width: 700px) {
+	table {
+		font-size: 0.7em;
+	}
 }
 
 
