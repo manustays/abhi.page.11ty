@@ -132,6 +132,11 @@
 	display: block;
 }
 
+.note-tag-menu .hash {
+	color: var(--clr-primary-txt);
+    margin-right: 1px;
+}
+
 @media(min-width: 700px) {
 	.note-tag-menu label {
 		display: none;
