@@ -4,14 +4,14 @@ const { minify } = require("terser");
 const htmlmin = require("html-minifier");
 
 // const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const Image = require("@11ty/eleventy-img");
 const blogTools = require("eleventy-plugin-blog-tools");
 const svgContents = require("eleventy-plugin-svg-contents");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const readingTime = require('eleventy-plugin-reading-time');
-const generateSocialImages = require("@manustays/eleventy-plugin-generate-social-images");
 const embedCodePen = require("@manustays/eleventy-plugin-codepen-iframe");
-const Image = require("@11ty/eleventy-img");
+const generateSocialImages = require("@manustays/eleventy-plugin-generate-social-images");
 
 // For testing local plugin...
 // const generateSocialImages = require("../eleventy-plugin-generate-social-images");
@@ -62,7 +62,8 @@ module.exports = function(eleventyConfig) {
 		titleColor: "#fedb8b",
 		terminalBgColor: "#202020",
 		customFontFilename: "lora-v16-latin-700.ttf",
-		lineBreakAt: 45
+		lineBreakAt: 45,
+		bgGradient: ['#ABB8C0', '#A0ACB3']
 	});
 	eleventyConfig.addPlugin(embedCodePen, {
 		tabs: "result",
