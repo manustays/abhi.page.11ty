@@ -1,25 +1,30 @@
 ---
 layout: note
 title: Use RegEx to split a string in Javascript preserving separator(s)
-description: How to use the regular-expression look-behind pattern to split a string by one or more separators while preserving the separators in the split sub-strings.
-keywords: regex
+description: How to use the regular-expression lookbehind pattern to split a string by one or more separators while preserving the separators in the split sub-strings.
+keywords: lookbehind
 emoji: ✂
-date: 2021-02-01T16:00:00+05:30
+date: 2021-02-01T16:10:00+05:30
 tags:
   - regex
   - javascript
   - recipe
 ---
 
-Use the Javascript split() function with a `Positive Look-behind Regular Expression` to split a string while preserving the separators in the sub-strings:
+Use the Javascript split() function with a `Positive Lookbehind Regular Expression` to split a string while preserving the separators in the sub-strings:
 
 ```javascript
 split(/(?<=[<separator characters go here>])/)
 ```
 
-> Look-behind in regular-expression allows to match a pattern only when it follows the given look-behind pattern (without actually matching it).
+## What is Lookbehind?
+Lookbehind in regular-expression allows to match a pattern only when it follows the given lookbehind pattern (without actually matching it).
 
-***One limitation*** is that Javascript only supports fix length look-behind regular expression patterns. So, you cannot split by a separator pattern wit variable length.
+### Syntax
+* Positive lookbehind: `(?<=Y)X` matches X if there is Y before it.
+* Negative lookbehind: `(?<!Y)X` matches X if there is no Y before it.
 
-Test it here & get a sample code in Javascript:
+***One limitation*** is that Javascript only supports fixed length lookbehind patterns. So, you cannot use it to split by a separator pattern with variable length.
+
+## Demo
 {% CodePen "https://codepen.io/abhiweb/pen/MWbYPLO", "js,result", "300" %}
