@@ -1,6 +1,6 @@
 ---
 layout: note
-title: Use RegEx to split a string in Javascript preserving separator(s)
+title: Use RegEx to split a string in Javascript (preserving separators)
 description: How to use the regular-expression lookbehind pattern to split a string by one or more separators while preserving the separators in the split sub-strings.
 keywords: lookbehind
 emoji: ✂
