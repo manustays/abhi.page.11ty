@@ -53,68 +53,6 @@ This is how it looks like configured for one of my blogposts:
 
 
 ## Installation & Usage
-
-#### STEP 1: Install the package:
-```bash
-npm install @manustays/eleventy-plugin-generate-social-images
-```
-
-#### STEP 2: Include it in your `.eleventy.js` config file:
-
-```js
-const generateSocialImages = require("@manustays/eleventy-plugin-generate-social-images");
-
-module.exports = (eleventyConfig) => {
-  eleventyConfig.addPlugin(generateSocialImages, {
-    promoImage: "./src/img/my_profile_pic.jpg",
-    outputDir: "./_site/img/preview",
-    urlPath: "/img/preview",
-	siteName: "abhi.page/",
-	titleColor: "#fedb8b"
-  });
-};
-```
-
-#### Step 3: Use in your template
-For example, in your `base.njk` template file, use it in the `<head>` for generating social image meta tags:
-```html
-<meta property="og:image" content="{{ '{% GenerateSocialImage title %}' }}" />
-<meta name="twitter:image" content="{{ '{% GenerateSocialImage title %}' }}" />
-```
-
-
-## Config Options
-
-| Option      | Type   | Default       | Description |
-| ----------- | ------ | ------------- |-------------|
-| promoImage  | string |               | Path to a promo Image (ideally, circular) that will be embedded in the social-images |
-| outputDir   | string | "./\_site/img/preview" | Project-relative path to the output directory where images will be generated |
-| urlPath     | string | "/img/preview" | A path-prefix-esque directory for the &lt;img src&gt; attribute. e.g. `/img/` for `<img src="/img/MY_IMAGE.jpeg">` |
-| siteName    | string |               | The website name to show on the social-image |
-| titleColor  | string | "white"       | The color of the page-title |
-| bgColor     | string |               | Optional background color. Otherwise, shows the gradient pattern |
-| terminalBgColor| string | "#404040"  | Background color of the terminal window design |
-| hideTerminal  | boolean | false      | If true, hides the terminal window design behind the title |
-| customSVG     | string  |            | Custom SVG code to be added to the image. Use this to add your own design or text anywhere on the image |
-| customFontFilename | string |        | Filename of custom local font used for title ([see **Custom Fonts**](#custom-fonts)) |
-| lineBreakAt  | number | 35           | Maximum row length for wrapping the title. Required because SVG does not have auto-wrapping text. Should depends on the font used |
-
-## Custom Fonts
-The [Sharp library](https://github.com/lovell/sharp) uses librsvg that uses [fontconfig](https://www.freedesktop.org/software/fontconfig/fontconfig-user) to load external fonts. Therefore, the following steps are required:
-1. Download your font file in project sub-folder. Eg: `./fonts/sans.ttf`
-2. Create a file `fonts.conf` with the following content:
-   ```xml
-	<?xml version="1.0"?>
-	<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-	<fontconfig>
-		<dir prefix="default">fonts</dir>
-	</fontconfig>
-	```
-3. Setup the following environment variable on your build server (eg: Netlify):
-   ```bash
-   FONTCONFIG_PATH=.
-   ```
-
----
+See the latest [installation and usage guide on this plugin's Github page](https://github.com/manustays/eleventy-plugin-generate-social-images).
 
 **Note:** For a complete implementation example, [checkout my website on Github](https://github.com/manustays/abhi.page.11ty).
