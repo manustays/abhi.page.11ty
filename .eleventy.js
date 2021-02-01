@@ -171,7 +171,8 @@ module.exports = function(eleventyConfig) {
 		level: [2],
 		placeholder: "(\\[\\[TOC\\]\\])",
 		listType: 'ol',
-		slugify: s => uslug(s)
+		slugify: s => uslug(s),
+		linkClass: 'toc_link'
 	});									// https://github.com/nagaozen/markdown-it-toc-done-right
 	markdownLib.use(multimd_table, {
 		multiline: true,
