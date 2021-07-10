@@ -8,6 +8,12 @@
 <section class="intro layout vertical center-center txt-center">
 	<h1 class="main-header">{{ website.intro_prefix }}{{ myname | safe }}</h1>
 
+	{# <input id="rangeBio" type="range" title="Adjust Bio Length" value="2" min="1" max="3" step="1" onChange="this.setAttribute('value',this.value)" />
+	<div>
+		<p bio='1'>Heyyyyyy</p>
+		<p bio='2'>{{ website.about }}</p>
+	</div> #}
+
 	<p>{{ website.about }}</p>
 
 	{% include 'social_links.njk' %}
