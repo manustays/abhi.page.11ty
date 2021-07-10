@@ -264,12 +264,12 @@ module.exports = function(eleventyConfig) {
 	});
 
 	// Add Files Passthrough...
+	eleventyConfig.addPassthroughCopy('src/admin');
 	eleventyConfig.addPassthroughCopy('src/assets/ico');
 	eleventyConfig.addPassthroughCopy('src/assets/img');
 	eleventyConfig.addPassthroughCopy('src/assets/font');
 	eleventyConfig.addPassthroughCopy('src/assets/favicon');
 	eleventyConfig.addPassthroughCopy('src/assets/audio');
-	eleventyConfig.addPassthroughCopy('src/admin/config.yml');
 
 	// Add Layouts...
 	eleventyConfig.addLayoutAlias('base', 'base.njk');
