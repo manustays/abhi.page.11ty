@@ -1,7 +1,7 @@
 backend:
-  # name: git-gateway
+  name: git-gateway
   branch: master
-  name: test-repo
+  # name: test-repo
 
 media_folder: "src/assets/img/blog"
 public_folder: "/assets/img/blog"
@@ -19,4 +19,20 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Tags", name: "tags", widget: "list", hint: "Enter one or more tags associated with this article. Separate tags with comma. Ex: technology, finance", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+
+  - name: "notes"
+    label: "Notes"
+    folder: "src/notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "note"}
+      - {label: "Emoji", name: "emoji", widget: "string", hint: "An emoji to describe the note"}
+      - {label: "Title", name: "title", widget: "string", hint: "Title of the article that will show on top of the page"}
+      - {label: "Description", name: "description", widget: "text", hint: "A short description of this article. Or, adding <!-- excerpt --> after the first paragraph will make that the description!"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", hint: "Enter one or more tags associated with this article. Separate tags with comma. Ex: technology, finance", required: false}
+      - {label: "Links", name: "links", widget: "list", hint: "Enter one or more external links related to this note", required: false}
       - {label: "Body", name: "body", widget: "markdown"}

@@ -27,4 +27,4 @@ I really had no idea about the HTML `<meter>` element that can show a range of v
 
 
 
-**Note:** The `<meter>` tag should not be used to show the progress of a task. Use the [`<progress> tag`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) instead.
+**Note:** The `<meter>` tag should not be used to show the progress of a task. Use the [`<progress>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) tag instead.

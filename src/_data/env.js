@@ -8,7 +8,7 @@
 module.exports = {
 	BUILD_ENV: process.env.BUILD_ENV || 'development',
 
-	BASE_URL: process.env.BASE_URL || '',
+	BASE_URL: process.env.URL || process.env.BASE_URL || '',	// Netlify sets the 'URL' env variable
 
 	GA_KEY: process.env.GA_KEY || '',
 	MS_CLARITY_TAG: process.env.MS_CLARITY_TAG || '',
