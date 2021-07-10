@@ -269,6 +269,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('src/assets/font');
 	eleventyConfig.addPassthroughCopy('src/assets/favicon');
 	eleventyConfig.addPassthroughCopy('src/assets/audio');
+	eleventyConfig.addPassthroughCopy('src/admin/config.yml');
 
 	// Add Layouts...
 	eleventyConfig.addLayoutAlias('base', 'base.njk');
