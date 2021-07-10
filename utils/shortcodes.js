@@ -42,4 +42,10 @@ module.exports = {
 	 */
 	thisYear: () => () => new Date().getFullYear().toString(),
 
+
+	EmbedTweet: () => (url) => {
+		const id = new URL(url).pathname.split('/')[3];
+		return `<iframe scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="height:510px; width:100%; max-width:100%;" title="Twitter Tweet" src="https://platform.twitter.com/embed/index.html?dnt=true&embedId=twitter-widget-2&frame=false&hideCard=false&hideThread=false&id=${id}&lang=en&theme=dark&widgetsVersion=ed20a2b%3A1601588405575"><p><a href="${url}" target="_blank" rel="noopener">See the Tweet</a></p></iframe>`;
+	},
+
 }
