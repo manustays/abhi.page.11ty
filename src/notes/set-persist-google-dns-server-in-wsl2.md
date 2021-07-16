@@ -5,7 +5,7 @@ title: Set & persist Google DNS server in WSL2
 description: How to setup & persist Google DNS Server in WSL2
 date: 2021-07-10T08:15:48.053Z
 tags:
-  - wsl
+  - wsl2
 ---
 Here is how you setup an alternative DNS server (like. Google DNS) on WSL2 and persist it between  WSL restart:
 
