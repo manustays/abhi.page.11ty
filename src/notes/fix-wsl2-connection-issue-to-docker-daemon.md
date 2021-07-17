@@ -10,11 +10,9 @@ tags:
 ---
 Recently while setting up docker for Hyperledger in WSL2, I got the following error:
 
-```sh
-
+```bash
 ====> hyperledger/fabric-peer:2.3.2
 Cannot connect to the Docker daemon at tcp://localhost:2375. Is the docker daemon running?
-
 ```
 
 After a quick research, it turns out that if you are upgrading from WSL to WSL2, Windows leaves behind a few legacy settings from WSL that causes this issue.
