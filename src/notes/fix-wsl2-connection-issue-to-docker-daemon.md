@@ -15,7 +15,7 @@ Recently while setting up docker for Hyperledger in WSL2, I got the following er
 Cannot connect to the Docker daemon at tcp://localhost:2375. Is the docker daemon running?
 ```
 
-After a quick research, it turns out that if you are upgrading from WSL to WSL2, Windows leaves behind a few legacy settings from WSL that causes this issue.
+After a quick research, it turns out that if you are upgrading from WSL1 to WSL2, Windows leaves behind a few legacy settings from WSL1 that causes this issue.
 
 Here is the fix that worked for me:
 
