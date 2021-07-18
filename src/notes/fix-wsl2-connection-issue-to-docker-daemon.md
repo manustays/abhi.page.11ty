@@ -20,15 +20,15 @@ After a quick research, it turns out that if you are upgrading from WSL to WSL2,
 Here is the fix that worked for me:
 
 ### Step 1: Check if you have the same issue
-1. In WSL2 terminal, run the command `docker info | head -15`
-2. You should see the following error `ERROR: Cannot connect to the Docker daemon at tcp://localhost:2375. Is the docker daemon running?`
+1. In WSL2 terminal, run the command: `docker info | head -15`
+2. You should see the following error: `ERROR: Cannot connect to the Docker daemon at tcp://localhost:2375. Is the docker daemon running?`
 
 ### Step 2: Check if the fix works for you
-1. Run the command `unset DOCKER_HOST`
+1. Run the command: `unset DOCKER_HOST`
 2. Follow the previous step again. The error should be gone now.
 
 ### Step 3: Make the fix permanent
 1. Edit the `.bashrc` script with: `vi ~/.bashrc`
 2. Search for the line with DOCKER_HOST and comment it out like this:
    `# export DOCKER_HOST=tcp://localhost:2375`
-3. Save the file and reload the terminal settings with `source ~/.bashrc`
+3. Save the file and reload the terminal settings with: `source ~/.bashrc`
