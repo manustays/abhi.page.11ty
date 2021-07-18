@@ -12,6 +12,8 @@ tags:
 links:
   - https://docs.soliditylang.org/en/v0.8.4/introduction-to-smart-contracts.html
 ---
+[[TOC]]
+
 ## Ethereum Accounts
 
 - There are two types of Ethereum accounts:
