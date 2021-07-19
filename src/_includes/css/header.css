@@ -20,9 +20,16 @@ header .crumb {
 }
 
 header nav a {
-	margin-left: 2em;
+	margin-left: 1em;
 }
 
 header a:not(.logo) {
 	font-weight: bold;
+}
+
+
+@media(min-width: 700px) {
+	header nav a {
+		margin-left: 2em;
+	}
 }
