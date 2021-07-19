@@ -70,13 +70,22 @@ blockquote p {
 
 
 .intro-meta {
-	font-size: 1.25rem;
-	line-height: 1.2;
+	font-size: 0.9rem;
+	line-height: 1.5;
 }
 
-.intro-meta > span {
-	margin-right: 1em;
+.intro-meta > span:not(:first-of-type)::before {
+	content: '●';
+	padding: 0 1em;
+	color: var(--lighter-text-color);
 }
+
+@media(min-width: 700px) {
+	.intro-meta {
+		font-size: 1.25rem;
+	}
+}
+
 
 .post-body img, img.hero {
     display: block;
