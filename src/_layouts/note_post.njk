@@ -41,8 +41,7 @@ section_title: Notes
 	<section class="block header">
 		<h1>{{ title }}</h1>
 		<div class="intro-meta">
-			<span><time>{{ date | dateFormat('MMM d, yyyy') }}</time></span>
-			<span>{% svgico 'clock-o' %} {{ content | readingTime }} read</span>
+			<span>{{ emoji or '🗒' }}</span><span><time>{{ date | dateFormat('MMM d, yyyy') }}</time></span><span>{# {% svgico 'clock-o' %} #}{{ content | readingTime }} read</span>
 		</div>
 	</section>
 	<section class="block">

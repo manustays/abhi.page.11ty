@@ -37,6 +37,7 @@ const md_lazy_loading = require('markdown-it-image-lazy-loading');
 const md_link_attrs = require('markdown-it-link-attributes');
 const md_mark = require('markdown-it-mark');
 const md_image_size = require('markdown-it-imsize');
+const nomnoml = require('nomnoml');
 
 
 require('dotenv').config();
@@ -149,6 +150,29 @@ module.exports = function(eleventyConfig) {
 
 	// 	return socialImgPath;
 	// });
+
+
+	// ----------------------- Configure Async Nomnoml Graph Diagrams --------------------
+	// https://github.com/skanaar/nomnoml
+
+	const nomnoml_options = [
+		'#background: #FDF6E3',
+		'#stroke: #33322E'
+	].join("\n");
+
+	eleventyConfig.addPairedAsyncShortcode("Graph", async (src) => {
+		if (!src) {
+			throw new Error(`Missing \`src\` on Image: ALT = ${alt}`);
+		}
+
+		src = ("\n" + nomnoml_options + "\n" + src).replace(/[\r\n]+/g, "\n");
+
+		// console.log("\n\n+------------------\n", src, "\n------------------+")
+
+		let _svg = await nomnoml.renderSvg(src);
+
+		return `<div class='nomnoml'>${_svg}</div>`;
+	});
 
 
 

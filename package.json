@@ -46,6 +46,7 @@
     "markdown-it-toc-done-right": "^4.2.0",
     "netlify-plugin-cache-folder": "^0.0.7",
     "node-fetch": "^2.6.1",
+    "nomnoml": "^1.4.0",
     "outdent": "^0.8.0",
     "parcel-bundler": "^1.6.1",
     "uslug": "^1.0.4"

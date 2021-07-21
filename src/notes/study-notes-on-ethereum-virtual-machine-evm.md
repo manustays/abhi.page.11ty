@@ -21,7 +21,7 @@ links:
         - Users
         - Address = public key
     - **Contract Accounts**
-        - smart contracts (code)
+        - Smart Contracts (code)
         - Address generated when the contract is created (it is derived from the creator address and the number of transactions sent from that address, the so-called “nonce”).
 - EVM treats both types of accounts equally.
 - Every account has a persistent key-value store mapping 256-bit words to 256-bit words called storage.
@@ -29,7 +29,7 @@ links:
 
 ## Ethereum Transactions
 
-- message that is sent from one account to another account (which might be the same or empty).
+- Message that is sent from one account to another account (which might be the same or empty).
 - It can include binary data (**payload**) and Ether.
 - If the target account contains code, that code is executed and the payload is provided as input data.
 - If the *target account is not set* (the transaction does not have a recipient or the recipient is set to null), the transaction ***creates a new contract***.
@@ -47,6 +47,20 @@ links:
 - If all gas is used up before the transaction is complete, an *out-of-gas* exception is triggered and all modifications to the state are reverted.
 
 ## Storage, Memory, and the Stack
+
+{% Graph %}
+#direction: down
+[EVM
+	[Non-Volatile
+		[<frame> ROM | code]
+		[<frame> RAM | storage]
+	]--[Volatile
+		[<database> stack]
+		[<frame> ROM | args]
+		[<frame> RAM | memory]
+	]
+]
+{% endGraph %}
 
 - **Storage**
     - Non-Volatile: persistent between function calls & transactions.
