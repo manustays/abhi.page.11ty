@@ -346,3 +346,16 @@ ul.slim_ul > li::before, .slim_ul ul > li::before {
 	background: var(--clr-highlight);
 	border-radius: 50%;
 }
+
+
+/* ---- Nomnoml Graphs ---- */
+.nomnoml > svg {
+	border-radius: 6px;
+}
+
+@media (max-width: 700px) {
+	.nomnoml > svg {
+		width: 100% !important;
+		height: auto;
+	}
+}
