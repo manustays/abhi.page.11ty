@@ -1,19 +1,21 @@
-- category: Web Frontend
+- category: Frontend
   skills:
-  - PWA
+  - Android SDK
   - Jamstack
   - Redux
   - Polymer
   - LitElement
   - React
+  - React Native
   - Vue
   - ES6/7
   - CSS3
+  - PWA
   - 11ty
   - Hugo
   - Svelte
 
-- category: Web Backend
+- category: Backend
   skills:
   - Node.js
   - Express.js
@@ -21,11 +23,8 @@
   - Flask
   - Django
   - Nginx
-
-- category: Native
-  skills:
-  - Android SDK
-  - React Native
+  - Ethereum Smart Contracts
+  - Hyperledger Fabric
 
 - category: Languages
   skills:
@@ -34,15 +33,17 @@
   - Java
   - Javascript
   - Python
+  - Solidity
   - Perl
   - PHP
   - Ruby
-  - Linux Shell Scripting
+  - Bash
 
 - category: Database
   skills:
   - MySQL
   - MongoDB
+  - Redis
   - SQLite
 
 - category: Architecture/Others
