@@ -69,11 +69,21 @@ section.homegrid {
 }
 
 .ico_list {
-	font-size: 1.3em;
+	font-size: 1.1em;
 }
 
 .ico_list > a+a {
-	margin-left: 1.4em;
+	margin-left: 1.2em;
+}
+
+@media(min-width: 700px) {
+	.ico_list {
+		font-size: 1.3em;
+	}
+
+	.ico_list > a+a {
+		margin-left: 1.4em;
+	}
 }
 
 .profilepic {

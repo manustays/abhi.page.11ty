@@ -59,6 +59,10 @@ social_profiles:
     url: https://stackoverflow.com/users/505601/abhishek?tab=profile
     ico: stack-overflow
     msg: My profile on StackOverflow
+  - title: StackShare
+    url: https://stackshare.io/abhiweb/tech-stack
+    ico: stackshare
+    msg: Tools & technology I use
 
 
 #### Others...
