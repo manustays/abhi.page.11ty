@@ -61,8 +61,8 @@ social_profiles:
     msg: My profile on StackOverflow
   - title: StackShare
     url: https://stackshare.io/abhiweb/tech-stack
-    ico: stackshare
-    msg: Tools & technology I use
+    ico: stackshare-line
+    msg: See the tools & technology I use on StackShare
 
 
 #### Others...
