@@ -172,6 +172,10 @@ section.homegrid {
 	font-weight: bold;
 }
 
+.skills .category[highlight] {
+	color: var(--clr-highlight);
+}
+
 .skills .category:not(:first-child),
 .company:not(:first-child) {
 	margin-top: 1em;
