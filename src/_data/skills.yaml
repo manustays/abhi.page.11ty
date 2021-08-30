@@ -23,8 +23,10 @@
   - Flask
   - Django
   - Nginx
-  - Ethereum Smart Contracts
+  - Ethereum
   - Hyperledger Fabric
+  - Solana
+  - Corda
 
 - category: Languages
   skills:
@@ -33,10 +35,10 @@
   - Java
   - Javascript
   - Python
+  - Rust
   - Solidity
   - Perl
   - PHP
-  - Ruby
   - Bash
 
 - category: Database
@@ -49,9 +51,7 @@
 - category: Architecture/Others
   skills:
   - Microservices
-  - Event-Driven
-  - Functional Programming
-  - Cloud
+  - Cloud/Serverless
   - REST
   - OpenAPI
   - Socket.io
@@ -61,7 +61,8 @@
   - Zoho CRM
 
 - category: Currently Exploring
+  highlight: true
   skills:
-  - Blockchain
-  - Microservices
-  - Azure Cloud
+  - Blockchain/DLT
+  - Event-Driven Microservices
+  - Azure

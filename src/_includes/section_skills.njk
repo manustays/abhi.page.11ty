@@ -2,7 +2,7 @@
 	<div class="h3">Talk to me about</div>
 
 	{% for skillsection in skills %}
-		<div class="category">{{ skillsection.category }}</div>
+		<div class="category" {{ 'highlight' if skillsection.highlight else '' }}>{{ skillsection.category }}</div>
 		<div class="list">{{ skillsection.skills | join(", ") }}</div>
 	{% endfor %}
 
