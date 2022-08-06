@@ -1,5 +1,6 @@
 - category: Frontend
   skills:
+  - Javascript
   - Android SDK
   - Jamstack
   - Redux
@@ -8,9 +9,7 @@
   - React
   - React Native
   - Vue
-  - ES6/7
-  - CSS3
-  - PWA
+  - CSS
   - 11ty
   - Hugo
   - Svelte
@@ -24,8 +23,9 @@
   - Django
   - Nginx
   - Ethereum
-  - Hyperledger Fabric
   - Solana
+  - Algorand
+  - Hyperledger Fabric
   - Corda
 
 - category: Languages

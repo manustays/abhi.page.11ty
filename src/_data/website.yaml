@@ -1,6 +1,6 @@
 title: abhi.page
 intro_prefix: Hi, I’m
-about: I’m a fullstack developer. I ♥ efficient architecture & clean design. (he/him)
+about: I’m a fullstack developer. I ♥ efficient architecture & clean design.
 description: A technology blog by Kumar Abhishek. I write about technology and software development.
 
 display_name: Abhishek
@@ -50,6 +50,7 @@ social_profiles:
     id: '@abhiweb'
     ico: twitter
     msg: I'm on Twitter (@abhiweb)
+    hide: true
   - title: Pinterest
     url: https://in.pinterest.com/manustays
     id: manustays
