@@ -7,9 +7,11 @@
   - Polymer
   - LitElement
   - React
+  - Next.js
   - React Native
   - Vue
   - CSS
+  - Tailwind
   - 11ty
   - Hugo
   - Svelte
@@ -46,7 +48,6 @@
   - MySQL
   - MongoDB
   - Redis
-  - SQLite
 
 - category: Architecture/Others
   skills:
