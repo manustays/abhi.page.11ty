@@ -8,13 +8,11 @@ tags:
   - typescript
   - library
   - react
-links:
-  - https://tanstack.com/router/v1
 ---
 
 > A fully typesafe router with first-class search-param APIs and built-in caching, built for JS/TS, React, Preact, Solid, Vue and Svelte.
 
-If you're a fan of TypeScript, you'll be excited to hear about `TanStack Router`, the first type-safe routing library for TypeScript applications.
+If you're a fan of TypeScript, you'll be excited to hear about [**TanStack Router**](https://tanstack.com/router/v1), a fully type-safe routing library for TypeScript applications.
 
 Potential advantages of using TanStack Router:
 - `Type safety` for routes.
