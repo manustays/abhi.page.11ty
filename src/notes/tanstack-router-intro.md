@@ -42,5 +42,5 @@ TanStack Router also has **first-class support for search parameters**, which ca
 ### Conclusion
 While TanStack Router ***is still in beta***, it shows a lot of promise for improving the routing process in TypeScript applications. If you're interested in giving it a try, be aware that there are currently some missing features and documentation, and the syntax is subject to change. However, the 100% TypeScript support and type safety make it worth keeping an eye on as it continues to develop.
 
-## Credits
+### Credits
 - Youtube video: [What Is TenStack Router And Why I Love It](https://youtu.be/OwoZtv6u9p4)
