@@ -5,6 +5,7 @@ description: A technology blog by Kumar Abhishek. I write about technology and s
 
 display_name: Abhishek
 name_audio: /assets/audio/abhishek_hi.mp3
+avatar: /assets/img/abhi-avatar.png
 author: Kumar Abhishek
 github_current_repo: https://github.com/manustays/abhi.page.11ty
 github_main_branch: https://github.com/manustays/abhi.page.11ty/tree/main

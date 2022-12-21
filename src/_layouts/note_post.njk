@@ -40,10 +40,17 @@ section_title: Notes
 {% block main %}
 	<section class="block header">
 		<h1>{{ title }}</h1>
+
 		<div class="intro-meta">
-			<span>{{ emoji or '🗒' }}</span><span><time>{{ date | dateFormat('MMM d, yyyy') }}</time></span><span>{# {% svgico 'clock-o' %} #}{{ content | readingTime }} read</span>
+			{% if (author and avatar) or not author %}
+				<img class="avatar" src="{{avatar or website.avatar}}" alt="{{(author or website.author) + "'s avatar"}}" />
+			{% endif %}
+			<span>{{author or website.author}}</span>
+			<span><time>{{ date | dateFormat('MMM d, yyyy') }}</time></span><span>{# {% svgico 'clock-o' %} #}{{ content | readingTime }} read</span>
+			<span>{{ emoji or '🗒' }}</span>
 		</div>
 	</section>
+
 	<section class="block">
 		<article class="post-body">
 			{% if links %}
