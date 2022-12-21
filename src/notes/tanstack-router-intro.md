@@ -1,6 +1,6 @@
 ---
 layout: note
-title: TanStack Router – A TypeScript Routing Library
+title: TanStack Router – A Routing Library for TypeScript Applications
 description: Introducing TanStack Router – The First TypeScript-Supported Routing Library
 emoji: ⚛️
 date: 2022-10-20T13:08:37+05:30
@@ -16,6 +16,12 @@ links:
 > A fully typesafe router with first-class search-param APIs and built-in caching, built for JS/TS, React, Preact, Solid, Vue and Svelte.
 
 If you're a fan of TypeScript, you'll be excited to hear about `TanStack Router`, the first type-safe routing library for TypeScript applications.
+
+Potential advantages of using TanStack Router:
+- `Type safety` for routes.
+- `Autocomplete` suggestions for routes.
+- First-class `search parameter support`: useful for storing state in a URL and sharing links.
+- `Improved reliability` by ensuring that routes are correctly defined and used.
 
 One of the challenges with routing in any language is that routes are often defined in one place (e.g. a config file or a page-based system like React Router) and used in another (e.g. links in pages, redirects). This means that if you change a route in one place, you have to manually update it in all the other places where it's used. This can lead to bugs and broken routing if you miss a change or misspell a route.
 
