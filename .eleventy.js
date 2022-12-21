@@ -24,7 +24,7 @@ const shortcodes = require('./utils/shortcodes.js');
 const md = require("markdown-it");
 const md_emoji = require("markdown-it-emoji");
 const multimd_table = require('markdown-it-multimd-table');
-const md_attrs = require('@gerhobbelt/markdown-it-attrs');
+const md_attrs = require('markdown-it-attrs');
 const md_abbr = require('markdown-it-abbr');
 const md_footnote = require('markdown-it-footnote');
 const md_sub = require('markdown-it-sub');
@@ -208,7 +208,7 @@ module.exports = function(eleventyConfig) {
 		allowedAttributes: ["class"]
 	});									// https://github.com/GerHobbelt/markdown-it-attrs
 	markdownLib.use(md_link_attrs, {
-		pattern: /^https?:/,
+		matcher: (href) => /^https?:/.test(href),
 		attrs: {
 			target: '_blank',
 			rel: 'noopener',
@@ -302,7 +302,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addLayoutAlias('note', 'note_post.njk');
 
 	// Add Data Extensions...
-	eleventyConfig.addDataExtension('yaml', contents => yaml.safeLoad(contents));
+	eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents));
 
 
 	// Add Collections......
