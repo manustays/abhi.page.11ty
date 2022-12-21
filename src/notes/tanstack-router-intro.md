@@ -5,10 +5,9 @@ description: Introducing TanStack Router – The First TypeScript-Supported Rout
 emoji: ⚛️
 date: 2022-10-20T13:08:37+05:30
 tags:
-  - react
-  - vue
-  - svelte
+  - typescript
   - library
+  - react
 links:
   - https://tanstack.com/router/v1
 ---
