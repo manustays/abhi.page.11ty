@@ -1,8 +1,11 @@
 - company: Eko India Financial Services Pvt. Ltd.
   url: https://eko.in
   positions:
+  - title: Product Head
+    start_date: Sep 2023
   - title: Solution Architect (Platform Strategy)
     start_date: Mar 2021
+    end_date: Aug 2023
   - title: Tech Lead (Engineering)
     start_date: Apr 2014
     end_date: Mar 2021
