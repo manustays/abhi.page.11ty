@@ -152,6 +152,7 @@ module.exports = function(eleventyConfig) {
 	// });
 
 
+
 	// ----------------------- Configure Async Nomnoml Graph Diagrams --------------------
 	// https://github.com/skanaar/nomnoml
 
@@ -165,14 +166,14 @@ module.exports = function(eleventyConfig) {
 			throw new Error(`Missing \`src\` on Image: ALT = ${alt}`);
 		}
 
-		src = ("\n" + nomnoml_options + "\n" + src).replace(/[\r\n]+/g, "\n");
+		let _svg = await nomnoml.renderSvg(("\n" + nomnoml_options + "\n" + src).replace(/[\r\n]+/g, "\n"));
 
-		// console.log("\n\n+------------------\n", src, "\n------------------+")
-
-		let _svg = await nomnoml.renderSvg(src);
+		// IMPORTANT: Remove indentation, because markdown parsers may consider indented text as code block.
+		_svg = _svg.replace(/[\r\n]+/g, "\n").replace(/^[\t\s]+/mg, "");
 
 		return `<div class='nomnoml'>${_svg}</div>`;
 	});
+
 
 
 
@@ -286,6 +287,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPairedShortcode("markdown", (content) => {
 		return markdownLib.render(content);
 	});
+
 
 	// Add Files Passthrough...
 	eleventyConfig.addPassthroughCopy('src/admin');
