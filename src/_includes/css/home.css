@@ -27,6 +27,7 @@ section.homegrid {
 
 .homegrid h1, .homegrid h3, .homegrid .h3 {
 	margin-top: 0;
+	text-wrap: balance;
 }
 
 .homegrid h3, .homegrid .h3 {
