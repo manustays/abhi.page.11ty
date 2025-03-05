@@ -21,6 +21,7 @@ h6 { font-size: .75em; }
 
 h1 {
 	color: var(--clr-highlight);
+	text-wrap: balance;
 }
 
 h2 {
