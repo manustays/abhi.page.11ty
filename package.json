@@ -14,9 +14,9 @@
       "url": "https://abhi.page"
     }
   ],
-  "engines" : {
-    "npm" : ">=8.0.0",
-    "node" : ">=16.0.0"
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2",
@@ -34,7 +34,7 @@
     "eleventy-plugin-svg-contents": "^0.7.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21",
-    "luxon": "^3.1.1",
+    "luxon": "^3.5.0",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^8.6.5",
     "markdown-it-attrs": "^4.1.4",
@@ -50,10 +50,10 @@
     "markdown-it-sup": "^1.0.0",
     "markdown-it-toc-done-right": "^4.2.0",
     "netlify-plugin-cache-folder": "^0.0.8",
-    "node-fetch": "^2.6.1",
-    "nomnoml": "^1.5.3",
+    "node-fetch": "^2.7.0",
+    "nomnoml": "^1.7.0",
     "outdent": "^0.8.0",
-    "parcel-bundler": "^1.6.1",
+    "parcel-bundler": "^1.12.5",
     "uslug": "^1.0.4"
   },
   "dependencies": {
