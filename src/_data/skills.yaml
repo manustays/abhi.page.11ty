@@ -1,69 +1,99 @@
-- category: Frontend
-  skills:
-  - Javascript
-  - Android SDK
-  - Jamstack
-  - Redux
-  - Polymer
-  - LitElement
-  - React
-  - Next.js
-  - React Native
-  - Vue
-  - CSS
-  - Tailwind
-  - 11ty
-  - Hugo
-  - Svelte
+- category: Frontend Engineering & UX Platforms
+  sections:
+  - title: Modern Web Stack
+    skills:
+    - React
+    - Next.js
+    - Redux
+    - Vue
+    - Svelte
+    - Jamstack
+    - Tailwind
+    - 11ty
+    - Hugo
+    - Jekyll
+    - Polymer
+    - LitElement
+  - title: Cross-Platform & Mobile
+    skills:
+    - React Native
+    - Android SDK
 
-- category: Backend
-  skills:
-  - Node.js
-  - Express.js
-  - PHP
-  - Flask
-  - Django
-  - Nginx
-  - Ethereum
-  - Solana
-  - Algorand
-  - Hyperledger Fabric
-  - Corda
+- category: Backend & Distributed Systems
+  sections:
+  - title: Frameworks & APIs
+    skills:
+    - Node.js
+    - Express.js
+    - PHP
+    - Flask
+    - Django
+    - Nginx
+  - title: Databases
+    skills:
+    - MySQL
+    - MongoDB
+    - Redis
+  - title: Cloud & DevOps
+    skills:
+    - Azure
+    - AWS
+    - Docker
+    - CI/CD
+    - GitHub Actions
+  - title: Blockchain / Smart Contract Runtimes
+    skills:
+    - Ethereum
+    - Solana
+    - Algorand
+    - Hyperledger Fabric
+    - Corda
 
-- category: Languages
-  skills:
-  - C
-  - C++
-  - Java
-  - Javascript
-  - Python
-  - Rust
-  - Solidity
-  - Perl
-  - PHP
-  - Bash
+- category: Languages & Scripting
+  sections:
+  - title: Core Languages
+    skills:
+    - Javascript
+    - Java
+    - C/C++
+    - Python
+    - Perl
+    - PHP
+  - title: Modern Systems & Blockchain
+    skills:
+    - Rust
+    - Solidity
 
-- category: Database
-  skills:
-  - MySQL
-  - MongoDB
-  - Redis
-
-- category: Architecture/Others
-  skills:
-  - Microservices
-  - Cloud/Serverless
-  - REST
-  - OpenAPI
-  - Socket.io
-  - RabbitMQ
-  - Lucene
-  - Celery
-  - Zoho CRM
+- category: Architecture & Strategic Leadership
+  sections:
+  - title: Platforms & Paradigms
+    skills:
+    - Microservices
+    - OpenAPI
+    - Multi-Tenant SaaS
+    - No-Code / Low-Code
+  - title: Specialized Domains
+    skills:
+    - Agentic AI
+    - Blockchain Systems
+    - Autonomous Workflows
+    - Developer Experience
+  - title: Fintech & Compliance
+    skills:
+    - Payments & Integrations
+    - AML/KYC Compliance Flows
+    - NPCI IndiaStack
+    - PCI-DSS Awareness
+  - title: Community & Ecosystem
+    skills:
+    - Open Source Evangelism
+    - Developer Advocacy
 
 - category: Currently Exploring
   highlight: true
-  skills:
-  - Blockchain/DLT
-  - Event-Driven Microservices
-  - Azure
+  sections:
+  - title: Areas of Focus
+    skills:
+    - Agentic AI
+    - LLM Developer Tooling
+    - AI-native Platforms

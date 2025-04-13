@@ -1,17 +1,28 @@
 <section class="latest_posts layout vertical">
-	<div class="h3">Latest notes &amp; articles</div>
+	<div class="h3">Notes on technology</div>
 
-	{% for post in collections.allArticles | reverse | trimArray(3) %}
-		<div class="post-tr">
-			<a class="article" href="{{ post.url | url }}">{{ post.data.title }}</a><br>
-			<time datetime="{{ post.date | dateFormat('yyyy-mm-dd') }}">{{ post.date | dateFormat('MMM d, yyyy') }}</time>
-		</div>
-	{% endfor %}
+	<div class="post-box">
+		{% for post in collections.allArticles | reverse | trimArray(5) %}
+			<div class="post-tr">
+					<a class="article" href="{{ post.url | url }}">
+						<div class="emoji">{{ post.data.emoji }}</div>
+						<div>{{ post.data.title }}</div>
+					</a>
+
+					{# <div class="taglist mono">
+						{% for tag in post.data.tags | trimArray(3) %}
+							<span class="post-tag">#{{ tag }}</span>&nbsp;
+						{% endfor %}
+					</div> #}
+					{# <time datetime="{{ post.date | dateFormat('yyyy-mm-dd') }}">{{ post.date | dateFormat('MMM d, yyyy') }}</time> #}
+			</div>
+		{% endfor %}
+	</div>
 
 	<div class="toolbar layout horizontal end-justified wrap">
 		<a class="button self-end" href="/notes" title="Read more technical notes"><span>More Notes</span>{% svgico 'arrow-circle-right' %}</a>
 
-		<a class="button self-end" href="/blog" title="Read more blog posts"><span>Blog</span>{% svgico 'arrow-circle-right' %}</a>
+		{# <a class="button self-end" href="/blog" title="Read more blog posts"><span>Blog</span>{% svgico 'arrow-circle-right' %}</a> #}
 	</div>
 
 </section>

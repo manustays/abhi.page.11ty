@@ -1,9 +1,15 @@
 <section class="skills">
-	<div class="h3">Talk to me about</div>
+	<div class="h3">Tech I Think In</div>
 
-	{% for skillsection in skills %}
-		<div class="category" {{ 'highlight' if skillsection.highlight else '' }}>{{ skillsection.category }}</div>
-		<div class="list">{{ skillsection.skills | join(", ") }}</div>
+	{% for skillcategory in skills %}
+		<div class="category" {{ 'highlight' if skillcategory.highlight else '' }}>{{ skillcategory.category }}</div>
+		<ul>
+		{% for skillsection in skillcategory.sections %}
+			<li>
+				<div class="list">{{ skillsection.title }}:&nbsp;<span>{{ skillsection.skills | join(", ") }}</span></div>
+			</li>
+		{% endfor %}
+		</ul>
 	{% endfor %}
 
 </section>

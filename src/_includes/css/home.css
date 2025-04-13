@@ -91,7 +91,7 @@ section.homegrid {
 	border-radius: 50%;
 	width: 200px;
 	height: 200px;
-	margin-top: 2em;
+	margin-top: 3em;
 }
 
 @media(min-width: 700px) {
@@ -147,7 +147,22 @@ section.homegrid {
 
 /* ============= Latest Articles ============= */
 
-.latest_posts .post-tr + .post-tr, .latest_posts .toolbar {
+.latest_posts .post-box {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8em;
+}
+
+.latest_posts .post-tr > .article {
+	display: flex;
+	flex-direction: row;
+	gap: 0.6em;
+}
+.latest_posts .post-tr .emoji {
+	min-width: 1.2em;
+}
+
+.latest_posts .toolbar {
 	margin-top: 1em;
 }
 
@@ -185,6 +200,15 @@ section.homegrid {
 .skills .list, .position, .duration {
 	font-size: 0.8em;
 	font-style: italic;
+}
+
+.skills .list > span {
+	font-style: normal;
+}
+
+.skills ul {
+	margin: 0;
+	padding-left: 14px;
 }
 
 

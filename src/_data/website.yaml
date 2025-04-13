@@ -1,6 +1,7 @@
 title: abhi.page
 intro_prefix: Hi, I’m
-about: I design & developer software. Passionate about technology-forward thinking, modular/scalable architecture & clean design. Currently heading Product @ Eko.
+about: I work at the intersection of software architecture, product leadership, and deep-tech R&D. Focused on scalable platforms and intelligent systems. Currently building platforms & heading Product at Eko.
+# about: I design & develop software. Passionate about technology-forward thinking, modular/scalable architecture & clean design. Currently heading Product @ Eko.
 description: A technology blog by Kumar Abhishek. I write about technology and software development.
 
 display_name: Abhishek
@@ -16,8 +17,8 @@ sections:
   notes:
     label: Notes
     crumb: notes
-    subtitle: Short notes on technology and coding. My second brain.
-    description: A collection of notes and recipes on technology, coding and software development. My second brain.
+    subtitle: Short notes on technology and coding.
+    description: A collection of notes and recipes on technology, coding and software development.
   blog:
     label: Blog
     crumb: blog
