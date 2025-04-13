@@ -10,8 +10,10 @@
 							<span class="post-tag">{{ tag }}</span>&nbsp;
 						{% endfor %}
 					</div>
-					<time datetime="{{ note.date | dateFormat('yyyy-mm-dd') }}">{{ note.date | dateFormat('MMM d, yyyy') }}</time>
 				</div>
+				{# <div class="note-meta">
+					<time datetime="{{ note.date | dateFormat('yyyy-mm-dd') }}">{{ note.date | dateFormat('MMM d, yyyy') }}</time>
+				</div> #}
 			</div>
 		</a>
     {% endfor %}
