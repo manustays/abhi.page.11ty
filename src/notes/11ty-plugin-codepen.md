@@ -6,7 +6,7 @@ keywords: codepen, 11ty, 11ty-plugin, eleventy-plugin
 emoji: 🎈
 date: 2021-01-24T21:19:50+05:30
 tags:
-  - eleventy
+  - 11ty
   - library
   - javascript
 links:

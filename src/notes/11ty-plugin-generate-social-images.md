@@ -6,7 +6,7 @@ keywords: social-image, social-sharing-image, 11ty, 11ty-plugin, eleventy-plugin
 emoji: 🎈
 date: 2021-01-28T20:13:00+05:30
 tags:
-  - eleventy
+  - 11ty
   - library
   - javascript
 links:
