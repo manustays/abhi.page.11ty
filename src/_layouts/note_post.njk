@@ -6,7 +6,7 @@ section_title: Notes
 {% extends "./base.njk" %}
 
 {# Ideally set through eleventyComputed in front-matter but not working. Bug? #}
-{% set description = (description or "Coding notes and recipes. My second brain.") | trim %}
+{% set description = (description or "Technology notes and recipes.") | trim %}
 {% set keywords = (keywords or "note") + ',blog,' + (tags and tags.join(",")) %}
 {% set generate_social_image = false if image else true %}
 
