@@ -71,19 +71,23 @@ section.homegrid {
 
 .ico_list {
 	font-size: 1.1em;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.2em;
 }
 
-.ico_list > a+a {
-	margin-left: 1.2em;
+/* Add animation for icons to move up on hover */
+.ico_list > a {
+	transition: transform 0.2s ease-out;
+}
+.ico_list > a:hover {
+	transform: scale(1.1);
 }
 
 @media(min-width: 700px) {
 	.ico_list {
 		font-size: 1.3em;
-	}
-
-	.ico_list > a+a {
-		margin-left: 1.4em;
+		gap: 1.4em;
 	}
 }
 

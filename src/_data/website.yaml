@@ -1,6 +1,6 @@
 title: abhi.page
 intro_prefix: Hi, I’m
-about: I work at the intersection of software architecture, product leadership, and deep-tech R&D. Focused on scalable platforms and intelligent systems. Currently building platforms & heading Product at Eko.
+about: I work at the intersection of software architecture, product leadership, and deep-tech R&D. Focused on scalable platforms and intelligent systems. Currently building AI-native platforms & heading Product at Eko.
 # about: I design & develop software. Passionate about technology-forward thinking, modular/scalable architecture & clean design. Currently heading Product @ Eko.
 description: A technology blog by Kumar Abhishek. I write about technology and software development.
 
@@ -47,6 +47,11 @@ social_profiles:
     id: manustays
     ico: github
     msg: My work on GitHub
+  - title: GoodReads
+    url: https://www.goodreads.com/user/show/7159803-kumar-abhishek
+    id: 7159803-kumar-abhishek
+    ico: book-2-rounded
+    msg: My favorite books on Goodreads
   - title: Twitter
     url: https://twitter.com/abhiweb
     id: '@abhiweb'
