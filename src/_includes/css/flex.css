@@ -114,6 +114,10 @@
 	justify-content: space-around;
 }
 
+.layout.evenly-justified {
+	justify-content: space-evenly;
+}
+
 .layout.justified {
 	justify-content: space-between;
 }

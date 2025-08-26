@@ -12,8 +12,10 @@ footer .ico_list {
 	font-size: 0.9em;
 }
 
-footer .ico_list a+a {
-	margin-left: 2em;
+@media(min-width: 700px) {
+	footer .ico_list {
+			gap: 3em;
+		}
 }
 
 footer .copyright {

@@ -1,22 +1,22 @@
-- company: Eko India Financial Services Pvt. Ltd.
+- company: Eko Bharat Ventures Pvt. Ltd.
   url: https://eko.in
   positions:
   - title: Product Head
-    start_date: Sep 2023
+    start_date: 2023
   - title: Solution Architect (Platform Strategy)
-    start_date: Mar 2021
-    end_date: Aug 2023
+    start_date: 2021
+    end_date: 2023
   - title: Tech Lead (Engineering)
-    start_date: Apr 2014
-    end_date: Mar 2021
+    start_date: 2014
+    end_date: 2021
   - title: Hacker in Residence (Engineering)
-    start_date: Oct 2010
-    end_date: Apr 2014
+    start_date: 2010
+    end_date: 2014
 
 - company: IndiaMART InterMESH Ltd.
   url: https://www.indiamart.com
   description: Scripting & automation, Solr Lucene based search solution, webcrawler bots, website design & development
   positions:
   - title: Executive Programmer
-    start_date: Dec 2009
-    end_date: Oct 2010
+    start_date: 2009
+    end_date: 2010

@@ -1,27 +1,37 @@
 
-section.homegrid {
+.homegrid {
 	display:grid;
 	grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
-	grid-gap:10px;
-	padding-top: 0;
-    padding-bottom: 0;
+	gap: var(--gap-md);
+	padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 .homegrid > * {
 	position: relative;
 	background: var(--clr-slate);
-	padding: 1.2em;
-	border-radius: 6px;
+	padding: var(--gap-md);
+	border-radius: 16px;
 }
 
-@media(min-width: 700px) {
+@media(min-width: 760px) {
 	.homegrid {
-		grid-gap:15px;
+		grid-template-columns: repeat(6, minmax(0, 1fr));
 	}
 
 	.homegrid > * {
-		padding: 2em;
-		border-radius: 8px;
+		padding: var(--gap-xl);
+		border-radius: 18px;
+	}
+}
+
+@media(min-width: 1024px) {
+	.homegrid {
+		gap: var(--gap-lg);
+	}
+
+	.homegrid>* {
+		border-radius: 28px;
 	}
 }
 
@@ -56,8 +66,27 @@ section.homegrid {
 }
 
 @media(min-width: 700px) {
-	.intro, .latest_posts {
+	/* .intro, .latest_posts {
 		grid-column: auto/span 2;
+	} */
+
+	.span2 {
+		grid-column: auto/span 2;
+	}
+	.span3 {
+		grid-column: auto/span 3;
+	}
+	.span4 {
+		grid-column: auto/span 4;
+	}
+	.span5 {
+		grid-column: auto/span 5;
+	}
+	.spanfull {
+		grid-column: 1 / -1;
+	}
+	.rows2 {
+		grid-row: auto/span 2;
 	}
 }
 
@@ -67,28 +96,6 @@ section.homegrid {
 
 .intro h1 {
 	color: var(--clr-highlight);
-}
-
-.ico_list {
-	font-size: 1.1em;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1.2em;
-}
-
-/* Add animation for icons to move up on hover */
-.ico_list > a {
-	transition: transform 0.2s ease-out;
-}
-.ico_list > a:hover {
-	transform: scale(1.1);
-}
-
-@media(min-width: 700px) {
-	.ico_list {
-		font-size: 1.3em;
-		gap: 1.4em;
-	}
 }
 
 .profilepic {
@@ -172,7 +179,7 @@ section.homegrid {
 
 .latest_posts a.article {
 	color: var(--clr-primary-txt);
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-weight: bold;
 	text-align: justify;
 }
@@ -221,9 +228,18 @@ section.homegrid {
 .quote {
 	border-left: 1px solid var(--clr-highlight);
 	padding-left: 0.5em;
+	margin-left: 2px;
+}
+
+.quote > div {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: 0.4em 0;
 }
 
 .duration {
 	font-style: normal;
+	font-size: 0.65em;
 	color: var(--clr-highlight);
 }

@@ -1,8 +1,8 @@
-<section class="latest_posts layout vertical">
+<section class="latest_posts layout vertical spanfull">
 	<div class="h3">Notes on technology</div>
 
 	<div class="post-box">
-		{% for post in collections.allArticles | reverse | trimArray(5) %}
+		{% for post in collections.allArticles | reverse | trimArray(10) %}
 			<div class="post-tr">
 					<a class="article" href="{{ post.url | url }}">
 						<div class="emoji">{{ post.data.emoji }}</div>

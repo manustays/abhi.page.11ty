@@ -1,12 +1,14 @@
-<section class="work">
+<section class="work span4">
 	<div class="h3">Experience</div>
 
 	{% for company in work %}
-		<div class="company">{{ company.company }}</div>
+		<div class="company"><a href="{{ company.url | url }}" target="_blank">{{ company.company }}</a></div>
 		<div class="quote">
 			{% for position in company.positions %}
-				<div class="position">{{ position.title }}</div>
-				<div class="duration">{{ position.start_date }} - {{ position.end_date or 'present' }}</div>
+				<div>
+					<div class="position">{{ position.title }}</div>
+					<div class="duration">{{ position.start_date }} – {{ position.end_date or 'present' }}</div>
+				</div>
 			{% endfor %}
 		</div>
 	{% endfor %}

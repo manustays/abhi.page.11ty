@@ -5,15 +5,15 @@
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
-	grid-gap: 20px;
+	gap: 20px;
 }
 
-@media(min-width: 700px) {
+/* @media(min-width: 700px) {
 	.blogslist {
 		grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
-		grid-gap: 20px;
+		gap: 20px;
 	}
-}
+} */
 
 .blogslist .card {
 	background: var(--clr-slate);

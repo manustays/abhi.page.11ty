@@ -16,6 +16,11 @@
 
 	--lighter-text-color: #888;
 	--background-section-color: #fffcf6;
+
+	--gap-sm: 8px;
+	--gap-md: 16px;
+	--gap-lg: 24px;
+	--gap-xl: 32px;
 }
 
 /* lora-700 - latin */
@@ -30,7 +35,7 @@
 
 body {
 	line-height: 1.56;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Helvetica, sans-serif,' Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+	font-family: system-ui, sans-serif;
 	background: var(--clr-bg);
 	color: var(--clr-text);
 	scroll-behavior: smooth;
@@ -61,14 +66,13 @@ body,html {
 section.block, header, footer {
 	box-sizing: border-box;
 	width: 100%;
-	margin: 0 auto;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding-left: var(--gap-md);
+	padding-right: var(--gap-md);
 }
 
 section.block {
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-top: var(--gap-md);
+	padding-bottom: var(--gap-md);
 }
 
 @media (min-width: 576px) {
@@ -318,6 +322,25 @@ tr:nth-child(even) td {
 @media (max-width: 700px) {
 	table {
 		font-size: 0.7em;
+	}
+}
+
+
+/* Social Icons */
+.ico_list {
+	font-size: 1.1em;
+	gap: 1.2em;
+}
+
+.ico_list > a:hover {
+	transition: transform 0.2s ease-out;
+	transform: scale(1.1);
+}
+
+@media(min-width: 700px) {
+	.ico_list {
+		font-size: 1.3em;
+		gap: 1.4em;
 	}
 }
 

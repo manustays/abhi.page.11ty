@@ -1,4 +1,4 @@
-<div class="ico_list">
+<div class="ico_list layout horizontal center-center wrap">
 	{% for social in website.social_profiles -%}
 		{% if social.hide != true %}
 			<a href="{{ social.url }}" target="_blank" rel="noopener me" title="{{ social.msg or 'Connect with me' }}">{% svgico social.ico %}</a>
