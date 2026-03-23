@@ -59,7 +59,7 @@ module.exports = function(eleventyConfig) {
 		promoImage: "./src/assets/img/abhi-bw-circle.png",
 		outputDir: "./_site/img/preview",
 		urlPath: "/img/preview",
-		siteName: "abhi.page/",
+		siteName: "abhi.am/",
 		titleColor: "#fedb8b",
 		terminalBgColor: "#202020",
 		customFontFilename: "lora-v16-latin-700.ttf",

@@ -1,6 +1,6 @@
 {
-  "name": "abhi.page",
-  "version": "1.0.0",
+  "name": "abhi.am",
+  "version": "2.0.0",
   "description": "Abhishek's personal website & blog",
   "scripts": {
     "start": "del-cli _site && eleventy --serve --quiet",
@@ -11,7 +11,7 @@
   "contributors": [
     {
       "name": "Kumar Abhishek",
-      "url": "https://abhi.page"
+      "url": "https://abhi.am"
     }
   ],
   "engines": {

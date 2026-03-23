@@ -59,4 +59,4 @@ These options set the default values for embedded Pens. They can be overridden w
 
 ## Demo
 
-Check it out live in my other post **[A Regular Expression to filter invalid names](https://abhi.page/notes/regex-to-validate-names/)**
+Check it out live in my other post **[A Regular Expression to filter invalid names](../regex-to-validate-names/)**

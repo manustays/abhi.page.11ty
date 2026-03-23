@@ -13,11 +13,11 @@ links:
   - https://github.com/manustays/eleventy-plugin-generate-social-images
 ---
 
-While porting [my website](https://abhi.page/) to [11ty](https://www.11ty.dev/), I wrote my own [plugin](https://github.com/manustays/eleventy-plugin-generate-social-images) to automatically generated social-sharing-images for my [articles](https://abhi.page/notes).
+While porting [my website](/) to [11ty](https://www.11ty.dev/), I wrote my own [plugin](https://github.com/manustays/eleventy-plugin-generate-social-images) to automatically generated social-sharing-images for my [articles](/notes).
 
 > A social-sharing-image shows as a thumbnail for a website/blogpost when shared on social media.
 >
-> This plugin generates such images automatically using the title of your blogposts/pages. For a live example, share this page on a social media like [Twitter](https://twitter.com/intent/tweet?url=https://abhi.page/notes/11ty-plugin-generate-social-images) or [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://abhi.page/notes/11ty-plugin-generate-social-images&title=&summary=&source=)!
+> This plugin generates such images automatically using the title of your blogposts/pages. For a live example, share this page on a social media like [Twitter](https://twitter.com/intent/tweet?url=https://abhi.am/notes/11ty-plugin-generate-social-images) or [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://abhi.am/notes/11ty-plugin-generate-social-images&title=&summary=&source=)!
 
 Images are generated in PNG format in a standard 1200×628px size that is suitable for sharing with most social networks.
 
@@ -41,7 +41,7 @@ Images are generated in PNG format in a standard 1200×628px size that is suitab
 
 ## Demo
 This is how it looks like configured for one of my blogposts:
-![](https://abhi.page/img/preview/how-to-load-third-party-javascript-on-demand.png)
+![](/img/preview/how-to-load-third-party-javascript-on-demand.png)
 
 
 ## How does the plugin work?

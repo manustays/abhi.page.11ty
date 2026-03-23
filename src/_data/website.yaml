@@ -1,4 +1,5 @@
-title: abhi.page
+title: abhi.am
+title_parts: ["abh", "i", ".am"]
 intro_prefix: Hi, I’m
 about: I work at the intersection of software architecture, product leadership, and deep-tech R&D. Focused on scalable platforms and intelligent systems. Currently building AI-native platforms & heading Product at Eko.
 # about: I design & develop software. Passionate about technology-forward thinking, modular/scalable architecture & clean design. Currently heading Product @ Eko.
@@ -28,7 +29,7 @@ sections:
 
 #### WebMentions (How to setup: https://sia.codes/posts/webmentions-eleventy-in-depth)
 webmentions:
-  domain: abhi.page
+  domain: abhi.am
   # Setup WEBMENTION_IO_TOKEN in environment variables (see .env.example)
 
 #### SEO & Social...

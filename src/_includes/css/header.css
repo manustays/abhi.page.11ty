@@ -6,6 +6,9 @@
 	font-family: 'Lora', serif;
 	color: var(--clr-highlight);
 }
+.logo > .highlight {
+	color: var(--clr-highlight-light);
+}
 
 header {
 	min-height: 74px;
