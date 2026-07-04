@@ -132,14 +132,29 @@ npm install
 npm run tauri build</pre>
 	</section>
 
+	{# ---------- Support / sponsor ---------- #}
+	<section class="block quay-support">
+		<div class="quay-support-card">
+			<span class="quay-support-ico" aria-hidden="true">{% svgico 'heart' %}</span>
+			<h2 class="quay-section-title quay-support-title">Enjoying Quay?</h2>
+			<p class="quay-support-text">Quay is free and open source, built in my spare time. If it saves you time, a one-time sponsorship — or even a quick star — genuinely helps and keeps me motivated.</p>
+			<div class="quay-cta quay-support-cta">
+				<a class="button sponsor" href="https://github.com/sponsors/manustays?frequency=one-time" target="_blank" rel="noopener">
+					{% svgico 'heart' %}Sponsor on GitHub
+				</a>
+				<a class="button secondary" href="{{ repo }}" target="_blank" rel="noopener">
+					{% svgico 'github' %}Star on GitHub
+				</a>
+			</div>
+			<p class="quay-support-note">No pressure — Quay stays free either way.</p>
+		</div>
+	</section>
+
 	{# ---------- Closing CTA ---------- #}
 	<section class="block quay-closing">
 		<div class="quay-cta">
 			<a class="button" href="{{ download }}" target="_blank" rel="noopener">
 				{% svgico 'arrow-circle-down' %}Download for macOS
-			</a>
-			<a class="button secondary" href="{{ repo }}" target="_blank" rel="noopener">
-				{% svgico 'github' %}Star on GitHub
 			</a>
 		</div>
 		<p class="quay-license">MIT © 2026 Kumar Abhishek</p>

@@ -270,6 +270,60 @@
 	margin: 0;
 }
 
+/* ---------- Support / sponsor ---------- */
+/* Intentionally introduces one brand color: the GitHub Sponsors pink heart. */
+
+.quay-support {
+	text-align: center;
+	--clr-sponsor: #db61a2;   /* GitHub Sponsors pink */
+}
+
+.quay-support-card {
+	max-width: 620px;
+	margin: 0 auto;
+	padding: var(--gap-xl) var(--gap-lg);
+	border-radius: 12px;
+	/* Subtle warm wash over the dark card — the "highlight" cue */
+	background:
+		radial-gradient(circle at 50% -30%, rgba(254, 219, 139, 0.10) 0%, transparent 60%),
+		var(--clr-primary-shade);
+	border: 1px solid rgba(254, 219, 139, 0.22);
+}
+
+.quay-support-ico .svgico {
+	width: 40px;
+	height: 40px;
+	fill: var(--clr-sponsor);
+}
+
+.quay-support-title {
+	margin-top: var(--gap-sm);
+	margin-bottom: var(--gap-md);
+}
+
+.quay-support-text {
+	max-width: 46ch;
+	margin: 0 auto var(--gap-lg);
+	color: var(--clr-mid);
+	line-height: 1.6;
+}
+
+.quay-support-cta {
+	justify-content: center;
+}
+
+/* Warm sponsor button, distinct from the pale-blue primary; heart inherits dark text color for clean contrast on amber */
+.button.sponsor {
+	background: var(--clr-highlight);
+	color: var(--clr-dark);
+}
+
+.quay-support-note {
+	margin: var(--gap-md) 0 0;
+	font-size: 0.8rem;
+	color: var(--lighter-text-color);
+}
+
 @media (min-width: 700px) {
 	.quay-lede { font-size: 1.2rem; }
 }
