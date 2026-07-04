@@ -1,0 +1,283 @@
+/* ============================================================
+   /quay landing page — scoped styles.
+   Reuses theme vars from base.css; adds no new colors.
+   ============================================================ */
+
+.quay {
+	overflow-x: hidden;
+}
+
+/* ---------- Hero ---------- */
+
+.quay-hero {
+	background:
+		radial-gradient(circle at 0% -20%, var(--clr-primary) 0%, transparent 55%),
+		var(--clr-primary-shade);
+	padding-top: var(--gap-xl);
+	padding-bottom: var(--gap-xl);
+}
+
+.quay-hero-head {
+	display: flex;
+	align-items: center;
+	gap: var(--gap-md);
+}
+
+.quay-logo {
+	width: 88px;
+	height: 88px;
+	flex: 0 0 auto;
+}
+
+.quay-hero-titles h1 {
+	margin: 0;
+	letter-spacing: -0.01em;
+}
+
+/* Dictionary-entry pronunciation line — calm, muted, monospace */
+.quay-pronounce {
+	margin: 0.25em 0 0;
+	font-size: 0.9rem;
+	letter-spacing: 0.02em;
+	color: var(--lighter-text-color);
+}
+
+.quay-lede {
+	max-width: 52ch;
+	margin: var(--gap-md) 0 var(--gap-lg);
+	color: var(--clr-mid);
+	font-size: 1.08rem;
+}
+
+/* Quiet section label (e.g. "In the menubar") */
+.quay-eyebrow {
+	margin: 0 0 var(--gap-md);
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--lighter-text-color);
+	font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+/* ---------- Call-to-action ---------- */
+
+.quay-cta {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	gap: var(--gap-sm);
+}
+
+/* Outline variant of the shared .button (base.css has only the filled one) */
+.button.secondary {
+	background: transparent;
+	color: var(--clr-primary-txt);
+	box-shadow: inset 0 0 0 2px var(--clr-primary-glare);
+}
+
+.button.secondary:hover {
+	background: var(--clr-primary-glare);
+	color: var(--clr-light);
+	filter: none;
+}
+
+.quay-note {
+	margin: var(--gap-sm) 0 0;
+	max-width: 52ch;
+	font-size: 0.82rem;
+	color: var(--lighter-text-color);
+}
+
+/* ---------- Badges ---------- */
+
+.quay-badges {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: var(--gap-sm);
+	margin-top: var(--gap-lg);
+	padding: 0;
+	list-style: none;
+}
+
+.quay-badges li {
+	font-size: 0.8rem;
+	font-weight: 500;
+	color: var(--clr-mid);
+	background: var(--clr-slate);
+	border-radius: 999px;
+	padding: 0.25em 0.85em;
+}
+
+/* ---------- Screenshot ---------- */
+
+.quay-shot {
+	margin: 0;
+	max-width: 960px;
+}
+
+.quay-shot img {
+	display: block;
+	width: 100%;
+	min-height: 120px;
+	border-radius: 10px;
+	border: 1px solid var(--clr-primary-glare);
+	box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+	background: var(--clr-darker);
+}
+
+/* ---------- Section scaffolding ---------- */
+
+.quay-section-title {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: var(--gap-lg);
+}
+
+/* ---------- Feature grid ---------- */
+
+.quay-features {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: var(--gap-md);
+	padding: 0;
+	list-style: none;
+	margin: 0;
+}
+
+.quay-feature {
+	background: var(--clr-primary-shade);
+	border: 1px solid var(--clr-slate);
+	border-radius: 10px;
+	padding: var(--gap-lg);
+}
+
+.quay-feature .ico {
+	display: block;
+	line-height: 1;
+	margin-bottom: var(--gap-md);
+	color: var(--clr-highlight);
+}
+
+/* Scoped over the global .svgico { fill: currentColor } — feature icons are line-style */
+.quay-feature .ico .svgico {
+	width: 28px;
+	height: 28px;
+	fill: none;
+	stroke: currentColor;
+}
+
+.quay-feature h3 {
+	font-size: 1.15rem;
+	margin: 0 0 0.35em;
+	color: var(--clr-primary-txt);
+}
+
+.quay-feature p {
+	margin: 0;
+	color: var(--clr-mid);
+	font-size: 0.95rem;
+}
+
+/* ---------- How it works ---------- */
+
+.quay-steps {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: var(--gap-lg);
+	padding: 0;
+	list-style: none;
+	margin: 0;
+	counter-reset: step;
+}
+
+.quay-step {
+	counter-increment: step;
+}
+
+.quay-step::before {
+	content: counter(step);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.2em;
+	height: 2.2em;
+	margin-bottom: var(--gap-sm);
+	font-family: 'Lora', serif;
+	font-weight: 700;
+	color: var(--clr-dark);
+	background: var(--clr-highlight);
+	border-radius: 50%;
+}
+
+.quay-step h3 {
+	margin: 0 0 0.3em;
+	font-size: 1.1rem;
+}
+
+.quay-step p {
+	margin: 0;
+	color: var(--clr-mid);
+	font-size: 0.95rem;
+}
+
+.quay-step code {
+	color: var(--clr-highlight);
+}
+
+/* ---------- Build from source ---------- */
+
+.quay-build {
+	text-align: center;
+}
+
+.quay-code {
+	text-align: left;
+	max-width: 640px;
+	margin: 0 auto;
+	background: var(--clr-darker);
+	color: var(--clr-light);
+	border: 1px solid var(--clr-slate);
+	border-radius: 8px;
+	padding: var(--gap-md);
+	overflow-x: auto;
+	font-size: 0.9rem;
+	line-height: 1.7;
+}
+
+.quay-code .comment {
+	color: var(--lighter-text-color);
+}
+
+/* ---------- Closing CTA ---------- */
+
+.quay-closing {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.quay-closing .quay-cta {
+	margin-bottom: var(--gap-xl);
+}
+
+.quay-license {
+	color: var(--lighter-text-color);
+	font-size: 0.85rem;
+	margin: 0;
+}
+
+@media (min-width: 700px) {
+	.quay-lede { font-size: 1.2rem; }
+}
+
+/* Small screens: shrink logo so it never crowds the title */
+@media (max-width: 480px) {
+	.quay-logo {
+		width: 60px;
+		height: 60px;
+	}
+}
