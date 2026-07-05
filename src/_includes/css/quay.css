@@ -111,21 +111,65 @@
 	padding: 0.25em 0.85em;
 }
 
-/* ---------- Screenshot ---------- */
+/* ---------- Screenshot: generated macOS desktop frame ---------- */
 
-.quay-shot {
-	margin: 0;
+.macos-frame {
+	position: relative;
 	max-width: 960px;
-}
-
-.quay-shot img {
-	display: block;
-	width: 100%;
-	min-height: 120px;
-	border-radius: 10px;
+	border-radius: 14px;
+	overflow: hidden;
+	padding: 20px;
+	background: radial-gradient(120% 120% at 78% 0%, #3A4A63 0%, #26303F 42%, #171D27 100%);
 	border: 1px solid var(--clr-primary-glare);
 	box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
-	background: var(--clr-darker);
+}
+
+.macos-menubar {
+	height: 26px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 16px;
+	border-radius: 8px;
+	background: rgba(12, 15, 20, 0.55);
+	backdrop-filter: blur(14px);
+	font-size: 12.5px;
+	color: #E4E8EF;
+}
+
+.macos-menubar-left,
+.macos-menubar-right {
+	display: flex;
+	align-items: center;
+}
+
+.macos-menubar-left { gap: 18px; }
+.macos-menubar-left .macos-app { font-weight: 600; }
+.macos-menubar-left span:not(.macos-app) { color: #C6CCD6; }
+
+.macos-menubar-right {
+	gap: 16px;
+	color: #D3D9E2;
+}
+
+.macos-clock { font-size: 12px; }
+
+.macos-stage {
+	display: flex;
+	justify-content: center;
+	padding: 2px 0 4px;
+}
+
+.macos-popup {
+	display: block;
+	width: min(360px, 100%);
+	height: auto;
+}
+
+@media (max-width: 480px) {
+	.macos-frame { padding: 12px; }
+	.macos-menubar { font-size: 11px; padding: 0 10px; }
+	.macos-menubar-left span:not(.macos-app) { display: none; }
 }
 
 /* ---------- Section scaffolding ---------- */

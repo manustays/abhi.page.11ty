@@ -6,6 +6,7 @@ keywords: quay, macos menubar app, dev services manager, localhost ports, tauri,
 generate_social_image: true
 ---
 {% extends "./_layouts/base.njk" %}
+{% from "components/desktop-frame.njk" import desktopFrame %}
 
 {% block custom_style %}
 	{% set css_quay %}{% include "css/quay.css" %}{% endset %}
@@ -51,9 +52,7 @@ generate_social_image: true
 	{# ---------- Screenshot ---------- #}
 	<section class="block quay-showcase">
 		<p class="quay-eyebrow">In the menubar</p>
-		<figure class="quay-shot">
-			<img src="/assets/img/quay/hero.png" alt="Quay menubar window listing running dev services with live status, CPU and memory metrics." />
-		</figure>
+		{{ desktopFrame("/assets/img/quay/popup.png", "Quay menubar popup listing running dev services with live status, CPU and memory metrics.") }}
 	</section>
 
 	{# ---------- Features ---------- #}
