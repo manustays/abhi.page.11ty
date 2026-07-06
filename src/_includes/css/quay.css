@@ -426,6 +426,162 @@
 	margin-bottom: var(--gap-lg);
 }
 
+/* ---------- Comparison table ---------- */
+/* A deliberately light "spec sheet" card on the dark page — the contrast makes it
+   read as an objective reference. Colors are scoped here (like the sponsor pink),
+   not added to the global theme. */
+
+.quay-compare-lede {
+	max-width: 46ch;
+	margin: -8px auto var(--gap-xl);
+	text-align: center;
+	color: var(--clr-mid);
+	line-height: 1.6;
+}
+
+.quay-compare-card {
+	--cmp-bg:        #ffffff;
+	--cmp-head-bg:   #f7f8fa;
+	--cmp-border:    #edeff2;
+	--cmp-ink:       #334155;   /* capability text */
+	--cmp-ink-strong:#0f2233;   /* navy — Quay header + edge rows */
+	--cmp-muted:     #94a0af;   /* typical-monitor values + header labels */
+	--cmp-yes:       #16a34a;   /* green check */
+	--cmp-edge-bg:   #fffaef;   /* warm cream for the differentiator rows */
+
+	max-width: 720px;
+	margin: 0 auto;
+	background: var(--cmp-bg);
+	border-radius: 16px;
+	box-shadow: 0 24px 60px -28px rgba(0, 0, 0, 0.7);
+	overflow: hidden;
+}
+
+.quay-compare-scroll {
+	overflow-x: auto;   /* narrow screens scroll the table instead of squashing it */
+}
+
+.quay-compare {
+	display: table;   /* overrides base.css table{display:block} which left a gap on the right */
+	width: 100%;
+	min-width: 460px;
+	border-collapse: collapse;
+	font-size: 0.95rem;
+}
+
+.quay-compare th,
+.quay-compare td {
+	padding: 15px 24px;
+	text-align: left;
+	vertical-align: middle;
+	border: 0;   /* drop base.css cell borders; this card uses horizontal rules only */
+}
+
+/* Reset base.css table theming (dark th bg + even-row zebra) to the light card surface */
+.quay-compare tbody th,
+.quay-compare tbody td {
+	background: var(--cmp-bg);
+}
+
+/* Value columns are centered under their headers */
+.quay-compare th + th,
+.quay-compare td {
+	text-align: center;
+}
+.quay-compare td:first-child,
+.quay-compare th:first-child {
+	text-align: left;
+}
+
+.quay-compare thead th {
+	background: var(--cmp-head-bg);
+	border-bottom: 1px solid var(--cmp-border);
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--cmp-ink-strong);
+}
+
+/* "CAPABILITY" label — quiet, spaced, uppercase */
+.quay-compare thead th:first-child {
+	font-size: 0.72rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--cmp-muted);
+}
+
+.quay-compare thead th:nth-child(2) {
+	font-weight: 500;
+	color: var(--cmp-muted);
+}
+
+.quay-compare-us {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4em;
+	color: var(--cmp-ink-strong);
+}
+.quay-compare-logo {
+	width: 20px;
+	height: 20px;
+	flex: 0 0 auto;
+}
+
+.quay-compare tbody th {
+	font-weight: 500;
+	color: var(--cmp-ink);
+}
+
+.quay-compare tbody tr + tr th,
+.quay-compare tbody tr + tr td {
+	border-top: 1px solid var(--cmp-border);
+}
+
+.quay-compare-typical {
+	color: var(--cmp-muted);
+}
+
+.quay-compare-yes .ico {
+	display: inline-flex;
+	color: var(--cmp-yes);
+	line-height: 0;
+}
+.quay-compare-yes .svgico {
+	width: 19px;
+	height: 19px;
+	fill: none;
+	stroke: currentColor;
+}
+
+/* Differentiator rows — where Quay pulls ahead. Cream fill + amber edge bar. */
+.quay-compare tbody tr.is-edge th,
+.quay-compare tbody tr.is-edge td {
+	background: var(--cmp-edge-bg);
+}
+.quay-compare tbody tr.is-edge th:first-child {
+	box-shadow: inset 3px 0 0 0 var(--clr-highlight-light);
+	font-weight: 600;
+	color: var(--cmp-ink-strong);
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+	.quay-compare th,
+	.quay-compare td { padding: 13px 16px; }
+}
+
 /* ---------- Feature grid ---------- */
 
 .quay-features {

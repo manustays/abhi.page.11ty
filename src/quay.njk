@@ -133,12 +133,59 @@ image: /assets/img/quay/social-preview.png
 				<li class="quay-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-terminal' %}</span>
 					<h3>Terminal &amp; AI agents</h3>
-					<p>Keep long-running processes like Claude Code visible, with uptime and resource use at a glance.</p>
+					<p>Keep long-running agents like Claude Code visible, with live start/stop status right in the menu bar.</p>
 				</li>
 			</ul>
 		</section>
 
-		{# ---------- Features ---------- #}
+		{# ---------- Comparison ---------- #}
+		<section class="block">
+			<h2 class="quay-section-title">More than a port monitor</h2>
+			<p class="quay-compare-lede">Most tools stop at listening ports. Quay manages the whole stack — the rows below are where it pulls ahead.</p>
+
+			<div class="quay-compare-card">
+				<div class="quay-compare-scroll">
+					<table class="quay-compare">
+						<thead>
+							<tr>
+								<th scope="col">Capability</th>
+								<th scope="col">Typical port monitor</th>
+								<th scope="col" class="quay-compare-us">
+									<img class="quay-compare-logo" src="/assets/img/quay/logo.svg" alt="" width="20" height="20" />Quay
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% set compareRows = [
+								{ cap: "See listening ports",          typical: "Yes",  edge: false },
+								{ cap: "Kill port / process",          typical: "Yes",  edge: false },
+								{ cap: "Manage project servers",       typical: "Some", edge: false },
+								{ cap: "Homebrew services",            typical: "—",    edge: true  },
+								{ cap: "Docker containers",            typical: "Some", edge: true  },
+								{ cap: "Terminal &amp; AI agents",     typical: "—",    edge: true  },
+								{ cap: "CPU &amp; memory per service", typical: "—",    edge: true  },
+								{ cap: "HTTP health checks",           typical: "Some", edge: false },
+								{ cap: "Auto-detect project config",   typical: "Some", edge: false },
+								{ cap: "Adopt unmanaged processes",    typical: "Some", edge: false },
+								{ cap: "Group full stacks",            typical: "—",    edge: true  }
+							] %}
+							{% for row in compareRows %}
+								<tr{% if row.edge %} class="is-edge"{% endif %}>
+									<th scope="row">{{ row.cap | safe }}</th>
+									<td class="quay-compare-typical">{{ row.typical | safe }}</td>
+									<td class="quay-compare-yes">
+										<span class="ico" aria-hidden="true">{% svgico 'check' %}</span>
+										<span class="visually-hidden">Yes</span>
+									</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		{# ---------- Features ---------- # }
 		<section class="block">
 			<h2 class="quay-section-title">One dock for every local service</h2>
 			<ul class="quay-features">
@@ -183,7 +230,7 @@ image: /assets/img/quay/social-preview.png
 					<p>Reads start commands and ports from <code>package.json</code>, <code>requirements.txt</code> and <code>.env</code>.</p>
 				</li>
 			</ul>
-		</section>
+		</section> #}
 
 	</div>
 
