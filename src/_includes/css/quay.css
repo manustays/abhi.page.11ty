@@ -8,7 +8,14 @@
 }
 
 .quay section {
-	padding-bottom: var(--gap-xl);
+	padding-top: 64px;
+	padding-bottom: 64px;
+}
+
+.quay h2 {
+	line-height: 1;
+	margin-top: 0;
+	margin-bottom: 42px;
 }
 
 /* ---------- Hero ---------- */
@@ -173,7 +180,7 @@
 /* ---------- Positioning callout ---------- */
 
 .quay-highlight-bg {
-	background: radial-gradient(120% 120% at 78% 0%, #3A4A63 0%, #26303F 42%, #171D27 100%);
+	background: radial-gradient(120% 120% at 78% 0%, #26303F 0%, #171D27 100%);
 	/* background:
 			radial-gradient(circle at 0% -20%, var(--clr-primary) 0%, transparent 55%),
 			var(--clr-primary-shade); */
@@ -183,6 +190,8 @@
 	border-top: 1px solid var(--clr-slate);
 	border-bottom: 1px solid var(--clr-slate);
 	background: var(--clr-primary-shade);
+	padding-top: var(--gap-lg) !important;
+	padding-bottom: var(--gap-lg) !important;
 }
 
 .quay-callout-text {
@@ -433,28 +442,46 @@
 	color: var(--clr-highlight);
 }
 
-/* ---------- Build from source ---------- */
+/* ---------- Open-source trust ---------- */
+/* Cards reuse the .quay-kind chip-card recipe; only the grid + link row are scoped here. */
 
-.quay-build {
+.quay-trust {
 	text-align: center;
 }
 
-.quay-code {
-	text-align: left;
-	max-width: 640px;
+.quay-trust-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: var(--gap-md);
+	max-width: 760px;   /* holds the 5 cards to a tidy 3 + 2, never a lonely 4 + 1 */
 	margin: 0 auto;
-	background: var(--clr-darker);
-	color: var(--clr-light);
-	border: 1px solid var(--clr-slate);
-	border-radius: 8px;
-	padding: var(--gap-md);
-	overflow-x: auto;
-	font-size: 0.9rem;
-	line-height: 1.7;
+	padding: 0;
+	list-style: none;
+	text-align: left;
 }
 
-.quay-code .comment {
-	color: var(--lighter-text-color);
+.quay-trust-links {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: var(--gap-lg);
+}
+
+.quay-trust-links a {
+	color: var(--clr-mid);
+	font-size: 0.95rem;
+	text-decoration: none;
+}
+
+/* Dot separators between links (pseudo, no extra DOM); the dot travels with its link on wrap */
+.quay-trust-links a + a::before {
+	content: "·";
+	margin: 0 var(--gap-md);
+	color: var(--clr-slate);
+}
+
+.quay-trust-links a:hover {
+	color: var(--clr-highlight);
 }
 
 /* ---------- Closing CTA ---------- */
@@ -484,18 +511,6 @@
 	--clr-sponsor: #db61a2;   /* GitHub Sponsors pink */
 }
 
-.quay-support-card {
-	max-width: 620px;
-	margin: 0 auto;
-	padding: var(--gap-xl) var(--gap-lg);
-	border-radius: 12px;
-	/* Subtle warm wash over the dark card — the "highlight" cue */
-	background:
-		radial-gradient(circle at 50% -30%, rgba(254, 219, 139, 0.10) 0%, transparent 60%),
-		var(--clr-primary-shade);
-	border: 1px solid rgba(254, 219, 139, 0.22);
-}
-
 .quay-support-ico .svgico {
 	width: 40px;
 	height: 40px;
@@ -503,8 +518,8 @@
 }
 
 .quay-support-title {
-	margin-top: var(--gap-sm);
-	margin-bottom: var(--gap-md);
+	margin-top: 20px !important;
+	margin-bottom: var(--gap-lg) !important;
 }
 
 .quay-support-text {

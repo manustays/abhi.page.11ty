@@ -1,10 +1,10 @@
 ---
 permalink: /quay/
-title: Quay — Manage Local Dev Services from the macOS Menu Bar
+title: Quay — Your local dev stack in one menu bar
 description: Start, stop and monitor local dev servers, Homebrew services, Docker containers and terminal agents from one macOS menu bar app. Free and open source.
-keywords: quay, macos menubar app, dev services manager, localhost ports, docker, homebrew
+keywords: quay, macos menu bar app, dev services manager, localhost ports, docker, homebrew
 generate_social_image: false
-image: /assets/img/quay/social-media-preview.png
+image: /assets/img/quay/social-preview.png
 ---
 
 {% extends "./_layouts/base.njk" %}
@@ -60,97 +60,95 @@ image: /assets/img/quay/social-media-preview.png
 			</div>
 
 			<div class="quay-hero-visual">
-				{{ desktopFrame("/assets/img/quay/popup.png", "Quay menubar popup listing running dev services with live status, CPU and memory metrics.", transparent=true) }}
+				{{ desktopFrame("/assets/img/quay/popup.png", "Quay menu bar popup listing running dev services with live status, CPU and memory metrics.", transparent=true) }}
 			</div>
 		</div>
 	</section>
 
 	{# ---------- Positioning callout ---------- #}
-	<section class="block quay-callout quay-highlight-bg">
-		<p class="quay-callout-text">
+	<section class="block quay-callout quay-highlight-bg quay-callout-text">
 			<span class="quay-callout-dot" aria-hidden="true"></span>
 			Not just a port monitor — <span class="hl">a control center for everything running locally.</span>
-		</p>
 	</section>
 
-	<section class="quay-highlight-bg">
+	<div class="quay-highlight-bg">
 
-	{# ---------- Four kinds of service ---------- #}
-	<section class="block">
-		<!-- p class="quay-eyebrow">Everything running locally</p -->
-		<h2 class="quay-kinds-title">Four kinds of service. One place.</h2>
-		<ul class="quay-kinds">
-			<li class="quay-kind">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
-				<h3>Project servers</h3>
-				<p>Next.js, Vite, Django, Rails — auto-detected from your project config and grouped into one stack.</p>
-			</li>
-			<li class="quay-kind">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-brew' %}</span>
-				<h3>Homebrew services</h3>
-				<p>Redis, Postgres, MySQL, MongoDB. Start and stop brew services without touching the terminal.</p>
-			</li>
-			<li class="quay-kind">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-docker' %}</span>
-				<h3>Docker containers</h3>
-				<p>See and control running containers alongside everything else — no separate dashboard.</p>
-			</li>
-			<li class="quay-kind">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-terminal' %}</span>
-				<h3>Terminal &amp; AI agents</h3>
-				<p>Keep long-running processes like Claude Code visible, with uptime and resource use at a glance.</p>
-			</li>
-		</ul>
-	</section>
+		{# ---------- Four kinds of service ---------- #}
+		<section class="block">
+			<!-- p class="quay-eyebrow">Everything running locally</p -->
+			<h2 class="quay-kinds-title">Four kinds of service. One place.</h2>
+			<ul class="quay-kinds">
+				<li class="quay-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
+					<h3>Project servers</h3>
+					<p>Next.js, Vite, Django, Rails — auto-detected from your project config and grouped into one stack.</p>
+				</li>
+				<li class="quay-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-brew' %}</span>
+					<h3>Homebrew services</h3>
+					<p>Redis, Postgres, MySQL, MongoDB. Start and stop brew services without touching the terminal.</p>
+				</li>
+				<li class="quay-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-docker' %}</span>
+					<h3>Docker containers</h3>
+					<p>See and control running containers alongside everything else — no separate dashboard.</p>
+				</li>
+				<li class="quay-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-terminal' %}</span>
+					<h3>Terminal &amp; AI agents</h3>
+					<p>Keep long-running processes like Claude Code visible, with uptime and resource use at a glance.</p>
+				</li>
+			</ul>
+		</section>
 
-	{# ---------- Features ---------- #}
-	<section class="block">
-		<h2 class="quay-section-title">One dock for every local service</h2>
-		<ul class="quay-features">
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
-				<h3>Unified management</h3>
-				<p>Node &amp; Python servers, Homebrew services, Docker containers and terminal agents — all in one list.</p>
-			</li>
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-health' %}</span>
-				<h3>Live status &amp; health</h3>
-				<p>Process-liveness checks plus HTTP health verification so you know what's actually up.</p>
-			</li>
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-metrics' %}</span>
-				<h3>Resource metrics</h3>
-				<p>Real-time CPU and memory usage per service, right in the menubar.</p>
-			</li>
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-browser' %}</span>
-				<h3>One-click browser</h3>
-				<p>Open <code>localhost:&lt;port&gt;</code> for any running service without hunting for the port.</p>
-			</li>
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-radar' %}</span>
-				<h3>Port radar</h3>
-				<p>Detects unmanaged dev servers on your machine — adopt them into Quay or terminate them.</p>
-			</li>
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-stack' %}</span>
-				<h3>Stack-aware</h3>
-				<p>Recognises frameworks like Vite, Next, Django and Rails and shows the right tech-stack icon.</p>
-			</li>
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-favorites' %}</span>
-				<h3>Organised your way</h3>
-				<p>Favorites, search and collapsible groups keep a long list of services tidy.</p>
-			</li>
-			<li class="quay-feature">
-				<span class="ico" aria-hidden="true">{% svgico 'feature-detect' %}</span>
-				<h3>Auto-detection</h3>
-				<p>Reads start commands and ports from <code>package.json</code>, <code>requirements.txt</code> and <code>.env</code>.</p>
-			</li>
-		</ul>
-	</section>
+		{# ---------- Features ---------- #}
+		<section class="block">
+			<h2 class="quay-section-title">One dock for every local service</h2>
+			<ul class="quay-features">
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
+					<h3>Unified management</h3>
+					<p>Node &amp; Python servers, Homebrew services, Docker containers and terminal agents — all in one list.</p>
+				</li>
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-health' %}</span>
+					<h3>Live status &amp; health</h3>
+					<p>Process-liveness checks plus HTTP health verification so you know what's actually up.</p>
+				</li>
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-metrics' %}</span>
+					<h3>Resource metrics</h3>
+					<p>Real-time CPU and memory usage per service, right in the menu bar.</p>
+				</li>
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-browser' %}</span>
+					<h3>One-click browser</h3>
+					<p>Open <code>localhost:&lt;port&gt;</code> for any running service without hunting for the port.</p>
+				</li>
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-radar' %}</span>
+					<h3>Port radar</h3>
+					<p>Detects unmanaged dev servers on your machine — adopt them into Quay or terminate them.</p>
+				</li>
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-stack' %}</span>
+					<h3>Stack-aware</h3>
+					<p>Recognises frameworks like Vite, Next, Django and Rails and shows the right tech-stack icon.</p>
+				</li>
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-favorites' %}</span>
+					<h3>Organised your way</h3>
+					<p>Favorites, search and collapsible groups keep a long list of services tidy.</p>
+				</li>
+				<li class="quay-feature">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-detect' %}</span>
+					<h3>Auto-detection</h3>
+					<p>Reads start commands and ports from <code>package.json</code>, <code>requirements.txt</code> and <code>.env</code>.</p>
+				</li>
+			</ul>
+		</section>
 
-	</section>
+	</div>
 
 	{# ---------- How it works ---------- #}
 	<section class="block bg-shaded">
@@ -166,24 +164,55 @@ image: /assets/img/quay/social-media-preview.png
 			</li>
 			<li class="quay-step">
 				<h3>Control it</h3>
-				<p>Start, stop, open in the browser or jump to a terminal — all from the menubar.</p>
+				<p>Start, stop, open in the browser or jump to a terminal — all from the menu bar.</p>
 			</li>
 		</ol>
 	</section>
 
-	{# ---------- Build from source ---------- #}
-	<section class="block quay-build">
-		<h2 class="quay-section-title">Prefer to build it yourself?</h2>
-		<pre class="quay-code mono"><span class="comment"># Requires Rust and Node — see the README for details</span>
-git clone {{ repo }}.git
-cd quay
-npm install
-npm run tauri build</pre>
+	{# ---------- Open-source trust ---------- #}
+	<section class="block quay-trust">
+		<h2 class="quay-section-title">Open source you can trust</h2>
+		<ul class="quay-trust-grid">
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-license' %}</span>
+				<h3>MIT licensed</h3>
+				<p>A permissive license — use, fork and ship it however you like.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-local' %}</span>
+				<h3>Fully local</h3>
+				<p>Your services and settings never leave your Mac.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-no-account' %}</span>
+				<h3>No account</h3>
+				<p>No sign-up, no login. Download it and go.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-no-telemetry' %}</span>
+				<h3>No telemetry</h3>
+				<p>Zero tracking, zero analytics, zero phone-home.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-code' %}</span>
+				<h3>Rust + TypeScript</h3>
+				<p>A Tauri app: a fast Rust core with a TypeScript interface.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-lightweight' %}</span>
+				<h3>Lightweight</h3>
+				<p>Native and lean — no Electron, no bundled browser.</p>
+			</li>
+		</ul>
+		<div class="quay-trust-links">
+			<a href="{{ repo }}" target="_blank" rel="noopener">View source</a>
+			<a href="{{ download }}" target="_blank" rel="noopener">Current release</a>
+			<a href="{{ repo }}/issues" target="_blank" rel="noopener">Contributions welcome</a>
+		</div>
 	</section>
 
 	{# ---------- Support / sponsor ---------- #}
-	<section class="block quay-support">
-		<div class="quay-support-card">
+	<section class="block quay-support bg-shaded">
 			<span class="quay-support-ico" aria-hidden="true">{% svgico 'heart' %}</span>
 			<h2 class="quay-section-title quay-support-title">Enjoying Quay?</h2>
 			<p class="quay-support-text">Quay is free and open source, built in my spare time. If it saves you time, a one-time sponsorship — or even a quick star — genuinely helps and keeps me motivated.</p>
@@ -196,7 +225,6 @@ npm run tauri build</pre>
 				</a>
 			</div>
 			<p class="quay-support-note">No pressure — Quay stays free either way.</p>
-		</div>
 	</section>
 
 	{# ---------- Closing CTA ---------- #}
