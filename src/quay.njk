@@ -1,10 +1,12 @@
 ---
 permalink: /quay/
-title: Quay
-description: A native macOS menubar app to start, stop and monitor all your local dev services — servers, Homebrew, Docker and terminal agents — from one place.
-keywords: quay, macos menubar app, dev services manager, localhost ports, tauri, docker, homebrew
-generate_social_image: true
+title: Quay — Manage Local Dev Services from the macOS Menu Bar
+description: Start, stop and monitor local dev servers, Homebrew services, Docker containers and terminal agents from one macOS menu bar app. Free and open source.
+keywords: quay, macos menubar app, dev services manager, localhost ports, docker, homebrew
+generate_social_image: false
+image: /assets/img/quay/social-media-preview.png
 ---
+
 {% extends "./_layouts/base.njk" %}
 {% from "components/desktop-frame.njk" import desktopFrame %}
 
@@ -21,38 +23,84 @@ generate_social_image: true
 
 	{# ---------- Hero ---------- #}
 	<section class="block quay-hero">
-		<div class="quay-hero-head">
-			<img class="quay-logo" src="/assets/img/quay/logo.svg" alt="" width="88" height="88" />
-			<div class="quay-hero-titles">
-				<h1>Quay</h1>
-				<p class="quay-pronounce mono">/kiː/ · where your ports come in</p>
+		<div class="quay-hero-grid">
+			<div class="quay-hero-copy">
+				<div class="quay-hero-head">
+					<img class="quay-logo" src="/assets/img/quay/logo.svg" alt="" width="88" height="88" />
+					<div class="quay-hero-titles">
+						<div class="quay-wordmark">Quay</div>
+						<div class="quay-pronounce mono">/kiː/ · where your ports come in</div>
+					</div>
+				</div>
+
+				<h1 class="quay-headline">Your entire local dev stack.<br><span class="hl">One menu bar.</span></h1>
+
+				<p class="quay-lede">Start, stop and monitor dev servers, Homebrew services, Docker containers and terminal agents from one lightweight macOS app — with live health, CPU and memory, and port-conflict detection.</p>
+
+				<div class="quay-cta">
+					<a class="button" href="{{ download }}" target="_blank" rel="noopener">
+						{% svgico 'arrow-circle-down' %}Download for macOS
+					</a>
+					<a class="button secondary" href="{{ repo }}" target="_blank" rel="noopener">
+						{% svgico 'github' %}View on GitHub
+					</a>
+				</div>
+
+				<p class="quay-note">
+					<svg class="quay-note-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none"/></svg>
+					Preview builds aren't notarized yet — macOS may ask for one confirmation in Privacy &amp; Security. Fully open source under MIT.
+				</p>
+
+				<ul class="quay-badges">
+					<li>macOS</li>
+					<li>Rust + TypeScript</li>
+					<li>Tauri v2</li>
+					<li>MIT</li>
+				</ul>
+			</div>
+
+			<div class="quay-hero-visual">
+				{{ desktopFrame("/assets/img/quay/popup.png", "Quay menubar popup listing running dev services with live status, CPU and memory metrics.", transparent=true) }}
 			</div>
 		</div>
-
-		<p class="quay-lede">A free &amp; open-source MacOS menubar app for developers and tinkers — start, stop and monitor every local dev service — project servers, Homebrew formulae, Docker containers and terminal agents — from a single menubar, with live CPU &amp; memory metrics.</p>
-
-		<div class="quay-cta">
-			<a class="button" href="{{ download }}" target="_blank" rel="noopener">
-				{% svgico 'arrow-circle-down' %}Download for macOS
-			</a>
-			<a class="button secondary" href="{{ repo }}" target="_blank" rel="noopener">
-				{% svgico 'github' %}View on GitHub
-			</a>
-		</div>
-		<p class="quay-note">Free &amp; open source (MIT). Builds aren't code-signed yet, so on first launch right-click the app and choose <strong>Open</strong> → <strong>Open Anyway</strong>.</p>
-
-		<ul class="quay-badges">
-			<li>macOS</li>
-			<li>Rust + TypeScript</li>
-			<li>Built on Tauri v2</li>
-			<li>MIT licensed</li>
-		</ul>
 	</section>
 
-	{# ---------- Screenshot ---------- #}
-	<section class="block quay-showcase">
-		<p class="quay-eyebrow">In the menubar</p>
-		{{ desktopFrame("/assets/img/quay/popup.png", "Quay menubar popup listing running dev services with live status, CPU and memory metrics.") }}
+	{# ---------- Positioning callout ---------- #}
+	<section class="block quay-callout quay-highlight-bg">
+		<p class="quay-callout-text">
+			<span class="quay-callout-dot" aria-hidden="true"></span>
+			Not just a port monitor — <span class="hl">a control center for everything running locally.</span>
+		</p>
+	</section>
+
+	<section class="quay-highlight-bg">
+
+	{# ---------- Four kinds of service ---------- #}
+	<section class="block">
+		<!-- p class="quay-eyebrow">Everything running locally</p -->
+		<h2 class="quay-kinds-title">Four kinds of service. One place.</h2>
+		<ul class="quay-kinds">
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
+				<h3>Project servers</h3>
+				<p>Next.js, Vite, Django, Rails — auto-detected from your project config and grouped into one stack.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'feature-brew' %}</span>
+				<h3>Homebrew services</h3>
+				<p>Redis, Postgres, MySQL, MongoDB. Start and stop brew services without touching the terminal.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'feature-docker' %}</span>
+				<h3>Docker containers</h3>
+				<p>See and control running containers alongside everything else — no separate dashboard.</p>
+			</li>
+			<li class="quay-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'feature-terminal' %}</span>
+				<h3>Terminal &amp; AI agents</h3>
+				<p>Keep long-running processes like Claude Code visible, with uptime and resource use at a glance.</p>
+			</li>
+		</ul>
 	</section>
 
 	{# ---------- Features ---------- #}
@@ -100,6 +148,8 @@ generate_social_image: true
 				<p>Reads start commands and ports from <code>package.json</code>, <code>requirements.txt</code> and <code>.env</code>.</p>
 			</li>
 		</ul>
+	</section>
+
 	</section>
 
 	{# ---------- How it works ---------- #}

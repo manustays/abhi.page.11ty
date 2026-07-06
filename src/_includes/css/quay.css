@@ -7,6 +7,10 @@
 	overflow-x: hidden;
 }
 
+.quay section {
+	padding-bottom: var(--gap-xl);
+}
+
 /* ---------- Hero ---------- */
 
 .quay-hero {
@@ -17,10 +21,27 @@
 	padding-bottom: var(--gap-xl);
 }
 
+/* Two-column hero: copy left, generated desktop frame right.
+   Stacks to a single column (frame below copy) under 900px. */
+.quay-hero-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--gap-xl);
+	align-items: center;
+}
+
+@media (min-width: 900px) {
+	.quay-hero-grid {
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+		gap: var(--gap-lg);
+	}
+}
+
 .quay-hero-head {
 	display: flex;
 	align-items: center;
-	gap: var(--gap-md);
+	gap: var(--gap-lg);
+	margin-bottom: 50px;
 }
 
 .quay-logo {
@@ -29,9 +50,37 @@
 	flex: 0 0 auto;
 }
 
-.quay-hero-titles h1 {
+/* Brand wordmark (the value headline below is the page h1) */
+.quay-hero-titles {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6em;
+}
+.quay-wordmark {
 	margin: 0;
+	font-family: 'Lora', serif;
+	font-size: 2.8rem;
+	line-height: 1;
+	color: var(--clr-txt);
 	letter-spacing: -0.01em;
+}
+
+.quay-headline {
+	margin: var(--gap-lg) 0 0;
+	line-height: 1.08;
+	letter-spacing: -0.015em;
+	color: var(--clr-light);
+	font-size: 2.4rem;
+}
+
+.quay-headline .hl {
+	color: var(--clr-highlight);
+}
+
+/* Frame fills its column instead of the standalone 960px max */
+.quay-hero-visual .macos-frame {
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 /* Dictionary-entry pronunciation line — calm, muted, monospace */
@@ -68,6 +117,7 @@
 	justify-content: flex-start;
 	align-items: center;
 	gap: var(--gap-sm);
+	margin-top: 50px;
 }
 
 /* Outline variant of the shared .button (base.css has only the filled one) */
@@ -84,10 +134,19 @@
 }
 
 .quay-note {
-	margin: var(--gap-sm) 0 0;
-	max-width: 52ch;
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5em;
+	margin: var(--gap-md) 0 0;
+	max-width: 56ch;
 	font-size: 0.82rem;
+	line-height: 1.5;
 	color: var(--lighter-text-color);
+}
+
+.quay-note-ico {
+	flex: 0 0 auto;
+	margin-top: 0.15em;
 }
 
 /* ---------- Badges ---------- */
@@ -96,19 +155,115 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	gap: var(--gap-sm);
+	gap: var(--gap-md);
 	margin-top: var(--gap-lg);
 	padding: 0;
 	list-style: none;
 }
 
 .quay-badges li {
-	font-size: 0.8rem;
+	font-size: 0.7rem;
 	font-weight: 500;
 	color: var(--clr-mid);
 	background: var(--clr-slate);
 	border-radius: 999px;
 	padding: 0.25em 0.85em;
+}
+
+/* ---------- Positioning callout ---------- */
+
+.quay-highlight-bg {
+	background: radial-gradient(120% 120% at 78% 0%, #3A4A63 0%, #26303F 42%, #171D27 100%);
+	/* background:
+			radial-gradient(circle at 0% -20%, var(--clr-primary) 0%, transparent 55%),
+			var(--clr-primary-shade); */
+}
+
+.quay-callout {
+	border-top: 1px solid var(--clr-slate);
+	border-bottom: 1px solid var(--clr-slate);
+	background: var(--clr-primary-shade);
+}
+
+.quay-callout-text {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin: 0;
+	font-size: 1.1rem;
+	font-weight: 600;
+	color: var(--clr-light);
+}
+
+.quay-callout-dot {
+	flex: 0 0 auto;
+	align-self: center;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--clr-highlight);
+	box-shadow: 0 0 10px 1px rgba(254, 219, 139, 0.5);
+}
+
+.quay-callout-text .hl {
+	color: var(--clr-highlight);
+}
+
+/* ---------- Four kinds of service ---------- */
+
+.quay-kinds-title {
+	text-align: center;
+	margin: var(--gap-sm) 0 var(--gap-lg);
+}
+
+.quay-kinds {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: var(--gap-md);
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.quay-kind {
+	background: var(--clr-primary-shade);
+	border: 1px solid var(--clr-slate);
+	border-radius: 10px;
+	padding: var(--gap-lg);
+}
+
+.quay-kind .ico {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	margin-bottom: var(--gap-md);
+	border-radius: 10px;
+	background: rgba(254, 219, 139, 0.1);
+	color: var(--clr-highlight);
+}
+
+/* Line-style icons (mirrors the .quay-feature .ico override) */
+.quay-kind .ico .svgico {
+	width: 24px;
+	height: 24px;
+	fill: none;
+	stroke: currentColor;
+}
+
+.quay-kind h3 {
+	font-size: 1.15rem;
+	margin: 0 0 0.35em;
+	color: var(--clr-primary-txt);
+}
+
+.quay-kind p {
+	margin: 0;
+	color: var(--clr-mid);
+	font-size: 0.95rem;
+	line-height: 1.55;
 }
 
 /* ---------- Screenshot: generated macOS desktop frame ---------- */
@@ -122,6 +277,13 @@
 	background: radial-gradient(120% 120% at 78% 0%, #3A4A63 0%, #26303F 42%, #171D27 100%);
 	border: 1px solid var(--clr-primary-glare);
 	box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* Chrome-less variant: frame surface disappears, screenshot floats on the page */
+.macos-frame.transparent {
+	background: transparent;
+	border-color: transparent;
+	box-shadow: none;
 }
 
 .macos-menubar {

@@ -5,8 +5,8 @@
   screenshot carries an accessible label via `alt`.
   Styles: `.macos-frame` block in css/quay.css.
 #}
-{% macro desktopFrame(img, alt="") %}
-<div class="macos-frame">
+{% macro desktopFrame(img, alt="", transparent=false) %}
+<div class="macos-frame{% if transparent %} transparent{% endif %}">
 	<div class="macos-menubar" aria-hidden="true">
 		<div class="macos-menubar-left">
 			<span class="macos-app">Quay</span>
