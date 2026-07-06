@@ -275,6 +275,81 @@
 	line-height: 1.55;
 }
 
+/* ---------- High-value workflows ---------- */
+/* Outcome-first cards; reuse the .quay-kind chip-card recipe, add a feature-tag row.
+   min 220px matches .quay-kinds so 3 cards fit the ~720px content width at 900px. */
+
+.quay-workflows {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: var(--gap-md);
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.quay-workflow {
+	display: flex;
+	flex-direction: column;
+	background: var(--clr-primary-shade);
+	border: 1px solid var(--clr-slate);
+	border-radius: 10px;
+	padding: var(--gap-lg);
+}
+
+.quay-workflow .ico {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	margin-bottom: var(--gap-md);
+	border-radius: 10px;
+	background: rgba(254, 219, 139, 0.1);
+	color: var(--clr-highlight);
+}
+
+.quay-workflow .ico .svgico {
+	width: 24px;
+	height: 24px;
+	fill: none;
+	stroke: currentColor;
+}
+
+.quay-workflow h3 {
+	font-size: 1.15rem;
+	margin: 0 0 0.35em;
+	color: var(--clr-primary-txt);
+}
+
+.quay-workflow p {
+	margin: 0;
+	color: var(--clr-mid);
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+
+/* Feature tags: pill chips naming the real features each workflow uses.
+   Pinned to the card bottom so uneven copy lengths still align the tag rows. */
+.quay-workflow-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap-sm);
+	margin-top: auto;    /* pins the tag row to the card bottom → rows align across uneven copy */
+	padding-top: var(--gap-md);
+	padding-left: 0;
+	list-style: none;
+}
+
+.quay-workflow-tags li {
+	font-size: 0.7rem;
+	font-weight: 500;
+	color: var(--clr-highlight);
+	background: rgba(254, 219, 139, 0.1);
+	border-radius: 999px;
+	padding: 0.25em 0.7em;
+}
+
 /* ---------- Screenshot: generated macOS desktop frame ---------- */
 
 .macos-frame {
