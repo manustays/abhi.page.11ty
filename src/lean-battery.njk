@@ -1,0 +1,337 @@
+---
+permalink: /lean-battery/
+title: LeanBattery — A battery indicator that doesn't hog your menubar
+description: An 11-point-wide macOS menubar battery with per-app energy use, battery health and custom low-battery alerts. Under 0.1% CPU and 0 idle wakeups. Free and open source.
+keywords: leanbattery, macos menubar battery, battery percentage menubar, per-app energy, battery health, apple silicon
+generate_social_image: false
+---
+
+{% extends "./_layouts/base.njk" %}
+{% from "components/desktop-frame.njk" import desktopFrame %}
+
+{% block custom_style %}
+	{% set css_product %}{% include "css/product.css" %}{% endset %}
+	{% set css_lb %}{% include "css/lean-battery.css" %}{% endset %}
+	{{ (css_product + css_lb) | cssmin | safe }}
+{% endblock %}
+
+{% set repo = "https://github.com/manustays/lean-battery" %}
+{% set download = "https://github.com/manustays/lean-battery/releases/latest" %}
+{% set brew = "brew install --cask manustays/tools/leanbattery" %}
+
+{# The menubar item itself: 11 x 22pt upright battery, charge drawn inside it.
+   On battery the fill is the menubar's own color at 28% opacity — green is the
+   charging state, so it would be wrong here. #}
+{% set menubarGlyph %}
+<svg class="lb-menubar-glyph" width="11" height="22" viewBox="0 0 11 22" fill="none">
+	<rect x="3.8" y="0.4" width="3.4" height="1.4" rx="0.7" fill="#E4E8EF"/>
+	<rect x="1.4" y="2.1" width="8.2" height="18.5" rx="2.3" stroke="#E4E8EF" stroke-width="1.1"/>
+	<rect x="2.3" y="10.4" width="6.4" height="9.4" rx="1.4" fill="#E4E8EF" opacity="0.28"/>
+	<text x="5.5" y="13.6" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="7.4" font-weight="600" letter-spacing="-0.4" fill="#E4E8EF">57</text>
+</svg>
+{% endset %}
+
+{% block main %}
+<div class="product">
+
+	{# ---------- Hero ---------- #}
+	<section class="block product-hero">
+		<div class="product-hero-grid">
+			<div class="product-hero-copy">
+				<div class="product-hero-head">
+					<img class="product-logo" src="/assets/img/lean-battery/logo.svg" alt="" width="88" height="88" />
+					<div class="product-hero-titles">
+						<div class="product-wordmark">LeanBattery</div>
+						<div class="product-pronounce mono">11 points wide · the percentage lives inside the icon</div>
+					</div>
+				</div>
+
+				<h1 class="product-headline">A battery indicator that<br><span class="hl">doesn't hog your menubar.</span></h1>
+
+				<p class="product-lede">A native macOS menubar app that shows battery level and charging state in an 11-point-wide upright battery — with a popover for per-app energy use, battery health and low-battery alerts you set yourself.</p>
+
+				<div class="product-cta">
+					<a class="button" href="{{ download }}" target="_blank" rel="noopener">
+						{% svgico 'arrow-circle-down' %}Download for macOS
+					</a>
+					<a class="button secondary" href="{{ repo }}" target="_blank" rel="noopener">
+						{% svgico 'github' %}View on GitHub
+					</a>
+				</div>
+
+				<p class="product-note">
+					<svg class="product-note-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none"/></svg>
+					Apple&nbsp;Silicon MacBooks, macOS&nbsp;26 or later. Builds aren't notarized yet — macOS asks for one confirmation in Privacy &amp; Security on first launch. Fully open source under MIT.
+				</p>
+
+				<ul class="product-badges">
+					<li>macOS 26+</li>
+					<li>Apple Silicon</li>
+					<li>Swift 6</li>
+					<li>1.3 MB</li>
+					<li>MIT</li>
+				</ul>
+			</div>
+
+			<div class="product-hero-visual">
+				{% call desktopFrame(null, transparent=true, app="LeanBattery", statusIcon=menubarGlyph) %}
+					<div class="lb-popover" aria-hidden="true">
+						<div class="lb-pop-level">
+							<span class="lb-pop-pct">57<span>%</span></span>
+							<span class="lb-pop-status">On Battery · 4h 05m left</span>
+						</div>
+						<div class="lb-bar"><i style="width:57%"></i></div>
+
+						<dl class="lb-kv">
+							<div><dt>Source</dt><dd>Battery</dd></div>
+							<div><dt>Draw</dt><dd>8.4 W</dd></div>
+							<div><dt>Temp</dt><dd>31 °C</dd></div>
+						</dl>
+
+						<div class="lb-row">
+							<span>Low Power Mode</span>
+							<span class="lb-switch"></span>
+						</div>
+
+						<div class="lb-sec-head">
+							<span class="lb-sec-title">Energy</span>
+							<div class="lb-ranges"><span class="is-on">Now</span><span>8h</span><span>24h</span><span>7d</span></div>
+						</div>
+						<ul class="lb-apps">
+							{% set demoApps = [
+								{ mark: "X", name: "Xcode",   pct: 41, tone: "is-hot"  },
+								{ mark: "C", name: "Chrome",  pct: 23, tone: "is-warm" },
+								{ mark: "S", name: "Slack",   pct: 16, tone: "is-warm" },
+								{ mark: "F", name: "Figma",   pct: 9,  tone: ""        },
+								{ mark: "M", name: "Music",   pct: 4,  tone: ""        }
+							] %}
+							{% for app in demoApps %}
+								<li class="lb-app">
+									<span class="lb-app-mark">{{ app.mark }}</span>
+									<span>
+										<span class="lb-app-name">{{ app.name }}</span>
+										<span class="lb-app-share {{ app.tone }}"><i style="width:{{ app.pct }}%"></i></span>
+									</span>
+									<span class="lb-app-pct">{{ app.pct }}%</span>
+								</li>
+							{% endfor %}
+						</ul>
+
+						<div class="lb-row"><span>Battery Information</span><span class="lb-chev">›</span></div>
+						<div class="lb-row"><span>Settings</span><span class="lb-chev">›</span></div>
+					</div>
+				{% endcall %}
+				<p class="lb-caption">Illustration with sample data. The narrow glyph in the menubar above is LeanBattery — the wide one beside it is macOS's own.</p>
+			</div>
+		</div>
+	</section>
+
+	{# ---------- Positioning callout ---------- #}
+	<section class="block product-callout product-highlight-bg product-callout-text">
+			<span class="product-callout-dot" aria-hidden="true"></span>
+			A battery app that costs you battery is a bad joke — <span class="hl">so this one publishes its own numbers.</span>
+	</section>
+
+	<div class="product-highlight-bg">
+
+		{# ---------- High-value workflows ---------- #}
+		<section class="block">
+			<h2 class="product-section-title">What you get back</h2>
+			<ul class="product-workflows">
+				<li class="product-workflow">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-slim' %}</span>
+					<h3>Your menubar space</h3>
+					<p>An upright battery 11 points wide, with the charge drawn <em>inside</em> it and a plug glyph when you're plugged in. On a notched MacBook that difference is the whole point.</p>
+					<ul class="product-workflow-tags">
+						<li>11-point icon</li>
+						<li>% inside the glyph</li>
+						<li>Plug when charging</li>
+					</ul>
+				</li>
+				<li class="product-workflow">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-energy' %}</span>
+					<h3>The app that's draining it</h3>
+					<p>Top five apps by energy use, with icons and share bars, over the last hour, 8 hours, 24 hours or 7 days — read straight out of the power log macOS already keeps.</p>
+					<ul class="product-workflow-tags">
+						<li>Per-app energy</li>
+						<li>Now → 7 days</li>
+						<li>Read-only</li>
+					</ul>
+				</li>
+				<li class="product-workflow">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-bell' %}</span>
+					<h3>A warning you actually notice</h3>
+					<p>Set up to five of your own thresholds — below 20%, above 80% while charging, whatever you like. Each one can raise a floating pill, pulse the screen edge and play a sound.</p>
+					<ul class="product-workflow-tags">
+						<li>5 custom rules</li>
+						<li>Notch pill</li>
+						<li>Screen-edge glow</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+
+		{# ---------- What's in the popover ---------- #}
+		<section class="block">
+			<h2 class="product-kinds-title">Everything else, one click away.</h2>
+			<ul class="product-kinds">
+				<li class="product-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-battery' %}</span>
+					<h3>Battery header</h3>
+					<p>Charge level and whether you're on battery, charging or plugged in but not charging — with time remaining, the adapter's wattage, live system draw and battery temperature.</p>
+				</li>
+				<li class="product-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-energy' %}</span>
+					<h3>Energy by app</h3>
+					<p>The top five energy users with their real app icons and share bars, across four time ranges. Rows under 1% are dropped so the list stays readable.</p>
+				</li>
+				<li class="product-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-health' %}</span>
+					<h3>Battery information</h3>
+					<p>Health, condition, cycle count, current capacity, voltage and the connected adapter — the numbers you'd otherwise dig out of System Information.</p>
+				</li>
+				<li class="product-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-lowpower' %}</span>
+					<h3>Low Power Mode</h3>
+					<p>Flip Low Power Mode from the popover instead of opening System Settings. The icon turns yellow while it's on, so you can tell at a glance.</p>
+				</li>
+			</ul>
+			<p class="lb-soon"><strong>Coming next:</strong> batteries for Bluetooth headphones, mice, keyboards and controllers.</p>
+		</section>
+
+		{# ---------- Measured efficiency ---------- #}
+		<section class="block">
+			<h2 class="product-section-title">Measured, not claimed</h2>
+			<p class="product-compare-lede">Numbers from the real app on a real Mac — an M3 Pro MacBook Pro running macOS 27 — sampled once a second by a script in the repo.</p>
+
+			<div class="product-compare-card">
+				<div class="product-compare-scroll">
+					<table class="product-compare lb-efficiency">
+						<thead>
+							<tr>
+								<th scope="col">What you're doing</th>
+								<th scope="col">CPU</th>
+								<th scope="col">Idle wakeups</th>
+								<th scope="col">Memory</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% set efficiencyRows = [
+								{ state: "Sitting in the menubar — the 99% case", cpu: "&lt;0.1%",  wakeups: "0 / min",   memory: "~15 MB", edge: true  },
+								{ state: "Notification on screen",                 cpu: "0.01%",  wakeups: "0 / min",   memory: "—",      edge: false },
+								{ state: "Popover open, <code>Now</code>",         cpu: "0.81%",  wakeups: "—",         memory: "~38 MB", edge: false },
+								{ state: "Popover open, <code>7d</code>",          cpu: "0.91%",  wakeups: "1.0 / min", memory: "44 MB",  edge: false }
+							] %}
+							{% for row in efficiencyRows %}
+								<tr{% if row.edge %} class="is-edge"{% endif %}>
+									<th scope="row">{{ row.state | safe }}</th>
+									<td>{{ row.cpu | safe }}</td>
+									<td>{{ row.wakeups | safe }}</td>
+									<td>{{ row.memory | safe }}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<p class="lb-footnote">
+				The menubar figure is three ten-minute runs, measuring 0.06%, 0.08% and 0.06% mean CPU with the popover closed. A one-minute sample usually reads 0.00%, which flatters it — so the honest number is <strong>under 0.1%</strong>, not zero. Reproduce it with <code>scripts/cpu-check.sh</code>.
+			</p>
+
+			<p class="lb-footnote">
+				<strong>Why it's idle:</strong> there's no polling for battery state. The icon redraws when macOS posts a power-source, Low Power Mode or wake notification, and not otherwise — plus one lax 60-second timer for temperature, the single value macOS has no notification for. The popover's own timers exist only while it's open, and notifications cost nothing at all between events.
+			</p>
+		</section>
+
+	</div>
+
+	{# ---------- How it works ---------- #}
+	<section class="block bg-shaded">
+		<h2 class="product-section-title">Running in under a minute</h2>
+		<ol class="product-steps">
+			<li class="product-step">
+				<h3>Install</h3>
+				<p>Run <code>{{ brew }}</code>, or download the <code>.zip</code> from Releases and drag <code>LeanBattery.app</code> to <code>/Applications</code>.</p>
+			</li>
+			<li class="product-step">
+				<h3>Approve it once</h3>
+				<p>Builds aren't notarized, so the first launch needs System Settings → Privacy &amp; Security → <em>Open Anyway</em>. Right-click → Open no longer works on recent macOS.</p>
+			</li>
+			<li class="product-step">
+				<h3>Forget about it</h3>
+				<p>It sits in the menubar. Click for the popover, and turn on Launch at Login in Settings if you want it back after a restart.</p>
+			</li>
+		</ol>
+	</section>
+
+	{# ---------- Open-source trust ---------- #}
+	<section class="block product-trust">
+		<h2 class="product-section-title">Open source you can trust</h2>
+		<ul class="product-trust-grid">
+			<li class="product-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-license' %}</span>
+				<h3>MIT licensed</h3>
+				<p>A permissive license — use, fork and ship it however you like.</p>
+			</li>
+			<li class="product-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-local' %}</span>
+				<h3>Fully local</h3>
+				<p>Battery and energy data never leave your Mac. LeanBattery reads macOS's power log; it stores no history of its own.</p>
+			</li>
+			<li class="product-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-no-account' %}</span>
+				<h3>No account</h3>
+				<p>No sign-up, no login. Download it and go.</p>
+			</li>
+			<li class="product-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-no-telemetry' %}</span>
+				<h3>No telemetry</h3>
+				<p>The only network call it ever makes is a release check — automatically at most once a day, or when you ask. Switch it off and it makes none.</p>
+			</li>
+			<li class="product-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-code' %}</span>
+				<h3>Swift 6, zero dependencies</h3>
+				<p>System frameworks only at runtime. Nothing third-party ships inside the app, and 159 tests cover the logic.</p>
+			</li>
+			<li class="product-kind">
+				<span class="ico" aria-hidden="true">{% svgico 'trust-lightweight' %}</span>
+				<h3>1.3 MB</h3>
+				<p>A native AppKit agent app with no Dock icon. No Electron, no bundled browser.</p>
+			</li>
+		</ul>
+		<div class="product-trust-links">
+			<a href="{{ repo }}" target="_blank" rel="noopener">View source</a>
+			<a href="{{ download }}" target="_blank" rel="noopener">Current release</a>
+			<a href="{{ repo }}/issues" target="_blank" rel="noopener">Contributions welcome</a>
+		</div>
+	</section>
+
+	{# ---------- Support / sponsor ---------- #}
+	<section class="block product-support bg-shaded">
+			<span class="product-support-ico" aria-hidden="true">{% svgico 'heart' %}</span>
+			<h2 class="product-section-title product-support-title">Enjoying LeanBattery?</h2>
+			<p class="product-support-text">LeanBattery is free and open source, built in my spare time. If it saves you time, a one-time sponsorship — or even a quick star — genuinely helps and keeps me motivated.</p>
+			<div class="product-cta product-support-cta">
+				<a class="button sponsor" href="https://github.com/sponsors/manustays?frequency=one-time" target="_blank" rel="noopener">
+					{% svgico 'heart' %}Sponsor on GitHub
+				</a>
+				<a class="button secondary" href="{{ repo }}" target="_blank" rel="noopener">
+					{% svgico 'github' %}Star on GitHub
+				</a>
+			</div>
+			<p class="product-support-note">No pressure — LeanBattery stays free either way.</p>
+	</section>
+
+	{# ---------- Closing CTA ---------- #}
+	<section class="block product-closing">
+		<div class="product-cta">
+			<a class="button" href="{{ download }}" target="_blank" rel="noopener">
+				{% svgico 'arrow-circle-down' %}Download for macOS
+			</a>
+		</div>
+		<p class="product-license">MIT © 2026 Kumar Abhishek</p>
+	</section>
+
+</div>
+{% endblock %}
