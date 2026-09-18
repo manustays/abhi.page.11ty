@@ -10,7 +10,95 @@
    glyph next to it is the width argument, made visually. */
 
 .lb-menubar-glyph {
+	display: block;
 	flex: 0 0 auto;
+}
+
+/* The product mark is the menubar glyph itself, so it is 11:22 rather than
+   square — it can't use .product-logo's 88x88 box. */
+.lb-logo {
+	flex: 0 0 auto;
+	width: auto;
+	height: 104px;
+}
+
+/* ---------- Glyph states ---------- */
+
+.lb-states {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: var(--gap-md);
+	max-width: 860px;   /* keeps the chips close to the glyph instead of stretching */
+	margin: 0 auto;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+/* Menubar-ish slab behind the glyph: dark by default, light for the
+   inverted variant, so each one is shown on the bar it's drawn for. */
+.lb-chip {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 104px;
+	margin-bottom: var(--gap-md);
+	border-radius: 10px;
+	background: rgba(12, 15, 20, 0.55);
+	border: 1px solid var(--clr-slate);
+}
+
+.lb-chip.is-light {
+	background: #EDEFF3;
+	border-color: #D5D9E0;
+}
+
+.lb-chip img {
+	display: block;
+	width: auto;
+	height: 68px;
+}
+
+.lb-state h3 {
+	margin: 0 0 0.35em;
+	font-size: 1rem;
+	color: var(--clr-primary-txt);
+}
+
+.lb-state p {
+	margin: 0;
+	font-size: 0.88rem;
+	line-height: 1.55;
+	color: var(--clr-mid);
+}
+
+/* Light-menubar footnote: one chip beside one sentence */
+.lb-adapt {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: var(--gap-md);
+	margin-top: var(--gap-xl);
+}
+
+.lb-adapt .lb-chip {
+	width: 70px;
+	height: 66px;
+	margin: 0;
+}
+
+.lb-adapt .lb-chip img {
+	height: 40px;
+}
+
+.lb-adapt p {
+	max-width: 38ch;
+	margin: 0;
+	font-size: 0.88rem;
+	line-height: 1.55;
+	color: var(--clr-mid);
+	text-align: left;
 }
 
 .lb-caption {
@@ -277,4 +365,8 @@
 .lb-soon strong {
 	color: var(--clr-mid);
 	font-weight: 600;
+}
+
+@media (max-width: 480px) {
+	.lb-logo { height: 76px; }
 }

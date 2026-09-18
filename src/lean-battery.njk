@@ -19,16 +19,11 @@ generate_social_image: false
 {% set download = "https://github.com/manustays/lean-battery/releases/latest" %}
 {% set brew = "brew install --cask manustays/tools/leanbattery" %}
 
-{# The menubar item itself: 11 x 22pt upright battery, charge drawn inside it.
-   On battery the fill is the menubar's own color at 28% opacity — green is the
-   charging state, so it would be wrong here. #}
+{# The menubar item itself: the app's own 11 x 22pt glyph. The white-outline
+   variants are what macOS draws on a dark menubar; the -light files are the
+   dark-outline versions it swaps in on a light one. #}
 {% set menubarGlyph %}
-<svg class="lb-menubar-glyph" width="11" height="22" viewBox="0 0 11 22" fill="none">
-	<rect x="3.8" y="0.4" width="3.4" height="1.4" rx="0.7" fill="#E4E8EF"/>
-	<rect x="1.4" y="2.1" width="8.2" height="18.5" rx="2.3" stroke="#E4E8EF" stroke-width="1.1"/>
-	<rect x="2.3" y="10.4" width="6.4" height="9.4" rx="1.4" fill="#E4E8EF" opacity="0.28"/>
-	<text x="5.5" y="13.6" text-anchor="middle" font-family="-apple-system, system-ui, sans-serif" font-size="7.4" font-weight="600" letter-spacing="-0.4" fill="#E4E8EF">57</text>
-</svg>
+<img class="lb-menubar-glyph" src="/assets/img/lean-battery/menubar-discharging.png" width="10" height="20" alt="" />
 {% endset %}
 
 {% block main %}
@@ -39,7 +34,7 @@ generate_social_image: false
 		<div class="product-hero-grid">
 			<div class="product-hero-copy">
 				<div class="product-hero-head">
-					<img class="product-logo" src="/assets/img/lean-battery/logo.svg" alt="" width="88" height="88" />
+					<img class="lb-logo" src="/assets/img/lean-battery/menubar-discharging.png" alt="" width="88" height="176" />
 					<div class="product-hero-titles">
 						<div class="product-wordmark">LeanBattery</div>
 						<div class="product-pronounce mono">11 points wide · the percentage lives inside the icon</div>
@@ -77,10 +72,10 @@ generate_social_image: false
 				{% call desktopFrame(null, transparent=true, app="LeanBattery", statusIcon=menubarGlyph) %}
 					<div class="lb-popover" aria-hidden="true">
 						<div class="lb-pop-level">
-							<span class="lb-pop-pct">57<span>%</span></span>
-							<span class="lb-pop-status">On Battery · 4h 05m left</span>
+							<span class="lb-pop-pct">78<span>%</span></span>
+							<span class="lb-pop-status">On Battery · 5h 40m left</span>
 						</div>
-						<div class="lb-bar"><i style="width:57%"></i></div>
+						<div class="lb-bar"><i style="width:78%"></i></div>
 
 						<dl class="lb-kv">
 							<div><dt>Source</dt><dd>Battery</dd></div>
@@ -133,6 +128,35 @@ generate_social_image: false
 	</section>
 
 	<div class="product-highlight-bg">
+
+		{# ---------- The glyph, in every state ---------- #}
+		<section class="block">
+			<h2 class="product-section-title">One glyph. Every state.</h2>
+			<ul class="lb-states">
+				{% set glyphStates = [
+					{ img: "menubar-discharging",     name: "On battery",   note: "The charge sits inside the glyph, so nothing extra is needed beside it." },
+					{ img: "menubar-charging",        name: "Charging",     note: "A plug replaces the number and the fill turns green." },
+					{ img: "menubar-low-battery",     name: "Running low",  note: "At 20% or below the fill goes red, before you have to think about it." },
+					{ img: "menubar-high-temperature", name: "Running hot", note: "A red dot appears once the battery passes the temperature you set." }
+				] %}
+				{% for state in glyphStates %}
+					<li class="lb-state">
+						<span class="lb-chip">
+							<img src="/assets/img/lean-battery/{{ state.img }}.png" alt="The LeanBattery menubar glyph, {{ state.name | lower }}." width="88" height="176" loading="lazy" />
+						</span>
+						<h3>{{ state.name }}</h3>
+						<p>{{ state.note }}</p>
+					</li>
+				{% endfor %}
+			</ul>
+
+			<div class="lb-adapt">
+				<span class="lb-chip is-light">
+					<img src="/assets/img/lean-battery/menubar-discharging-light.png" alt="The same glyph drawn dark, for a light menubar." width="88" height="176" loading="lazy" />
+				</span>
+				<p>Light menubar? The glyph inverts to match it — the fill stays translucent so the digits read either way.</p>
+			</div>
+		</section>
 
 		{# ---------- High-value workflows ---------- #}
 		<section class="block">
