@@ -1,18 +1,28 @@
 {#
-  desktopFrame(img, alt) — renders a macOS desktop + menubar in HTML/CSS and
-  superimposes the given screenshot centered below the bar. The generated
-  chrome (menubar, status icons, clock) is decorative (aria-hidden); only the
-  screenshot carries an accessible label via `alt`.
-  Styles: `.macos-frame` block in css/quay.css.
+  desktopFrame(img, alt, transparent, app, statusIcon) — renders a macOS desktop +
+  menubar in HTML/CSS and superimposes a screenshot centered below the bar. The
+  generated chrome (menubar, status icons, clock) is decorative (aria-hidden); only
+  the screenshot carries an accessible label via `alt`.
+
+  `img`        screenshot path. Pass a falsy value and invoke the macro with
+               {% call %} to place arbitrary markup on the stage instead.
+  `app`        name shown in the menubar's left-hand app slot.
+  `statusIcon` raw SVG markup for the product's own menubar item. Defaults to the
+               Quay buoy. The native wifi + battery icons are always kept, so a
+               menubar-item product can be seen next to the system's own.
+
+  Styles: `.macos-frame` block in css/product.css.
 #}
-{% macro desktopFrame(img, alt="", transparent=false) %}
+{% macro desktopFrame(img, alt="", transparent=false, app="Quay", statusIcon=null) %}
 <div class="macos-frame{% if transparent %} transparent{% endif %}">
 	<div class="macos-menubar" aria-hidden="true">
 		<div class="macos-menubar-left">
-			<span class="macos-app">Quay</span>
+			<span class="macos-app">{{ app }}</span>
 			<span>File</span><span>Edit</span><span>View</span>
 		</div>
 		<div class="macos-menubar-right">
+			{%- if statusIcon %}{{ statusIcon | safe }}
+			{%- else %}
 			{# Quay buoy — from src/assets/img/quay/logo.svg #}
 			<svg class="macos-buoy" width="17" height="17" viewBox="0 0 22 22" fill="none" stroke="#C6CCD6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 				<path d="M9 7h4"/>
@@ -22,13 +32,16 @@
 				<circle cx="11" cy="4.5" r="1.8" fill="#f59e0b" stroke="none"/>
 				<path d="M4.5 18c1.4-.9 2.8-.9 4.2 0s2.8.9 4.2 0 2.8-.9 4.6 0"/>
 			</svg>
+			{%- endif %}
 			<svg width="17" height="13" viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M2 5 A8 8 0 0 1 14 5"/><path d="M4.5 7.5 A4.5 4.5 0 0 1 11.5 7.5"/><circle cx="8" cy="10" r="1" fill="currentColor" stroke="none"/></svg>
 			<svg width="26" height="13" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="1" y="1.6" width="18" height="9" rx="2.6"/><rect x="3" y="3.6" width="11" height="5" rx="1" fill="currentColor" stroke="none"/><path d="M21 4.4 V7.6" stroke-width="2.2" stroke-linecap="round"/></svg>
 			<span class="mono macos-clock">9:41</span>
 		</div>
 	</div>
 	<div class="macos-stage">
+		{%- if img %}
 		<img class="macos-popup" src="{{ img }}" alt="{{ alt }}" loading="lazy" />
+		{%- else %}{{ caller() }}{% endif %}
 	</div>
 </div>
 {% endmacro %}

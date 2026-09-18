@@ -11,33 +11,33 @@ image: /assets/img/quay/social-preview.png
 {% from "components/desktop-frame.njk" import desktopFrame %}
 
 {% block custom_style %}
-	{% set css_quay %}{% include "css/quay.css" %}{% endset %}
-	{{ css_quay | cssmin | safe }}
+	{% set css_product %}{% include "css/product.css" %}{% endset %}
+	{{ css_product | cssmin | safe }}
 {% endblock %}
 
 {% set repo = "https://github.com/manustays/quay" %}
 {% set download = "https://github.com/manustays/quay/releases/latest" %}
 
 {% block main %}
-<div class="quay">
+<div class="product">
 
 	{# ---------- Hero ---------- #}
-	<section class="block quay-hero">
-		<div class="quay-hero-grid">
-			<div class="quay-hero-copy">
-				<div class="quay-hero-head">
-					<img class="quay-logo" src="/assets/img/quay/logo.svg" alt="" width="88" height="88" />
-					<div class="quay-hero-titles">
-						<div class="quay-wordmark">Quay</div>
-						<div class="quay-pronounce mono">/kiː/ · where your ports come in</div>
+	<section class="block product-hero">
+		<div class="product-hero-grid">
+			<div class="product-hero-copy">
+				<div class="product-hero-head">
+					<img class="product-logo" src="/assets/img/quay/logo.svg" alt="" width="88" height="88" />
+					<div class="product-hero-titles">
+						<div class="product-wordmark">Quay</div>
+						<div class="product-pronounce mono">/kiː/ · where your ports come in</div>
 					</div>
 				</div>
 
-				<h1 class="quay-headline">Your entire local dev stack.<br><span class="hl">One menu bar.</span></h1>
+				<h1 class="product-headline">Your entire local dev stack.<br><span class="hl">One menu bar.</span></h1>
 
-				<p class="quay-lede">Start, stop and monitor dev servers, Homebrew services, Docker containers and terminal agents from one lightweight macOS app — with live health, CPU and memory, and port-conflict detection.</p>
+				<p class="product-lede">Start, stop and monitor dev servers, Homebrew services, Docker containers and terminal agents from one lightweight macOS app — with live health, CPU and memory, and port-conflict detection.</p>
 
-				<div class="quay-cta">
+				<div class="product-cta">
 					<a class="button" href="{{ download }}" target="_blank" rel="noopener">
 						{% svgico 'arrow-circle-down' %}Download for macOS
 					</a>
@@ -46,12 +46,12 @@ image: /assets/img/quay/social-preview.png
 					</a>
 				</div>
 
-				<p class="quay-note">
-					<svg class="quay-note-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none"/></svg>
+				<p class="product-note">
+					<svg class="product-note-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none"/></svg>
 					Preview builds aren't notarized yet — macOS may ask for one confirmation in Privacy &amp; Security. Fully open source under MIT.
 				</p>
 
-				<ul class="quay-badges">
+				<ul class="product-badges">
 					<li>macOS</li>
 					<li>Rust + TypeScript</li>
 					<li>Tauri v2</li>
@@ -59,49 +59,49 @@ image: /assets/img/quay/social-preview.png
 				</ul>
 			</div>
 
-			<div class="quay-hero-visual">
+			<div class="product-hero-visual">
 				{{ desktopFrame("/assets/img/quay/popup.png", "Quay menu bar popup listing running dev services with live status, CPU and memory metrics.", transparent=true) }}
 			</div>
 		</div>
 	</section>
 
 	{# ---------- Positioning callout ---------- #}
-	<section class="block quay-callout quay-highlight-bg quay-callout-text">
-			<span class="quay-callout-dot" aria-hidden="true"></span>
+	<section class="block product-callout product-highlight-bg product-callout-text">
+			<span class="product-callout-dot" aria-hidden="true"></span>
 			Not just a port monitor — <span class="hl">a control center for everything running locally.</span>
 	</section>
 
-	<div class="quay-highlight-bg">
+	<div class="product-highlight-bg">
 
 		{# ---------- High-value workflows ---------- #}
 		<section class="block">
-			<h2 class="quay-section-title">What a good local day looks like</h2>
-			<ul class="quay-workflows">
-				<li class="quay-workflow">
+			<h2 class="product-section-title">What a good local day looks like</h2>
+			<ul class="product-workflows">
+				<li class="product-workflow">
 					<span class="ico" aria-hidden="true">{% svgico 'flow-bolt' %}</span>
 					<h3>Start your stack in seconds</h3>
 					<p>Your frontend, API and Redis sit together as one group — start them from the menu bar in seconds, no terminal tabs to hunt down.</p>
-					<ul class="quay-workflow-tags">
+					<ul class="product-workflow-tags">
 						<li>Project servers</li>
 						<li>Homebrew services</li>
 						<li>Auto-detection</li>
 					</ul>
 				</li>
-				<li class="quay-workflow">
+				<li class="product-workflow">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-radar' %}</span>
 					<h3>Find what stole your port</h3>
 					<p>Port radar spots the unmanaged process on a port. Open it in the browser to identify it, then adopt it into Quay or terminate it.</p>
-					<ul class="quay-workflow-tags">
+					<ul class="product-workflow-tags">
 						<li>Port radar</li>
 						<li>One-click browser</li>
 						<li>Live status &amp; health</li>
 					</ul>
 				</li>
-				<li class="quay-workflow">
+				<li class="product-workflow">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-metrics' %}</span>
 					<h3>Keep heavy services visible</h3>
 					<p>Watch CPU, memory, uptime and health right from the menu bar — no need to open Activity Monitor.</p>
-					<ul class="quay-workflow-tags">
+					<ul class="product-workflow-tags">
 						<li>Resource metrics</li>
 						<li>Live status &amp; health</li>
 						<li>Unified management</li>
@@ -112,25 +112,25 @@ image: /assets/img/quay/social-preview.png
 
 		{# ---------- Four kinds of service ---------- #}
 		<section class="block">
-			<!-- p class="quay-eyebrow">Everything running locally</p -->
-			<h2 class="quay-kinds-title">Four kinds of service. One place.</h2>
-			<ul class="quay-kinds">
-				<li class="quay-kind">
+			<!-- p class="product-eyebrow">Everything running locally</p -->
+			<h2 class="product-kinds-title">Four kinds of service. One place.</h2>
+			<ul class="product-kinds">
+				<li class="product-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
 					<h3>Project servers</h3>
 					<p>Next.js, Vite, Django, Rails — auto-detected from your project config and grouped into one stack.</p>
 				</li>
-				<li class="quay-kind">
+				<li class="product-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-brew' %}</span>
 					<h3>Homebrew services</h3>
 					<p>Redis, Postgres, MySQL, MongoDB. Start and stop brew services without touching the terminal.</p>
 				</li>
-				<li class="quay-kind">
+				<li class="product-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-docker' %}</span>
 					<h3>Docker containers</h3>
 					<p>See and control running containers alongside everything else — no separate dashboard.</p>
 				</li>
-				<li class="quay-kind">
+				<li class="product-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-terminal' %}</span>
 					<h3>Terminal &amp; AI agents</h3>
 					<p>Keep long-running agents like Claude Code visible, with live start/stop status right in the menu bar.</p>
@@ -140,18 +140,18 @@ image: /assets/img/quay/social-preview.png
 
 		{# ---------- Comparison ---------- #}
 		<section class="block">
-			<h2 class="quay-section-title">More than a port monitor</h2>
-			<p class="quay-compare-lede">Most tools stop at listening ports. Quay manages the whole stack — the rows below are where it pulls ahead.</p>
+			<h2 class="product-section-title">More than a port monitor</h2>
+			<p class="product-compare-lede">Most tools stop at listening ports. Quay manages the whole stack — the rows below are where it pulls ahead.</p>
 
-			<div class="quay-compare-card">
-				<div class="quay-compare-scroll">
-					<table class="quay-compare">
+			<div class="product-compare-card">
+				<div class="product-compare-scroll">
+					<table class="product-compare">
 						<thead>
 							<tr>
 								<th scope="col">Capability</th>
 								<th scope="col">Typical port monitor</th>
-								<th scope="col" class="quay-compare-us">
-									<img class="quay-compare-logo" src="/assets/img/quay/logo.svg" alt="" width="20" height="20" />Quay
+								<th scope="col" class="product-compare-us">
+									<img class="product-compare-logo" src="/assets/img/quay/logo.svg" alt="" width="20" height="20" />Quay
 								</th>
 							</tr>
 						</thead>
@@ -172,8 +172,8 @@ image: /assets/img/quay/social-preview.png
 							{% for row in compareRows %}
 								<tr{% if row.edge %} class="is-edge"{% endif %}>
 									<th scope="row">{{ row.cap | safe }}</th>
-									<td class="quay-compare-typical">{{ row.typical | safe }}</td>
-									<td class="quay-compare-yes">
+									<td class="product-compare-typical">{{ row.typical | safe }}</td>
+									<td class="product-compare-yes">
 										<span class="ico" aria-hidden="true">{% svgico 'check' %}</span>
 										<span class="visually-hidden">Yes</span>
 									</td>
@@ -187,44 +187,44 @@ image: /assets/img/quay/social-preview.png
 
 		{# ---------- Features ---------- # }
 		<section class="block">
-			<h2 class="quay-section-title">One dock for every local service</h2>
-			<ul class="quay-features">
-				<li class="quay-feature">
+			<h2 class="product-section-title">One dock for every local service</h2>
+			<ul class="product-features">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
 					<h3>Unified management</h3>
 					<p>Node &amp; Python servers, Homebrew services, Docker containers and terminal agents — all in one list.</p>
 				</li>
-				<li class="quay-feature">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-health' %}</span>
 					<h3>Live status &amp; health</h3>
 					<p>Process-liveness checks plus HTTP health verification so you know what's actually up.</p>
 				</li>
-				<li class="quay-feature">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-metrics' %}</span>
 					<h3>Resource metrics</h3>
 					<p>Real-time CPU and memory usage per service, right in the menu bar.</p>
 				</li>
-				<li class="quay-feature">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-browser' %}</span>
 					<h3>One-click browser</h3>
 					<p>Open <code>localhost:&lt;port&gt;</code> for any running service without hunting for the port.</p>
 				</li>
-				<li class="quay-feature">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-radar' %}</span>
 					<h3>Port radar</h3>
 					<p>Detects unmanaged dev servers on your machine — adopt them into Quay or terminate them.</p>
 				</li>
-				<li class="quay-feature">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-stack' %}</span>
 					<h3>Stack-aware</h3>
 					<p>Recognises frameworks like Vite, Next, Django and Rails and shows the right tech-stack icon.</p>
 				</li>
-				<li class="quay-feature">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-favorites' %}</span>
 					<h3>Organised your way</h3>
 					<p>Favorites, search and collapsible groups keep a long list of services tidy.</p>
 				</li>
-				<li class="quay-feature">
+				<li class="product-feature">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-detect' %}</span>
 					<h3>Auto-detection</h3>
 					<p>Reads start commands and ports from <code>package.json</code>, <code>requirements.txt</code> and <code>.env</code>.</p>
@@ -236,17 +236,17 @@ image: /assets/img/quay/social-preview.png
 
 	{# ---------- How it works ---------- #}
 	<section class="block bg-shaded">
-		<h2 class="quay-section-title">Up and running in a minute</h2>
-		<ol class="quay-steps">
-			<li class="quay-step">
+		<h2 class="product-section-title">Up and running in a minute</h2>
+		<ol class="product-steps">
+			<li class="product-step">
 				<h3>Install</h3>
 				<p>Download the latest <code>.dmg</code> and drag Quay to <code>/Applications</code>.</p>
 			</li>
-			<li class="quay-step">
+			<li class="product-step">
 				<h3>Add a service</h3>
 				<p>Hit <code>+ Add</code>, pick a project folder — Quay auto-fills the start command and port.</p>
 			</li>
-			<li class="quay-step">
+			<li class="product-step">
 				<h3>Control it</h3>
 				<p>Start, stop, open in the browser or jump to a terminal — all from the menu bar.</p>
 			</li>
@@ -254,41 +254,41 @@ image: /assets/img/quay/social-preview.png
 	</section>
 
 	{# ---------- Open-source trust ---------- #}
-	<section class="block quay-trust">
-		<h2 class="quay-section-title">Open source you can trust</h2>
-		<ul class="quay-trust-grid">
-			<li class="quay-kind">
+	<section class="block product-trust">
+		<h2 class="product-section-title">Open source you can trust</h2>
+		<ul class="product-trust-grid">
+			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-license' %}</span>
 				<h3>MIT licensed</h3>
 				<p>A permissive license — use, fork and ship it however you like.</p>
 			</li>
-			<li class="quay-kind">
+			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-local' %}</span>
 				<h3>Fully local</h3>
 				<p>Your services and settings never leave your Mac.</p>
 			</li>
-			<li class="quay-kind">
+			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-no-account' %}</span>
 				<h3>No account</h3>
 				<p>No sign-up, no login. Download it and go.</p>
 			</li>
-			<li class="quay-kind">
+			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-no-telemetry' %}</span>
 				<h3>No telemetry</h3>
 				<p>Zero tracking, zero analytics, zero phone-home.</p>
 			</li>
-			<li class="quay-kind">
+			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-code' %}</span>
 				<h3>Rust + TypeScript</h3>
 				<p>A Tauri app: a fast Rust core with a TypeScript interface.</p>
 			</li>
-			<li class="quay-kind">
+			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-lightweight' %}</span>
 				<h3>Lightweight</h3>
 				<p>Native and lean — no Electron, no bundled browser.</p>
 			</li>
 		</ul>
-		<div class="quay-trust-links">
+		<div class="product-trust-links">
 			<a href="{{ repo }}" target="_blank" rel="noopener">View source</a>
 			<a href="{{ download }}" target="_blank" rel="noopener">Current release</a>
 			<a href="{{ repo }}/issues" target="_blank" rel="noopener">Contributions welcome</a>
@@ -296,11 +296,11 @@ image: /assets/img/quay/social-preview.png
 	</section>
 
 	{# ---------- Support / sponsor ---------- #}
-	<section class="block quay-support bg-shaded">
-			<span class="quay-support-ico" aria-hidden="true">{% svgico 'heart' %}</span>
-			<h2 class="quay-section-title quay-support-title">Enjoying Quay?</h2>
-			<p class="quay-support-text">Quay is free and open source, built in my spare time. If it saves you time, a one-time sponsorship — or even a quick star — genuinely helps and keeps me motivated.</p>
-			<div class="quay-cta quay-support-cta">
+	<section class="block product-support bg-shaded">
+			<span class="product-support-ico" aria-hidden="true">{% svgico 'heart' %}</span>
+			<h2 class="product-section-title product-support-title">Enjoying Quay?</h2>
+			<p class="product-support-text">Quay is free and open source, built in my spare time. If it saves you time, a one-time sponsorship — or even a quick star — genuinely helps and keeps me motivated.</p>
+			<div class="product-cta product-support-cta">
 				<a class="button sponsor" href="https://github.com/sponsors/manustays?frequency=one-time" target="_blank" rel="noopener">
 					{% svgico 'heart' %}Sponsor on GitHub
 				</a>
@@ -308,17 +308,17 @@ image: /assets/img/quay/social-preview.png
 					{% svgico 'github' %}Star on GitHub
 				</a>
 			</div>
-			<p class="quay-support-note">No pressure — Quay stays free either way.</p>
+			<p class="product-support-note">No pressure — Quay stays free either way.</p>
 	</section>
 
 	{# ---------- Closing CTA ---------- #}
-	<section class="block quay-closing">
-		<div class="quay-cta">
+	<section class="block product-closing">
+		<div class="product-cta">
 			<a class="button" href="{{ download }}" target="_blank" rel="noopener">
 				{% svgico 'arrow-circle-down' %}Download for macOS
 			</a>
 		</div>
-		<p class="quay-license">MIT © 2026 Kumar Abhishek</p>
+		<p class="product-license">MIT © 2026 Kumar Abhishek</p>
 	</section>
 
 </div>

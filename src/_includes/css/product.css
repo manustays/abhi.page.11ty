@@ -1,18 +1,18 @@
 /* ============================================================
-   /quay landing page — scoped styles.
+   Shared product landing-page styles (/quay, /lean-battery).
    Reuses theme vars from base.css; adds no new colors.
    ============================================================ */
 
-.quay {
+.product {
 	overflow-x: hidden;
 }
 
-.quay section {
+.product section {
 	padding-top: 64px;
 	padding-bottom: 64px;
 }
 
-.quay h2 {
+.product h2 {
 	line-height: 1;
 	margin-top: 0;
 	margin-bottom: 42px;
@@ -20,7 +20,7 @@
 
 /* ---------- Hero ---------- */
 
-.quay-hero {
+.product-hero {
 	background:
 		radial-gradient(circle at 0% -20%, var(--clr-primary) 0%, transparent 55%),
 		var(--clr-primary-shade);
@@ -30,7 +30,7 @@
 
 /* Two-column hero: copy left, generated desktop frame right.
    Stacks to a single column (frame below copy) under 900px. */
-.quay-hero-grid {
+.product-hero-grid {
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: var(--gap-xl);
@@ -38,32 +38,32 @@
 }
 
 @media (min-width: 900px) {
-	.quay-hero-grid {
+	.product-hero-grid {
 		grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
 		gap: var(--gap-lg);
 	}
 }
 
-.quay-hero-head {
+.product-hero-head {
 	display: flex;
 	align-items: center;
 	gap: var(--gap-lg);
 	margin-bottom: 50px;
 }
 
-.quay-logo {
+.product-logo {
 	width: 88px;
 	height: 88px;
 	flex: 0 0 auto;
 }
 
 /* Brand wordmark (the value headline below is the page h1) */
-.quay-hero-titles {
+.product-hero-titles {
 	display: flex;
 	flex-direction: column;
 	gap: 0.6em;
 }
-.quay-wordmark {
+.product-wordmark {
 	margin: 0;
 	font-family: 'Lora', serif;
 	font-size: 2.8rem;
@@ -72,7 +72,7 @@
 	letter-spacing: -0.01em;
 }
 
-.quay-headline {
+.product-headline {
 	margin: var(--gap-lg) 0 0;
 	line-height: 1.08;
 	letter-spacing: -0.015em;
@@ -80,25 +80,25 @@
 	font-size: 2.4rem;
 }
 
-.quay-headline .hl {
+.product-headline .hl {
 	color: var(--clr-highlight);
 }
 
 /* Frame fills its column instead of the standalone 960px max */
-.quay-hero-visual .macos-frame {
+.product-hero-visual .macos-frame {
 	max-width: 100%;
 	margin: 0 auto;
 }
 
 /* Dictionary-entry pronunciation line — calm, muted, monospace */
-.quay-pronounce {
+.product-pronounce {
 	margin: 0.25em 0 0;
 	font-size: 0.9rem;
 	letter-spacing: 0.02em;
 	color: var(--lighter-text-color);
 }
 
-.quay-lede {
+.product-lede {
 	max-width: 52ch;
 	margin: var(--gap-md) 0 var(--gap-lg);
 	color: var(--clr-mid);
@@ -106,7 +106,7 @@
 }
 
 /* Quiet section label (e.g. "In the menubar") */
-.quay-eyebrow {
+.product-eyebrow {
 	margin: 0 0 var(--gap-md);
 	font-size: 0.75rem;
 	font-weight: 500;
@@ -118,7 +118,7 @@
 
 /* ---------- Call-to-action ---------- */
 
-.quay-cta {
+.product-cta {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -140,7 +140,7 @@
 	filter: none;
 }
 
-.quay-note {
+.product-note {
 	display: flex;
 	align-items: flex-start;
 	gap: 0.5em;
@@ -151,14 +151,14 @@
 	color: var(--lighter-text-color);
 }
 
-.quay-note-ico {
+.product-note-ico {
 	flex: 0 0 auto;
 	margin-top: 0.15em;
 }
 
 /* ---------- Badges ---------- */
 
-.quay-badges {
+.product-badges {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -168,7 +168,7 @@
 	list-style: none;
 }
 
-.quay-badges li {
+.product-badges li {
 	font-size: 0.7rem;
 	font-weight: 500;
 	color: var(--clr-mid);
@@ -179,14 +179,14 @@
 
 /* ---------- Positioning callout ---------- */
 
-.quay-highlight-bg {
+.product-highlight-bg {
 	background: radial-gradient(120% 120% at 78% 0%, #26303F 0%, #171D27 100%);
 	/* background:
 			radial-gradient(circle at 0% -20%, var(--clr-primary) 0%, transparent 55%),
 			var(--clr-primary-shade); */
 }
 
-.quay-callout {
+.product-callout {
 	border-top: 1px solid var(--clr-slate);
 	border-bottom: 1px solid var(--clr-slate);
 	background: var(--clr-primary-shade);
@@ -194,7 +194,7 @@
 	padding-bottom: var(--gap-lg) !important;
 }
 
-.quay-callout-text {
+.product-callout-text {
 	display: flex;
 	align-items: baseline;
 	flex-wrap: wrap;
@@ -205,7 +205,7 @@
 	color: var(--clr-light);
 }
 
-.quay-callout-dot {
+.product-callout-dot {
 	flex: 0 0 auto;
 	align-self: center;
 	width: 9px;
@@ -215,18 +215,18 @@
 	box-shadow: 0 0 10px 1px rgba(254, 219, 139, 0.5);
 }
 
-.quay-callout-text .hl {
+.product-callout-text .hl {
 	color: var(--clr-highlight);
 }
 
 /* ---------- Four kinds of service ---------- */
 
-.quay-kinds-title {
+.product-kinds-title {
 	text-align: center;
 	margin: var(--gap-sm) 0 var(--gap-lg);
 }
 
-.quay-kinds {
+.product-kinds {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	gap: var(--gap-md);
@@ -235,14 +235,14 @@
 	list-style: none;
 }
 
-.quay-kind {
+.product-kind {
 	background: var(--clr-primary-shade);
 	border: 1px solid var(--clr-slate);
 	border-radius: 10px;
 	padding: var(--gap-lg);
 }
 
-.quay-kind .ico {
+.product-kind .ico {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -254,21 +254,21 @@
 	color: var(--clr-highlight);
 }
 
-/* Line-style icons (mirrors the .quay-feature .ico override) */
-.quay-kind .ico .svgico {
+/* Line-style icons (mirrors the .product-feature .ico override) */
+.product-kind .ico .svgico {
 	width: 24px;
 	height: 24px;
 	fill: none;
 	stroke: currentColor;
 }
 
-.quay-kind h3 {
+.product-kind h3 {
 	font-size: 1.15rem;
 	margin: 0 0 0.35em;
 	color: var(--clr-primary-txt);
 }
 
-.quay-kind p {
+.product-kind p {
 	margin: 0;
 	color: var(--clr-mid);
 	font-size: 0.95rem;
@@ -276,10 +276,10 @@
 }
 
 /* ---------- High-value workflows ---------- */
-/* Outcome-first cards; reuse the .quay-kind chip-card recipe, add a feature-tag row.
-   min 220px matches .quay-kinds so 3 cards fit the ~720px content width at 900px. */
+/* Outcome-first cards; reuse the .product-kind chip-card recipe, add a feature-tag row.
+   min 220px matches .product-kinds so 3 cards fit the ~720px content width at 900px. */
 
-.quay-workflows {
+.product-workflows {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	gap: var(--gap-md);
@@ -288,7 +288,7 @@
 	list-style: none;
 }
 
-.quay-workflow {
+.product-workflow {
 	display: flex;
 	flex-direction: column;
 	background: var(--clr-primary-shade);
@@ -297,7 +297,7 @@
 	padding: var(--gap-lg);
 }
 
-.quay-workflow .ico {
+.product-workflow .ico {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -309,20 +309,20 @@
 	color: var(--clr-highlight);
 }
 
-.quay-workflow .ico .svgico {
+.product-workflow .ico .svgico {
 	width: 24px;
 	height: 24px;
 	fill: none;
 	stroke: currentColor;
 }
 
-.quay-workflow h3 {
+.product-workflow h3 {
 	font-size: 1.15rem;
 	margin: 0 0 0.35em;
 	color: var(--clr-primary-txt);
 }
 
-.quay-workflow p {
+.product-workflow p {
 	margin: 0;
 	color: var(--clr-mid);
 	font-size: 0.95rem;
@@ -331,7 +331,7 @@
 
 /* Feature tags: pill chips naming the real features each workflow uses.
    Pinned to the card bottom so uneven copy lengths still align the tag rows. */
-.quay-workflow-tags {
+.product-workflow-tags {
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--gap-sm);
@@ -341,7 +341,7 @@
 	list-style: none;
 }
 
-.quay-workflow-tags li {
+.product-workflow-tags li {
 	font-size: 0.7rem;
 	font-weight: 500;
 	color: var(--clr-highlight);
@@ -420,7 +420,7 @@
 
 /* ---------- Section scaffolding ---------- */
 
-.quay-section-title {
+.product-section-title {
 	text-align: center;
 	margin-top: 0;
 	margin-bottom: var(--gap-lg);
@@ -431,7 +431,7 @@
    read as an objective reference. Colors are scoped here (like the sponsor pink),
    not added to the global theme. */
 
-.quay-compare-lede {
+.product-compare-lede {
 	max-width: 46ch;
 	margin: -8px auto var(--gap-xl);
 	text-align: center;
@@ -439,12 +439,12 @@
 	line-height: 1.6;
 }
 
-.quay-compare-card {
+.product-compare-card {
 	--cmp-bg:        #ffffff;
 	--cmp-head-bg:   #f7f8fa;
 	--cmp-border:    #edeff2;
 	--cmp-ink:       #334155;   /* capability text */
-	--cmp-ink-strong:#0f2233;   /* navy — Quay header + edge rows */
+	--cmp-ink-strong:#0f2233;   /* navy — product column + edge rows */
 	--cmp-muted:     #94a0af;   /* typical-monitor values + header labels */
 	--cmp-yes:       #16a34a;   /* green check */
 	--cmp-edge-bg:   #fffaef;   /* warm cream for the differentiator rows */
@@ -457,11 +457,11 @@
 	overflow: hidden;
 }
 
-.quay-compare-scroll {
+.product-compare-scroll {
 	overflow-x: auto;   /* narrow screens scroll the table instead of squashing it */
 }
 
-.quay-compare {
+.product-compare {
 	display: table;   /* overrides base.css table{display:block} which left a gap on the right */
 	width: 100%;
 	min-width: 460px;
@@ -469,8 +469,8 @@
 	font-size: 0.95rem;
 }
 
-.quay-compare th,
-.quay-compare td {
+.product-compare th,
+.product-compare td {
 	padding: 15px 24px;
 	text-align: left;
 	vertical-align: middle;
@@ -478,22 +478,22 @@
 }
 
 /* Reset base.css table theming (dark th bg + even-row zebra) to the light card surface */
-.quay-compare tbody th,
-.quay-compare tbody td {
+.product-compare tbody th,
+.product-compare tbody td {
 	background: var(--cmp-bg);
 }
 
 /* Value columns are centered under their headers */
-.quay-compare th + th,
-.quay-compare td {
+.product-compare th + th,
+.product-compare td {
 	text-align: center;
 }
-.quay-compare td:first-child,
-.quay-compare th:first-child {
+.product-compare td:first-child,
+.product-compare th:first-child {
 	text-align: left;
 }
 
-.quay-compare thead th {
+.product-compare thead th {
 	background: var(--cmp-head-bg);
 	border-bottom: 1px solid var(--cmp-border);
 	font-size: 0.9rem;
@@ -502,7 +502,7 @@
 }
 
 /* "CAPABILITY" label — quiet, spaced, uppercase */
-.quay-compare thead th:first-child {
+.product-compare thead th:first-child {
 	font-size: 0.72rem;
 	font-weight: 600;
 	letter-spacing: 0.1em;
@@ -510,56 +510,56 @@
 	color: var(--cmp-muted);
 }
 
-.quay-compare thead th:nth-child(2) {
+.product-compare thead th:nth-child(2) {
 	font-weight: 500;
 	color: var(--cmp-muted);
 }
 
-.quay-compare-us {
+.product-compare-us {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	gap: 0.4em;
 	color: var(--cmp-ink-strong);
 }
-.quay-compare-logo {
+.product-compare-logo {
 	width: 20px;
 	height: 20px;
 	flex: 0 0 auto;
 }
 
-.quay-compare tbody th {
+.product-compare tbody th {
 	font-weight: 500;
 	color: var(--cmp-ink);
 }
 
-.quay-compare tbody tr + tr th,
-.quay-compare tbody tr + tr td {
+.product-compare tbody tr + tr th,
+.product-compare tbody tr + tr td {
 	border-top: 1px solid var(--cmp-border);
 }
 
-.quay-compare-typical {
+.product-compare-typical {
 	color: var(--cmp-muted);
 }
 
-.quay-compare-yes .ico {
+.product-compare-yes .ico {
 	display: inline-flex;
 	color: var(--cmp-yes);
 	line-height: 0;
 }
-.quay-compare-yes .svgico {
+.product-compare-yes .svgico {
 	width: 19px;
 	height: 19px;
 	fill: none;
 	stroke: currentColor;
 }
 
-/* Differentiator rows — where Quay pulls ahead. Cream fill + amber edge bar. */
-.quay-compare tbody tr.is-edge th,
-.quay-compare tbody tr.is-edge td {
+/* Highlighted rows — the ones that carry the argument. Cream fill + amber edge bar. */
+.product-compare tbody tr.is-edge th,
+.product-compare tbody tr.is-edge td {
 	background: var(--cmp-edge-bg);
 }
-.quay-compare tbody tr.is-edge th:first-child {
+.product-compare tbody tr.is-edge th:first-child {
 	box-shadow: inset 3px 0 0 0 var(--clr-highlight-light);
 	font-weight: 600;
 	color: var(--cmp-ink-strong);
@@ -578,13 +578,13 @@
 }
 
 @media (max-width: 480px) {
-	.quay-compare th,
-	.quay-compare td { padding: 13px 16px; }
+	.product-compare th,
+	.product-compare td { padding: 13px 16px; }
 }
 
 /* ---------- Feature grid ---------- */
 
-.quay-features {
+.product-features {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	gap: var(--gap-md);
@@ -593,14 +593,14 @@
 	margin: 0;
 }
 
-.quay-feature {
+.product-feature {
 	background: var(--clr-primary-shade);
 	border: 1px solid var(--clr-slate);
 	border-radius: 10px;
 	padding: var(--gap-lg);
 }
 
-.quay-feature .ico {
+.product-feature .ico {
 	display: block;
 	line-height: 1;
 	margin-bottom: var(--gap-md);
@@ -608,20 +608,20 @@
 }
 
 /* Scoped over the global .svgico { fill: currentColor } — feature icons are line-style */
-.quay-feature .ico .svgico {
+.product-feature .ico .svgico {
 	width: 28px;
 	height: 28px;
 	fill: none;
 	stroke: currentColor;
 }
 
-.quay-feature h3 {
+.product-feature h3 {
 	font-size: 1.15rem;
 	margin: 0 0 0.35em;
 	color: var(--clr-primary-txt);
 }
 
-.quay-feature p {
+.product-feature p {
 	margin: 0;
 	color: var(--clr-mid);
 	font-size: 0.95rem;
@@ -629,7 +629,7 @@
 
 /* ---------- How it works ---------- */
 
-.quay-steps {
+.product-steps {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	gap: var(--gap-lg);
@@ -639,11 +639,11 @@
 	counter-reset: step;
 }
 
-.quay-step {
+.product-step {
 	counter-increment: step;
 }
 
-.quay-step::before {
+.product-step::before {
 	content: counter(step);
 	display: flex;
 	align-items: center;
@@ -658,29 +658,29 @@
 	border-radius: 50%;
 }
 
-.quay-step h3 {
+.product-step h3 {
 	margin: 0 0 0.3em;
 	font-size: 1.1rem;
 }
 
-.quay-step p {
+.product-step p {
 	margin: 0;
 	color: var(--clr-mid);
 	font-size: 0.95rem;
 }
 
-.quay-step code {
+.product-step code {
 	color: var(--clr-highlight);
 }
 
 /* ---------- Open-source trust ---------- */
-/* Cards reuse the .quay-kind chip-card recipe; only the grid + link row are scoped here. */
+/* Cards reuse the .product-kind chip-card recipe; only the grid + link row are scoped here. */
 
-.quay-trust {
+.product-trust {
 	text-align: center;
 }
 
-.quay-trust-grid {
+.product-trust-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	gap: var(--gap-md);
@@ -691,44 +691,44 @@
 	text-align: left;
 }
 
-.quay-trust-links {
+.product-trust-links {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	margin-top: var(--gap-lg);
 }
 
-.quay-trust-links a {
+.product-trust-links a {
 	color: var(--clr-mid);
 	font-size: 0.95rem;
 	text-decoration: none;
 }
 
 /* Dot separators between links (pseudo, no extra DOM); the dot travels with its link on wrap */
-.quay-trust-links a + a::before {
+.product-trust-links a + a::before {
 	content: "·";
 	margin: 0 var(--gap-md);
 	color: var(--clr-slate);
 }
 
-.quay-trust-links a:hover {
+.product-trust-links a:hover {
 	color: var(--clr-highlight);
 }
 
 /* ---------- Closing CTA ---------- */
 
-.quay-closing {
+.product-closing {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.quay-closing .quay-cta {
+.product-closing .product-cta {
 	margin-bottom: var(--gap-xl);
 }
 
-.quay-license {
+.product-license {
 	color: var(--lighter-text-color);
 	font-size: 0.85rem;
 	margin: 0;
@@ -737,30 +737,30 @@
 /* ---------- Support / sponsor ---------- */
 /* Intentionally introduces one brand color: the GitHub Sponsors pink heart. */
 
-.quay-support {
+.product-support {
 	text-align: center;
 	--clr-sponsor: #db61a2;   /* GitHub Sponsors pink */
 }
 
-.quay-support-ico .svgico {
+.product-support-ico .svgico {
 	width: 40px;
 	height: 40px;
 	fill: var(--clr-sponsor);
 }
 
-.quay-support-title {
+.product-support-title {
 	margin-top: 20px !important;
 	margin-bottom: var(--gap-lg) !important;
 }
 
-.quay-support-text {
+.product-support-text {
 	max-width: 46ch;
 	margin: 0 auto var(--gap-lg);
 	color: var(--clr-mid);
 	line-height: 1.6;
 }
 
-.quay-support-cta {
+.product-support-cta {
 	justify-content: center;
 }
 
@@ -770,19 +770,19 @@
 	color: var(--clr-dark);
 }
 
-.quay-support-note {
+.product-support-note {
 	margin: var(--gap-md) 0 0;
 	font-size: 0.8rem;
 	color: var(--lighter-text-color);
 }
 
 @media (min-width: 700px) {
-	.quay-lede { font-size: 1.2rem; }
+	.product-lede { font-size: 1.2rem; }
 }
 
 /* Small screens: shrink logo so it never crowds the title */
 @media (max-width: 480px) {
-	.quay-logo {
+	.product-logo {
 		width: 60px;
 		height: 60px;
 	}
