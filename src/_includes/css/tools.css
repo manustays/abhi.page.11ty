@@ -1,0 +1,119 @@
+/* ============================================================
+   /tools — portfolio of FOSS apps.
+   Reuses theme vars from base.css; card look mirrors .product-feature.
+   ============================================================ */
+
+.tools-head {
+	padding-top: 64px;
+	padding-bottom: var(--gap-lg);
+}
+
+.tools-head h1 {
+	margin: 0;
+	line-height: 1.08;
+	letter-spacing: -0.015em;
+}
+
+.tools-head p {
+	max-width: 52ch;
+	margin: var(--gap-md) 0 0;
+	color: var(--clr-mid);
+	font-size: 1.08rem;
+}
+
+.tools-list {
+	padding-top: var(--gap-lg);
+	padding-bottom: 96px;
+}
+
+/* min(100%, …): below ~312px a bare 300px track would overflow the section padding */
+.tools-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+	gap: var(--gap-lg);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tool-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: var(--gap-xl);
+	background: var(--clr-primary-shade);
+	border: 1px solid var(--clr-slate);
+	border-radius: 10px;
+	transition: border-color 0.2s;
+}
+
+.tool-card:hover,
+.tool-card:focus-visible {
+	border-color: var(--clr-highlight);
+}
+
+.tool-card:focus-visible {
+	outline: 2px solid var(--clr-highlight);
+	outline-offset: 3px;
+}
+
+/* Fixed box so a square logo and LeanBattery's tall 1:2 glyph share one baseline */
+.tool-logo {
+	display: flex;
+	align-items: center;
+	height: 64px;
+	margin-bottom: var(--gap-lg);
+}
+
+.tool-logo img {
+	width: auto;
+	height: 100%;
+}
+
+.tool-card h2 {
+	margin: 0;
+	font-size: 1.7rem;
+	line-height: 1;
+}
+
+.tool-tagline {
+	margin: 0.6em 0 0;
+	color: var(--clr-highlight);
+	font-weight: 600;
+}
+
+.tool-blurb {
+	margin: 0.6em 0 0;
+	color: var(--clr-mid);
+	font-size: 0.95rem;
+}
+
+.tool-badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap-sm);
+	margin: var(--gap-lg) 0;
+	padding: 0;
+	list-style: none;
+}
+
+.tool-badges li {
+	font-size: 0.7rem;
+	font-weight: 500;
+	color: var(--clr-mid);
+	background: var(--clr-slate);
+	border-radius: 999px;
+	padding: 0.25em 0.85em;
+}
+
+/* margin-top:auto pins the link to the card bottom when blurbs differ in length */
+.tool-more {
+	margin-top: auto;
+	font-weight: bold;
+	color: var(--clr-primary-txt);
+}
+
+.tool-card:hover .tool-more,
+.tool-card:focus-visible .tool-more {
+	color: var(--clr-highlight);
+}

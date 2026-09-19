@@ -1,0 +1,65 @@
+---
+permalink: /tools/
+title: Tools — Free and open-source macOS apps
+description: Small, free and open-source macOS menu bar apps — Quay, a control center for your local dev stack, and LeanBattery, an 11-point-wide battery indicator.
+keywords: macos apps, open source, menu bar apps, developer tools, quay, leanbattery
+generate_social_image: false
+breadcrumb: tools
+---
+
+{% extends "./_layouts/base.njk" %}
+
+{% block custom_style %}
+	{% set css_tools %}{% include "css/tools.css" %}{% endset %}
+	{{ css_tools | cssmin | safe }}
+{% endblock %}
+
+{# ponytail: inline list, one object per app. Move to _data/tools.yaml if it outgrows ~5 entries. #}
+{% set tools = [
+	{
+		name: "Quay",
+		url: "/quay/",
+		logo: "/assets/img/quay/logo.svg",
+		logoWidth: 64,
+		logoHeight: 64,
+		tagline: "Your entire local dev stack. One menu bar.",
+		blurb: "Start, stop and monitor dev servers, Homebrew services, Docker containers and AI coding agents — with live health, CPU and memory, and port-conflict detection.",
+		badges: ["macOS", "Universal", "Tauri v2", "MIT"]
+	},
+	{
+		name: "LeanBattery",
+		url: "/lean-battery/",
+		logo: "/assets/img/lean-battery/menubar-discharging.png",
+		logoWidth: 32,
+		logoHeight: 64,
+		tagline: "A battery indicator that doesn't hog your menubar.",
+		blurb: "Battery level and charging state in an 11-point-wide upright battery — with per-app energy use, battery health and low-battery alerts you set yourself.",
+		badges: ["macOS", "Apple Silicon", "Swift 6", "MIT"]
+	}
+] %}
+
+{% block main %}
+	<section class="block tools-head">
+		<h1>Tools</h1>
+		<p>Small, free and open-source apps I build for macOS. No accounts, no telemetry — just download and run.</p>
+	</section>
+
+	<section class="block tools-list">
+		<ul class="tools-grid">
+			{% for tool in tools %}
+			<li>
+				<a class="nostyle tool-card" href="{{ tool.url }}">
+					<div class="tool-logo"><img src="{{ tool.logo }}" alt="" width="{{ tool.logoWidth }}" height="{{ tool.logoHeight }}" /></div>
+					<h2>{{ tool.name }}</h2>
+					<p class="tool-tagline">{{ tool.tagline }}</p>
+					<p class="tool-blurb">{{ tool.blurb }}</p>
+					<ul class="tool-badges">
+						{% for badge in tool.badges %}<li>{{ badge }}</li>{% endfor %}
+					</ul>
+					<span class="tool-more">Learn more <span aria-hidden="true">→</span></span>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endblock %}

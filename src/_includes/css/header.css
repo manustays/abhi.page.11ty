@@ -36,3 +36,10 @@ header a:not(.logo) {
 		margin-left: 2em;
 	}
 }
+
+/* Logo + crumb + three nav links don't fit one row on a 320px phone; the crumb is the expendable one */
+@media(max-width: 359px) {
+	header .crumb {
+		display: none;
+	}
+}
