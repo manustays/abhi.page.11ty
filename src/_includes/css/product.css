@@ -235,6 +235,13 @@
 	list-style: none;
 }
 
+/* Five cards wrap to a lonely 4 + 1 at full width; the same cap the trust grid
+   uses holds them to a tidy 3 + 2. Four cards or fewer don't need it. */
+.product-kinds.is-five {
+	max-width: 760px;
+	margin: 0 auto;
+}
+
 .product-kind {
 	background: var(--clr-primary-shade);
 	border: 1px solid var(--clr-slate);
@@ -568,6 +575,35 @@
 	color: var(--cmp-ink-strong);
 }
 
+/* ---------- Measurement table ----------
+   Same card + rules as the capability comparison, but every column is our own
+   number rather than a rival's, so undo the muted second-column heading. */
+
+.product-efficiency thead th:nth-child(2) {
+	font-weight: 600;
+	color: var(--cmp-ink-strong);
+}
+
+.product-efficiency tbody td {
+	color: var(--cmp-ink);
+	font-variant-numeric: tabular-nums;
+}
+
+/* Caveats under a table or a card grid — the small print that keeps a claim honest. */
+
+.product-footnote {
+	max-width: 62ch;
+	margin: var(--gap-lg) auto 0;
+	text-align: center;
+	font-size: 0.82rem;
+	line-height: 1.6;
+	color: var(--lighter-text-color);
+}
+
+.product-footnote code {
+	color: var(--clr-highlight);
+}
+
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -634,7 +670,9 @@
 
 .product-steps {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	/* 220px, not 240px: four steps must share one row rather than wrap to a lonely
+	   3 + 1. Sections with fewer steps are unaffected — auto-fit drops spare tracks. */
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 	gap: var(--gap-lg);
 	padding: 0;
 	list-style: none;

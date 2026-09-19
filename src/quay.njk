@@ -1,8 +1,8 @@
 ---
 permalink: /quay/
 title: Quay — Your local dev stack in one menu bar
-description: Start, stop and monitor local dev servers, Homebrew services, Docker containers and terminal agents from one macOS menu bar app. Free and open source.
-keywords: quay, macos menu bar app, dev services manager, localhost ports, docker, homebrew
+description: Start, stop and monitor local dev servers, Homebrew services, Docker containers and AI coding agents from one macOS menu bar app — with live health, CPU and memory, port-conflict detection, and an amber glyph when an agent is waiting on you. Free and open source.
+keywords: quay, macos menu bar app, dev services manager, localhost ports, docker, homebrew, claude code, codex cli, ai coding agent monitor, agent session status
 generate_social_image: false
 image: /assets/img/quay/social-preview.png
 ---
@@ -17,6 +17,7 @@ image: /assets/img/quay/social-preview.png
 
 {% set repo = "https://github.com/manustays/quay" %}
 {% set download = "https://github.com/manustays/quay/releases/latest" %}
+{% set brew = "brew install --cask manustays/tools/quay" %}
 
 {% block main %}
 <div class="product">
@@ -35,7 +36,7 @@ image: /assets/img/quay/social-preview.png
 
 				<h1 class="product-headline">Your entire local dev stack.<br><span class="hl">One menu bar.</span></h1>
 
-				<p class="product-lede">Start, stop and monitor dev servers, Homebrew services, Docker containers and terminal agents from one lightweight macOS app — with live health, CPU and memory, and port-conflict detection.</p>
+				<p class="product-lede">Start, stop and monitor dev servers, Homebrew services, Docker containers and AI coding agents from one lightweight macOS app — with live health, CPU and memory, port-conflict detection, and an amber glyph the moment an agent is waiting on you.</p>
 
 				<div class="product-cta">
 					<a class="button" href="{{ download }}" target="_blank" rel="noopener">
@@ -48,11 +49,12 @@ image: /assets/img/quay/social-preview.png
 
 				<p class="product-note">
 					<svg class="product-note-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none"/></svg>
-					Preview builds aren't notarized yet — macOS may ask for one confirmation in Privacy &amp; Security. Fully open source under MIT.
+					One universal build for Apple&nbsp;Silicon and Intel. Releases aren't notarized yet, so the first launch needs System Settings → Privacy &amp; Security → <em>Open Anyway</em> — right-click → Open no longer works on recent macOS. Fully open source under MIT.
 				</p>
 
 				<ul class="product-badges">
 					<li>macOS</li>
+					<li>Universal</li>
 					<li>Rust + TypeScript</li>
 					<li>Tauri v2</li>
 					<li>MIT</li>
@@ -110,11 +112,53 @@ image: /assets/img/quay/social-preview.png
 			</ul>
 		</section>
 
-		{# ---------- Four kinds of service ---------- #}
+		{# ---------- Agent radar ---------- #}
 		<section class="block">
-			<!-- p class="product-eyebrow">Everything running locally</p -->
-			<h2 class="product-kinds-title">Four kinds of service. One place.</h2>
-			<ul class="product-kinds">
+			<h2 class="product-section-title">Your coding agents, on the same shelf</h2>
+			<p class="product-compare-lede">Claude Code, Codex CLI, OpenCode and Pi sessions appear beside your services — so an agent that finished twenty minutes ago, or one stuck at a permission prompt, isn't a terminal window you forgot to check.</p>
+			<ul class="product-workflows">
+				<li class="product-workflow">
+					<span class="ico" aria-hidden="true">{% svgico 'trust-local' %}</span>
+					<h3>It never reads your transcripts</h3>
+					<p>Each agent reports its own lifecycle through a tiny hook, so Quay never opens the session files under <code>~/.claude</code>, <code>~/.codex</code> or <code>~/.pi</code>. Nothing about your prompts or projects is read, stored or sent.</p>
+					<ul class="product-workflow-tags">
+						<li>Claude Code</li>
+						<li>Codex CLI</li>
+						<li>OpenCode</li>
+						<li>Pi</li>
+					</ul>
+				</li>
+				<li class="product-workflow">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-bell' %}</span>
+					<h3>Know when one needs you</h3>
+					<p>Working, idle, or waiting on you at a permission prompt. The menu bar glyph turns amber while the popover is shut, so a blocked agent doesn't sit there unanswered while you're in another window.</p>
+					<ul class="product-workflow-tags">
+						<li>Working / idle / waiting</li>
+						<li>Works popover-closed</li>
+						<li>Optional count</li>
+					</ul>
+				</li>
+				<li class="product-workflow">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-terminal' %}</span>
+					<h3>Jump straight back in</h3>
+					<p>One click focuses that session's own terminal. Sessions in the same folder club into a single project row, with the session name on hover and live CPU, memory and uptime per agent.</p>
+					<ul class="product-workflow-tags">
+						<li>Ghostty, Kitty, WezTerm</li>
+						<li>iTerm2, Terminal.app</li>
+						<li>Reveal, kill, ignore</li>
+					</ul>
+				</li>
+			</ul>
+			<p class="product-note">
+				<svg class="product-note-ico" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="0.6" fill="currentColor" stroke="none"/></svg>
+				Hooks install in one click from Settings — no terminal, and no restarting the sessions you already have open; a running session appears as soon as it next reports. Until an agent's hooks are installed its sessions stay invisible, and the Agents list tells you so. Jump-to-session also covers Cmux, Herdr and Supacode; it needs remote control switched on for Kitty, and doesn't reach bare tmux, screen or zellij panes.
+			</p>
+		</section>
+
+		{# ---------- Five kinds of service ---------- #}
+		<section class="block">
+			<h2 class="product-kinds-title">Five kinds of service. One place.</h2>
+			<ul class="product-kinds is-five">
 				<li class="product-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
 					<h3>Project servers</h3>
@@ -128,12 +172,17 @@ image: /assets/img/quay/social-preview.png
 				<li class="product-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-docker' %}</span>
 					<h3>Docker containers</h3>
-					<p>See and control running containers alongside everything else — no separate dashboard.</p>
+					<p>Pick an image from the ones you've already pulled. Quay starts the daemon if it needs to, and reuses an existing container rather than discarding its data.</p>
 				</li>
 				<li class="product-kind">
 					<span class="ico" aria-hidden="true">{% svgico 'feature-terminal' %}</span>
-					<h3>Terminal &amp; AI agents</h3>
-					<p>Keep long-running agents like Claude Code visible, with live start/stop status right in the menu bar.</p>
+					<h3>Terminal &amp; CLI tools</h3>
+					<p>Long-running interactive tools you register yourself, started and stopped like any other service. Agent sessions you launched in your own terminal show up in the agent radar instead.</p>
+				</li>
+				<li class="product-kind">
+					<span class="ico" aria-hidden="true">{% svgico 'feature-stack' %}</span>
+					<h3>Daemons with their own CLI</h3>
+					<p>Anything driven by a start and stop command pair — a launchd service, a local model server. Status is polled even while it's stopped, so a change you made outside Quay still shows up.</p>
 				</li>
 			</ul>
 		</section>
@@ -157,17 +206,20 @@ image: /assets/img/quay/social-preview.png
 						</thead>
 						<tbody>
 							{% set compareRows = [
-								{ cap: "See listening ports",          typical: "Yes",  edge: false },
-								{ cap: "Kill port / process",          typical: "Yes",  edge: false },
-								{ cap: "Manage project servers",       typical: "Some", edge: false },
-								{ cap: "Homebrew services",            typical: "—",    edge: true  },
-								{ cap: "Docker containers",            typical: "Some", edge: true  },
-								{ cap: "Terminal &amp; AI agents",     typical: "—",    edge: true  },
-								{ cap: "CPU &amp; memory per service", typical: "—",    edge: true  },
-								{ cap: "HTTP health checks",           typical: "Some", edge: false },
-								{ cap: "Auto-detect project config",   typical: "Some", edge: false },
-								{ cap: "Adopt unmanaged processes",    typical: "Some", edge: false },
-								{ cap: "Group full stacks",            typical: "—",    edge: true  }
+								{ cap: "See listening ports",             typical: "Yes",  edge: false },
+								{ cap: "Kill port / process",             typical: "Yes",  edge: false },
+								{ cap: "Manage project servers",          typical: "Some", edge: false },
+								{ cap: "Homebrew services",               typical: "—",    edge: true  },
+								{ cap: "Docker containers",               typical: "Some", edge: true  },
+								{ cap: "Terminal &amp; CLI services",     typical: "—",    edge: true  },
+								{ cap: "CPU &amp; memory per service",    typical: "—",    edge: true  },
+								{ cap: "HTTP health checks",              typical: "Some", edge: false },
+								{ cap: "Auto-detect project config",      typical: "Some", edge: false },
+								{ cap: "Adopt unmanaged processes",       typical: "Some", edge: false },
+								{ cap: "Group full stacks",               typical: "—",    edge: true  },
+								{ cap: "AI agent session states",         typical: "—",    edge: true  },
+								{ cap: "Waiting-for-you menu bar signal", typical: "—",    edge: true  },
+								{ cap: "Jump to the agent's terminal",    typical: "—",    edge: true  }
 							] %}
 							{% for row in compareRows %}
 								<tr{% if row.edge %} class="is-edge"{% endif %}>
@@ -185,52 +237,48 @@ image: /assets/img/quay/social-preview.png
 			</div>
 		</section>
 
-		{# ---------- Features ---------- # }
+		{# ---------- Measured efficiency ---------- #}
 		<section class="block">
-			<h2 class="product-section-title">One dock for every local service</h2>
-			<ul class="product-features">
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-services' %}</span>
-					<h3>Unified management</h3>
-					<p>Node &amp; Python servers, Homebrew services, Docker containers and terminal agents — all in one list.</p>
-				</li>
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-health' %}</span>
-					<h3>Live status &amp; health</h3>
-					<p>Process-liveness checks plus HTTP health verification so you know what's actually up.</p>
-				</li>
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-metrics' %}</span>
-					<h3>Resource metrics</h3>
-					<p>Real-time CPU and memory usage per service, right in the menu bar.</p>
-				</li>
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-browser' %}</span>
-					<h3>One-click browser</h3>
-					<p>Open <code>localhost:&lt;port&gt;</code> for any running service without hunting for the port.</p>
-				</li>
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-radar' %}</span>
-					<h3>Port radar</h3>
-					<p>Detects unmanaged dev servers on your machine — adopt them into Quay or terminate them.</p>
-				</li>
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-stack' %}</span>
-					<h3>Stack-aware</h3>
-					<p>Recognises frameworks like Vite, Next, Django and Rails and shows the right tech-stack icon.</p>
-				</li>
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-favorites' %}</span>
-					<h3>Organised your way</h3>
-					<p>Favorites, search and collapsible groups keep a long list of services tidy.</p>
-				</li>
-				<li class="product-feature">
-					<span class="ico" aria-hidden="true">{% svgico 'feature-detect' %}</span>
-					<h3>Auto-detection</h3>
-					<p>Reads start commands and ports from <code>package.json</code>, <code>requirements.txt</code> and <code>.env</code>.</p>
-				</li>
-			</ul>
-		</section> #}
+			<h2 class="product-section-title">Measured, not claimed</h2>
+			<p class="product-compare-lede">An app you never quit should cost nothing while you aren't looking at it. Numbers from a debug build with seven services registered, sampled by a script that ships in the repo.</p>
+
+			<div class="product-compare-card">
+				<div class="product-compare-scroll">
+					<table class="product-compare product-efficiency">
+						<thead>
+							<tr>
+								<th scope="col">What you're doing</th>
+								<th scope="col">CPU</th>
+								<th scope="col">Interface</th>
+								<th scope="col">Idle wakeups</th>
+							</tr>
+						</thead>
+						<tbody>
+							{% set efficiencyRows = [
+								{ state: "Sitting in the menu bar — the everyday case", cpu: "0.10%", renderer: "0.00%", wakeups: "0.0 / min", edge: true  },
+								{ state: "Popover open, watching your services",        cpu: "0.45%", renderer: "0.51%", wakeups: "4.0 / min", edge: false }
+							] %}
+							{% for row in efficiencyRows %}
+								<tr{% if row.edge %} class="is-edge"{% endif %}>
+									<th scope="row">{{ row.state | safe }}</th>
+									<td>{{ row.cpu | safe }}</td>
+									<td>{{ row.renderer | safe }}</td>
+									<td>{{ row.wakeups | safe }}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<p class="product-footnote">
+				These come from a debug build; a release bundle reads several times lower, so treat them as the pessimistic figure. Absolutes depend on how many services you've registered — the comparable number is the difference between the two rows, and opening the popover costs about 0.35 percentage points of CPU in this configuration. Reproduce it with <code>scripts/cpu-check.sh</code>.
+			</p>
+
+			<p class="product-footnote">
+				<strong>And it stops when you do.</strong> Polling parks entirely while every display is asleep or the Mac is locked — overnight with the lid shut, Quay runs no status passes rather than roughly 1,200 an hour. There's no setting for it; it's the default.
+			</p>
+		</section>
 
 	</div>
 
@@ -240,7 +288,7 @@ image: /assets/img/quay/social-preview.png
 		<ol class="product-steps">
 			<li class="product-step">
 				<h3>Install</h3>
-				<p>Download the latest <code>.dmg</code> and drag Quay to <code>/Applications</code>.</p>
+				<p>Run <code>{{ brew }}</code>, or download the <code>.dmg</code> from Releases and drag Quay to <code>/Applications</code>.</p>
 			</li>
 			<li class="product-step">
 				<h3>Add a service</h3>
@@ -249,6 +297,10 @@ image: /assets/img/quay/social-preview.png
 			<li class="product-step">
 				<h3>Control it</h3>
 				<p>Start, stop, open in the browser or jump to a terminal — all from the menu bar.</p>
+			</li>
+			<li class="product-step">
+				<h3>Let it keep itself current</h3>
+				<p>Updates are signed with their own key, independent of Apple notarization — so in-app updating works even on today's unsigned builds.</p>
 			</li>
 		</ol>
 	</section>
@@ -265,7 +317,7 @@ image: /assets/img/quay/social-preview.png
 			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-local' %}</span>
 				<h3>Fully local</h3>
-				<p>Your services and settings never leave your Mac.</p>
+				<p>Your services and settings never leave your Mac, and Quay never reads your agents' session files — their states come from the agents themselves.</p>
 			</li>
 			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-no-account' %}</span>
@@ -275,7 +327,7 @@ image: /assets/img/quay/social-preview.png
 			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-no-telemetry' %}</span>
 				<h3>No telemetry</h3>
-				<p>Zero tracking, zero analytics, zero phone-home.</p>
+				<p>No tracking, no analytics, nothing phoned home about what you run. The only outbound traffic is GitHub Releases, to check for and download updates.</p>
 			</li>
 			<li class="product-kind">
 				<span class="ico" aria-hidden="true">{% svgico 'trust-code' %}</span>
