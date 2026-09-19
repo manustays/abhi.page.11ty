@@ -459,6 +459,9 @@
 
 .product-compare-scroll {
 	overflow-x: auto;   /* narrow screens scroll the table instead of squashing it */
+	/* The table's 460px min-width otherwise leaks past every clipping ancestor and
+	   scrolls the whole page sideways on a phone. Containment keeps it in here. */
+	contain: content;
 }
 
 .product-compare {
