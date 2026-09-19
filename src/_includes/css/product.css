@@ -140,11 +140,13 @@
 	filter: none;
 }
 
+/* A hanging indent rather than flex: as a flex container every inline element in
+   the note — an <em>, a <code> — became its own column and split the sentence. */
+
 .product-note {
-	display: flex;
-	align-items: flex-start;
-	gap: 0.5em;
 	margin: var(--gap-md) 0 0;
+	padding-left: 1.65em;
+	text-indent: -1.65em;
 	max-width: 56ch;
 	font-size: 0.82rem;
 	line-height: 1.5;
@@ -152,8 +154,8 @@
 }
 
 .product-note-ico {
-	flex: 0 0 auto;
-	margin-top: 0.15em;
+	margin-right: 0.5em;
+	vertical-align: -0.2em;
 }
 
 /* ---------- Badges ---------- */
