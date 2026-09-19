@@ -159,8 +159,9 @@
 	border-radius: 7px;
 	background: var(--clr-primary-shade);
 	color: var(--clr-highlight);
-	overflow-x: auto;
-	white-space: nowrap;
+	/* Wrap rather than scroll: an unbreakable line would set the min-content width
+	   of the whole hero column and stretch it past a phone's viewport. */
+	overflow-wrap: anywhere;
 }
 
 /* A hanging indent rather than flex: as a flex container every inline element in
