@@ -140,6 +140,29 @@
 	filter: none;
 }
 
+/* Install command, offered beside the download button */
+
+.product-install {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.6em;
+	margin: var(--gap-md) 0 0;
+	font-size: 0.82rem;
+	color: var(--lighter-text-color);
+}
+
+.product-install code {
+	max-width: 100%;
+	padding: 8px 12px;
+	border: 1px solid var(--clr-slate);
+	border-radius: 7px;
+	background: var(--clr-primary-shade);
+	color: var(--clr-highlight);
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
 /* A hanging indent rather than flex: as a flex container every inline element in
    the note — an <em>, a <code> — became its own column and split the sentence. */
 
